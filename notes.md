@@ -309,3 +309,38 @@ See the code in example 5 folder
 Time to practice. See the Challenge 1 folder.
 
 
+
+=========================== Class 10 ===========================
+
+
+-Event Binding
+  A simple way to add a event listener in a HTML element is the
+  vue method "v-on". We can use the prefix "v-on" for add a event
+  directly in the element tag. Ex:
+
+  HTML file:
+
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click="counter++">Add</button>
+      <button v-on:click="counter--">Reduce</button>
+      <p>Result: {{ counter }}</p>
+    </section>
+
+  js file:
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          counter: 0
+        }
+      }
+    }) 
+
+    app.mount('#events')
+
+See the code in the exemple 6 folder.
+
+
+
+
