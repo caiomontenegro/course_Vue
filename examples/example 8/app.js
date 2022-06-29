@@ -6,6 +6,17 @@ const app = Vue.createApp({
       fullName: ''
     };
   },
+  computed: {
+    outputFull() {
+      console.log('running')
+      if(this.name === '') {
+        this.fullName = this.name 
+      } else {
+        this.fullName = this.name + ' ' + 'Montenegro'
+      }
+      return this.fullName
+    }
+  },
   methods: {
     setName(event) {
       this.name = event.target.value
