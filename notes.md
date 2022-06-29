@@ -547,3 +547,48 @@ There many modifier for each event, for exemple:
 Check the JS documentation for more event modifiers.
 
 See this code running in the example 6 folder.
+
+
+=========================== Class 14 ===========================
+
+
+- V-once
+
+So, in a fictional scenario, you need to show a data just once.
+But your code manipulate this data elsewhere... How to show the 
+once without after manipulates?
+
+It's simple, using v-once. Like this:
+
+  HTML File
+
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click="counter++">Add</button>
+      <button v-on:click="reduceA()">Reduce</button>
+      <button v-on:click="reduceB(5)">Reduce 5</button>
+      <p v-once>Starting Counter: {{ counter }}</p>
+      <p>Result: {{ counter }}</p>
+    </section>
+
+  Js File
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          counter: 0 
+        }
+      },
+      methods: 
+      reduceA() {
+        this.counter--
+      },
+      reduceB(num) {
+        this.counter = this.counter - num
+      }
+    }) 
+  
+Look, the first time the element is shown, the element do not 
+update the "Counter" anymore.
+        
+

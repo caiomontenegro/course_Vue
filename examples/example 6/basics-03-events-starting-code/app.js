@@ -9,10 +9,10 @@ const app = Vue.createApp({
     }
   },
   methods: {
-    reduce() {
+    reduceA() {
       this.counter--
     },
-    reduce(num) {
+    reduceB(num) {
       this.counter = this.counter - num
     },
     setName(event) {
