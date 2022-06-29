@@ -3,6 +3,11 @@ const app = Vue.createApp({
     return {
       counter: 0
     }
+  },
+  methods: {
+    reduce() {
+      this.counter--
+    }
   }
 }) 
 
