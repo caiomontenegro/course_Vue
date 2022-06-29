@@ -422,3 +422,128 @@ See the code in the example 6 folder.
 
 
 =========================== Class 13 ===========================
+
+
+-Native Event Object
+
+  We can use the natives events objects directly in our HTML element
+  event. In our Js file, just we set event as a parameter Ex:
+
+  HTML file
+
+    <section id="events">
+      <h2>Events in Action</h2>
+      <input type="text" v-on:input="setName">
+      <p>Your name {{ name }}</p>
+    </section>
+
+  JS File
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          name: ''
+        }
+      },
+      methods: {
+        setName(event) {
+          this.name = event.target.value
+        }
+      }
+    }) 
+
+    app.mount('#events')
+
+If you need to use a seconde paremeter in your function, you need add
+"$" before the "event" parameter. Like this:
+
+  HTML file
+
+    <section id="events">
+      <h2>Events in Action</h2>
+      <input type="text" v-on:input="setName($event, 'Montenegro')">
+      <p>Your name {{ name }}</p>
+    </section>
+
+  JS File
+
+      const app = Vue.createApp({
+        data() {
+          return {
+            name: ''
+          }
+        },
+        methods: {
+          setName(event, lastName) {
+            this.name = event.target.value + ' ' + lastName
+          }
+        }
+      }) 
+
+      app.mount('#events')
+
+See the code running in example 6 folder
+
+
+
+=========================== Class 14 ===========================
+
+
+- Event Modifiers
+
+We can change the com behavior of events, as we change in Vanilla JS.
+Remember the event.prevent. That stop the default behavior of browser.
+
+And for do this, we have two ways:
+
+1-
+  
+  HTML file:
+
+    <form v-on:submit="submitFormA">
+      <input type="text">
+      <button>Send</button>
+    </form>
+
+  Js File:
+
+    const app = Vue.createApp({
+      methods: {
+        submitFormA(event) {
+          event.preventDefault()
+          alert("Sended")
+        }
+      }
+    }) 
+
+    app.mount('#events')
+
+2- 
+
+  HTML file:
+
+    <form v-on:submit.prevent="submitFormB">
+    <input type="text">
+    <button>Send</button>
+    </form>
+
+  Js file:
+
+    const app = Vue.createApp({
+      method: {
+        submitFormB() {
+          alert('Sended')
+        }
+      }
+    })
+
+There many modifier for each event, for exemple:
+
+    v-on:click
+    v-on:click.right
+    v-on:keypup
+    v-on:keyup.enter
+
+Check the JS documentation for more event modifiers.
+
+See this code running in the example 6 folder.

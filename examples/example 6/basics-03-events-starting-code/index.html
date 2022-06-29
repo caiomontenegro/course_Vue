@@ -22,6 +22,21 @@
       <button v-on:click="reduce()">Reduce</button>
       <button v-on:click="reduce(5)">Reduce 5</button>
       <p>Result: {{ counter }}</p>
+      <input type="text" v-on:input="setName">
+      <p>Your name {{ name }}</p>
+      <input type="text" v-on:input="setGirlName($event, 'Alto')">
+      <p>The girl Name {{ girlName }}</p>
+      <!-- Form with prevent in JS -->
+      <form v-on:submit="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
+      <!-- Form with prevent in V-On  -->
+      </br>
+      <form v-on:submit.prevent="submitForm2">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
