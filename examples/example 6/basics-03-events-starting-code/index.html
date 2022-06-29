@@ -26,6 +26,8 @@
       <p>Your name {{ name }}</p>
       <input type="text" v-on:input="setGirlName($event, 'Alto')">
       <p>The girl Name {{ girlName }}</p>
+      <input type="text" v-on:input="inputText" v-on:keyup.enter="confirmText">
+      <p>Confirm text: {{ confirmedText }}</p>
       <!-- Form with prevent in JS -->
       <form v-on:submit="submitForm">
         <input type="text">
