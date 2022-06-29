@@ -599,6 +599,78 @@ Time to practice.
 See the challenge in the challenge 2 folder
 
 
+=========================== Class 16 ===========================
+
+
+- V-Model
+  Due the often that we use v-bind:value with v-on:input. The Vue
+  created a extra method, that substitute the both methods. Ex:
+
+  HTML code
+
+        <input type="text" v-bind:value="name" v-on:input="saveName()">
+        <button v-on:click="resetName">Reset Name</button>
+        <p>Your Name: {{ name }}</p>
+
+        this, is the same that:
+
+        <input type="text" v-model="name">
+        <button v-on:click="resetName">Reset Name</button>
+        <p>Your Name: {{ name }}</p>
+
+
+Check the example in example 7 folder
+
+
+
+=========================== Class 17 ===========================
+
+
+- Methods Called in HTML
+  
+  We already know which methods can be called via interpollation
+  wich double curly braces, but that we don't know is:
+  Whenever something change in the page, the Vue will go execute 
+  the method, because he need see if something that, use a datas 
+  inside to the method.
+
+  So, methods can be bad for our performance.
+
+  For see that, acces the example 7 folder, and click at Add and
+  remove buttons. And you can see on the browser console, the 
+  method "setFullName()", being called.
+
+
+
+=========================== Class 18 ===========================
+
+
+- Computed Properties
+
+For resolve the refresh problem which methods cause, you can use
+Computed properties.
+
+Computeds, are defined like a methods, but the computeds just
+only call if the element has a interpolation being  triggered.
+
+The config is:
+
+  HTML File 
+
+    In computeds, you should never use parentheses
+    <p>{{ example }}</p>
+
+  js File
+
+    const app = Vue.createApp() {
+      computed: {
+        example() {
+          console.log("hello Computed")
+        }
+      }
+    }
+
+
 
         
 
