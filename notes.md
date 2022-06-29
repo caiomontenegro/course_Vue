@@ -381,3 +381,44 @@ See the code in the exemple 6 folder.
 See the code in the exemple 6 folder.
 
 
+
+=========================== Class 12 ===========================
+
+
+-Event Arguments
+  
+  You can use argument in the methods, directly in HTML file event.
+  For example, see the new button "Reduce 5":
+
+  HTML file
+
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click="counter++">Add</button>
+      <button v-on:click="reduce()">Reduce</button>
+      <button v-on:click="reduce(5)">Reduce 5</button>
+      <p>Result: {{ counter }}</p>
+    </section>
+
+  Js file:
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          counter: 0
+        }
+      },
+      methods: {
+        reduce() {
+          this.counter--
+        },
+        reduce(num) {
+          this.counter = this.counter - num
+        }
+      }
+    }) 
+
+See the code in the example 6 folder.
+
+
+=========================== Class 13 ===========================
