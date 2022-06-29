@@ -305,3 +305,7 @@ See the code in example 5 folder
 
 
 =========================== Class 9 ===========================
+
+Time to practice. See the Challenge 1 folder.
+
+
