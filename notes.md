@@ -590,5 +590,15 @@ It's simple, using v-once. Like this:
   
 Look, the first time the element is shown, the element do not 
 update the "Counter" anymore.
+
+
+=========================== Class 15 ===========================
+
+Time to practice.
+
+See the challenge in the challenge 2 folder
+
+
+
         
 
