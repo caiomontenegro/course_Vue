@@ -679,4 +679,57 @@ See the code in the example 8 folder
 
 - Watchers
         
+If you need to monitor a data propertie or a computed propertie, 
+you can use Watch Properties. Watchers be functions like a Computeds
+which running in specifics ocasions. 
 
+Watch just running, when the Data wich him monitoring be changing.
+
+The sintax for use Watch is similar to Computed and Method sintax, but
+wich a difference, the Watch always must be named wich the Data name that
+is monitoring. Ex:
+
+  HTML FIle:
+
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click="add(10)">Add 10</button>
+      <button v-on:click="reduce(5)">Subtract 5</button>
+      <p>Result: {{ counter }}</p>
+    </section>
+
+
+  Js file
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          counter: 0
+        }
+      },
+      watch: {
+        resetCounter() {
+          if(this.counter > 10) {
+            this.counter = 0
+          }
+        }
+      },
+      methods: {
+        add(num) {
+          this.counter++
+        },
+        reduce(num) {
+          this.counter--
+        }
+      }
+    })
+
+
+Take a look, if the counter is greater than 10, the counter is reseted
+to zero.
+
+See de code running in the example 9 folder.
+
+
+
+=========================== Class 20 ===========================
