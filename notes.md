@@ -901,3 +901,51 @@ Now, we learn how to add classes wich Vue. Step by Step:
 
 See the coding running in the example 11 folder.
     
+
+=========================== Class 24 ===========================
+
+Computed with Dynamic Styles.
+
+So, how to remove the logic in the HTML file about the last class?
+
+If you have a many class styles or the logic is very extensive, 
+you can use Computed. Ex:
+
+  HTML file:
+
+    <section id="styling">
+      <div class="demo" :class="changeStyle" @click="boxSelected('A')"></div>
+      <div class="demo" :class="{active: boxBSelected}" @click="boxSelected('B')"></div>
+      <div class="demo" :class="{active: boxCSelected}" @click="boxSelected('C')"></div>
+    </section>
+
+    const app = Vue.createApp ({
+      data() {
+        return {
+          boxASelected: false,
+          boxBSelected: false,
+          boxCSelected: false
+        }
+      },
+      computed: {
+        changeStyle() {
+          return {active: this.boxASelected}
+        }
+      },
+      methods: {
+        boxSelected(box) {
+          if(box === 'A') {
+            this.boxASelected = !this.boxASelected
+          } else if(box === 'B') {
+            this.boxBSelected = !this.boxBSelected
+          } else if(box === 'C') {
+            this.boxCSelected = !this.boxCSelected
+          }
+        }
+      }
+    })
+
+    The a look, in the first element A, we can use a computed for
+    corresponding the "{active: boxASelected}".
+
+See this code running in the example 12 folder
