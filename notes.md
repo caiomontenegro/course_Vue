@@ -770,7 +770,7 @@ Acces to challenge 3 and resolve that!
 =========================== Class 22 ===========================
 
 
--Dynamic Styling
+-Dynamic Inline Styling
 
   To use dinamic style, the Vue use a especial sintax on HTML file.
   First of all, we need to create a form to select our element to 
@@ -841,3 +841,63 @@ Acces to challenge 3 and resolve that!
 See the code running in the example 10 folder.
 
 
+
+=========================== Class 23 ===========================
+
+
+-Dynamic Classes
+
+So now, suppose you want to style a element, but your style has
+many properties, and use inline style is not appropriate.
+
+Now, we learn how to add classes wich Vue. Step by Step:
+
+  1-Create the class ou CSS File:
+
+    .active {
+      border-color: red;
+      background-color: salmon;
+    }
+
+  2-Create your Js File, wich rules to active the class:
+
+    const app = Vue.createApp ({
+      data() {
+        return {
+          boxASelected: false,
+          boxBSelected: false,
+        }
+      },
+      methods: {
+        boxSelected(box) {
+          if(box === 'A') {
+      //look that, the code changes for your opposite value.
+            this.boxASelected = !this.boxASelected
+          } else if(box === 'B') {
+            this.boxBSelected = !this.boxBSelected
+          }
+        }
+      }
+    })
+
+  3-Create de HTML file:
+
+
+    <section id="styling">
+      <div class="demo" :class="{active: boxASelected}" @click="boxSelected('A')"></div>
+      <div class="demo" :class="{active: boxBSelected}" @click="boxSelected('B')"></div>
+    </section>
+
+  Check the sintax, the default class is added like a normal sintax ("class="demo"),
+  but for dynamic classes with Vue, the sintax is based in True or False, being the 
+  first parameter the class name created in CSS file, and the second is the corresponding
+  value for "true" or "false".
+
+  So:
+
+    :class="{active: boxASelected}"
+
+  It's the same as "Active class is true or false"
+
+See the coding running in the example 11 folder.
+    
