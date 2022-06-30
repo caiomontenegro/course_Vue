@@ -733,3 +733,36 @@ See de code running in the example 9 folder.
 
 
 =========================== Class 20 ===========================
+
+
+Short-Hands
+
+  V-on:
+  For V-on (events) we can use just "@". Ex:
+
+    v-on:click="add(1)"
+
+    Is the same that:
+
+    @click="add(1)"
+
+  V-bind
+  And for V-bind, we can use ":". Ex:
+
+    v-bind:value="name"
+
+    is the same that:
+
+    :value="name"
+
+Remember to be consistent in the use of your choice.
+
+
+=========================== Class 21 ===========================
+
+Time to practice!
+
+Acces to challenge 3 and resolve that!
+
+
+=========================== Class 22 ===========================
