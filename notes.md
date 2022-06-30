@@ -949,3 +949,15 @@ you can use Computed. Ex:
     corresponding the "{active: boxASelected}".
 
 See this code running in the example 12 folder
+
+
+=========================== Class 25 ===========================
+
+
+A simple sintax extra, for the classes is the class lists in HTML
+
+You can add a more than one class in a element, use the below sintax:
+
+    <div :class="[demo, {active: boxASelected}]" @click="boxSelected('A')"></div>
+
+See that code running in the example 13 folder.
