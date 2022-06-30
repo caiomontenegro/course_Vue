@@ -770,6 +770,74 @@ Acces to challenge 3 and resolve that!
 =========================== Class 22 ===========================
 
 
-- Dynamic Styling
+-Dynamic Styling
+
+  To use dinamic style, the Vue use a especial sintax on HTML file.
+  First of all, we need to create a form to select our element to 
+  style.
+
+  1- Create de Js file:
+
+    const app = Vue.createApp ({
+      data() {
+        return {
+          boxASelected: false,
+          boxBSelected: false,
+          boxCSelected: false
+        }
+      },
+      methods: {
+        boxSelected(box) {
+          if(box === 'A') {
+            this.boxASelected = true
+          } else if(box === 'B') {
+            this.boxBSelected = true
+          } else if(box === 'C') {
+            this.boxCSelected = true
+          }
+        }
+      }
+    })
+
+    app.mount('#styling')
+
+    It's not the best form to create a select element code, but
+    it's serve for know.
+
+    
+  Second, we need to create our HTML with our elements to style:
+
+  HTML file:
+
+    <section id="styling">
+      <div class="demo" :style="{borderColor: boxASelected ? 'red' : '#CCC'}" @click="boxSelected('A')"></div>
+      <div class="demo" @click="boxSelected('B')"></div>
+      <div class="demo" @click="boxSelected('C')"></div>
+    </section>
+
+  
+  Know let's take a look on first Element "demo".
+  1- We input the method to select, with "A" parameter, for our JS file knows
+  what element we are going to style.
+
+  2- We add the style propertie, and add the prefix ":" (v-bind). but
+  to use Vue values on the propertie Style, Class, etc... We need to 
+  use the special sintax with curly braces({ }) ex:
+
+    :style="{'border-color': 'red'}"
+
+    // We can remove the simples quotes, and replace with CamelCase:
+    
+    :style="{borderColor: 'red'}"
+
+    // We also can use a simple logic in there:
+
+    :style="{borderColor: boxASelected ? 'red' : '#CCC'}" 
+
+    // If boxASelect is true, the border color is red, else 
+    the border color is gray.
+
+
+See the code running in the example 10 folder.
 
 
