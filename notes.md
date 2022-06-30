@@ -653,6 +653,8 @@ Computed properties.
 Computeds, are defined like a methods, but the computeds just
 only call if the element has a interpolation being  triggered.
 
+Obs:Computed can't be called on events.
+
 The config is:
 
   HTML File 
@@ -766,5 +768,8 @@ Acces to challenge 3 and resolve that!
 
 
 =========================== Class 22 ===========================
+
+
+- Dynamic Styling
 
 
