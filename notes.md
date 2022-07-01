@@ -983,7 +983,11 @@ Acces the link:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463232#overview
 
 
-=========================== Class 28 ===========================
+
+########################### Module 3 ###########################
+
+
+=========================== Class 01 ===========================
 
 
 - Rendering Content Conditionally
@@ -1006,11 +1010,11 @@ For the rendering conditional content, you can use the special Vue propertie
       },
     })
 
-Check that code running in module 3 folder.
+Check that code running in example 1 folder.
 
 
 
-=========================== Class 29 ===========================
+=========================== Class 02 ===========================
 
 
 - More Deep on Conditional Content
@@ -1028,5 +1032,27 @@ But remember! This just works if you put one below or above the other, if there 
 a another element between the sintax, that not works.
 
 
+Se that code running in the example 2 folder.
 
-  
+
+
+=========================== Class 03 ===========================
+
+
+-V-Show
+
+A alternative to "v-if", is "v-show"... V-show, similar to v-if but
+don't works together "v-else-if" and "v-else", and another feature is 
+that no remove the element when de condition is false, the element continue
+being part of the DOM, but commented.
+
+  Ex:
+
+    <p v-show="goals === 0"> No goals have been added yet - please start adding some! </p>
+    
+
+Use the v-show when the element appears for many times in your page, 
+because v-show has a more performance than v-if
+
+
+See the code running in the example 3 folder.
