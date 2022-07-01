@@ -984,3 +984,33 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463232#o
 
 
 =========================== Class 28 ===========================
+
+
+- Rendering Content Conditionally
+
+For the rendering conditional content, you can use the special Vue propertie
+"v-if", like a Js propertie "if". ex:
+
+  HTML File
+
+    <p v-if="goals === 0"> No goals have been added yet - please start adding some! </p>
+
+  Js File:
+
+    const app = Vue.createApp({
+      data() {
+        return { 
+          goal: '',
+          goals: [], 
+        };
+      },
+    })
+
+Check that code running in module 3 folder.
+
+
+
+=========================== Class 29 ===========================
+
+
+  
