@@ -6,6 +6,11 @@ const app = Vue.createApp ({
       boxCSelected: false
     }
   },
+  computed: {
+    changeStyle() {
+      return {active: this.boxASelected}
+    }
+  },
   methods: {
     boxSelected(box) {
       if(box === 'A') {

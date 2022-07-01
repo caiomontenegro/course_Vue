@@ -773,7 +773,7 @@ Acces to challenge 3 and resolve that!
 -Dynamic Inline Styling
 
   To use dinamic style, the Vue use a especial sintax on HTML file.
-  First of all, we need to create a form to select our element to 
+  First of all, we need to create a shape to select our element to 
   style.
 
   1- Create de Js file:
@@ -884,6 +884,8 @@ Now, we learn how to add classes wich Vue. Step by Step:
 
 
     <section id="styling">
+      <div class="demo" :class="active" @click="boxSelected('A')"></div>
+      // Or with conditions True or False:
       <div class="demo" :class="{active: boxASelected}" @click="boxSelected('A')"></div>
       <div class="demo" :class="{active: boxBSelected}" @click="boxSelected('B')"></div>
     </section>
@@ -961,3 +963,11 @@ You can add a more than one class in a element, use the below sintax:
     <div :class="[demo, {active: boxASelected}]" @click="boxSelected('A')"></div>
 
 See that code running in the example 13 folder.
+
+
+=========================== Class 26 ===========================
+
+
+Time to practice. 
+
+Look the challenge 4 and resolve that.
