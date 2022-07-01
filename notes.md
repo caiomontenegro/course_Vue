@@ -1062,7 +1062,7 @@ See the code running in the example 3 folder.
 =========================== Class 04 ===========================
 
 
-- Loops 
+- Loops 1/2
 
 If you need to repeat element following a list, you can use "v-for".
 Ex:
@@ -1077,3 +1077,45 @@ of the f-vor element.
 Check the code running in example 3 folder.
 
 
+=========================== Class 05 ===========================
+
+- Loops 2/2
+
+V-For tricks:
+
+  We have more ways to work with For:
+
+  1- Show the index. 
+  You can show the index of the value printed. Ex:
+
+    <li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>
+
+  2- Work with Objects.
+  We can running a objet with V-For. Ex:
+
+    <ul>
+      <li v-for="(user in users">{{ user }}</li>
+    </ul>
+
+  And we can show the key of value:
+
+    <ul>
+      <li v-for="(value, key) in users">{{ key }}: {{ value }}</li>
+    </ul>
+
+  And finally, the index:
+
+    <ul>
+      <li v-for="(value, key, index) in users">{{ key }}: {{ value }} - {{ index }}</li>
+    </ul>
+
+So, when we work with lists, "v-for" has the following parameters:
+
+    v-for(value, index) in list
+
+And when we work on objects:
+
+    v-for(value, key, index) in list
+
+
+Looke the code running in example 4 folder
