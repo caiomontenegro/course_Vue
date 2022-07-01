@@ -18,11 +18,11 @@
     </header>
     <section id="user-goals">
       <h2>My course goals</h2>
-      <input type="text" v-model="goal">
+      <input type="text" v-model="registeredGoal">
       <button @click="addGoal">Add Goal</button>
       <p v-show="goals.length === 0" >No goals have been added yet - please start adding some!</p>
       <ul>
-        <li>Goal</li>
+        <li v-for="goal in goals">{{ goal }}</li>
       </ul>
     </section>
   </body>

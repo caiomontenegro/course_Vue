@@ -1056,3 +1056,24 @@ because v-show has a more performance than v-if
 
 
 See the code running in the example 3 folder.
+
+
+
+=========================== Class 04 ===========================
+
+
+- Loops 
+
+If you need to repeat element following a list, you can use "v-for".
+Ex:
+
+    <ul>
+      <li v-for="goal in goals">{{ goal }}</li>
+    </ul>
+
+Remember! The element that running in list, just can be accessed inside
+of the f-vor element.
+
+Check the code running in example 3 folder.
+
+
