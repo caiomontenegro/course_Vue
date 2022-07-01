@@ -1013,4 +1013,20 @@ Check that code running in module 3 folder.
 =========================== Class 29 ===========================
 
 
+- More Deep on Conditional Content
+
+As we can imagine, the Vue also suported the JS properties "else if()" and
+"else()". And you can use typing: v-else-if, or "v-else". ex:
+
+
+    <p v-if="goals === 0"> No goals have been added yet - please start adding some! </p>
+    <ul v-else>
+        <li>Goal</li>
+    </ul>
+
+But remember! This just works if you put one below or above the other, if there is
+a another element between the sintax, that not works.
+
+
+
   
