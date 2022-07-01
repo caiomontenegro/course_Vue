@@ -971,3 +971,16 @@ See that code running in the example 13 folder.
 Time to practice. 
 
 Look the challenge 4 and resolve that.
+
+
+=========================== Class 27 ===========================
+
+
+Module Summary
+
+Acces the link:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463232#overview
+
+
+=========================== Class 28 ===========================

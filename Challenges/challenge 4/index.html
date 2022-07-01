@@ -21,7 +21,7 @@
       <!-- The entered class should be added to the below paragraph -->
       <input type="text" @input="saveClass">
       <!-- (available classes: "user1", "user2") -->
-      <p :class="{user1: checkUser1, user2: checkUser2, hidden: hidden}">
+      <p :class="{style: checkUser1, user2: checkUser2, hidden: hidden}">
         Style Me
       </p>
       <button @click="checkContent">Toggle Paragraph</button>
