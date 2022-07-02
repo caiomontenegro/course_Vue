@@ -1144,3 +1144,22 @@ element that v-for is running.
 
 See the coding running in example 4 folder.
 
+
+=========================== Class 05 ===========================
+
+- Key
+
+So, we can a little problem when we use the v-for. Sometimes, the 
+elements that be shown, can inherit the properties of another elements
+when are interacted.
+
+Because of this, the Vue offer a special atribute that we can use
+to specify which child have this properties. The atribute is key.
+
+So we can use the anything of value, but is recomended to use items
+ID. But for our little example, we use the value of index list:
+
+    <li v-for="(goal, index) in goals" :key="goal" @click="removeGoals(index)">{{ goal }} - {{ index }}</li>
+
+
+Check this code running in the example 4 folder.
