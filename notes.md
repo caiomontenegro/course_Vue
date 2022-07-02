@@ -1163,3 +1163,9 @@ ID. But for our little example, we use the value of index list:
 
 
 Check this code running in the example 4 folder.
+
+
+=========================== Class 06 ===========================
+
+Time to practice, check the challenge 1 folder and resolved.
+
