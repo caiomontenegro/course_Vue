@@ -1119,3 +1119,28 @@ And when we work on objects:
 
 
 Looke the code running in example 4 folder
+
+
+
+=========================== Class 04 ===========================
+
+
+- Remove item
+
+So how we can remove the item, with your index, it's very simple:
+
+First of all, we need to create a new method to remove:
+
+    remove(idx) {
+      this.goals.splice(idx, 1)
+    }
+
+Second step, we need to add this method in our element. 
+Remember! We just can acces the index (we need), inside of the 
+element that v-for is running.
+
+    <li v-for="(goal, index) in goals" @click="removeGoals(index)">{{ goal }} - {{ index }}>
+
+
+See the coding running in example 4 folder.
+
