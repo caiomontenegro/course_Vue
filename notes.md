@@ -1200,3 +1200,51 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463370#o
 =========================== Class 03 ===========================
 
 
+- More than one Vue App.
+
+In a single page, we can have more than one Vue app, but de properties can't be
+mixed. 
+
+So to use, is very simple... Just code on after another. Ex:
+
+  HTML file: 
+
+    <section id="app">
+      <h2>How Vue Works</h2>
+      <input type="text" @input="saveInput">
+      <button @click="setText">Set Text</button>
+      <p>{{ message }}</p>
+    </section>
+    <section id="elementA">
+      <h2>{{ name }}</h2>
+    </section>
+    <section id="elementB">
+      <h2>{{ name }}</h2>
+    </section>
+
+  Js File:
+
+    const appA = Vue.createApp({
+      data() {
+        return {
+          name: 'Caio'
+        }
+      }
+    })
+
+    const appB = Vue.createApp({
+      data() {
+        return {
+          name: 'Montenegro'
+        }
+      }
+    })
+
+    appA.mount('#elementA')
+    appB.mount('#elementB')
+
+
+
+=========================== Class 04 ===========================
+
+

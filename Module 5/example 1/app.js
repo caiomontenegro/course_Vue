@@ -14,8 +14,26 @@ const app = Vue.createApp({
     },
   },
 });
+const appA = Vue.createApp({
+  data() {
+    return {
+      name: 'Caio'
+    }
+  }
+})
+
+const appB = Vue.createApp({
+  data() {
+    return {
+      name: 'Montenegro'
+    }
+  }
+})
 
 app.mount('#app');
+appA.mount('#elementA')
+appB.mount('#elementB')
+
 
 const data = {
   message: 'hello',
