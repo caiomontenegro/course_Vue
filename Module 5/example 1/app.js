@@ -23,6 +23,7 @@ const appA = Vue.createApp({
 })
 
 const appB = Vue.createApp({
+  template: `<p>{{ name }}</p>`,
   data() {
     return {
       name: 'Montenegro'

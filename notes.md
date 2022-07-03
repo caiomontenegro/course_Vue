@@ -1243,8 +1243,33 @@ So to use, is very simple... Just code on after another. Ex:
     appA.mount('#elementA')
     appB.mount('#elementB')
 
-
+Check the code running in example 1 folder
 
 =========================== Class 04 ===========================
 
 
+- Templates
+
+All the HTML code inside of the Vue app element, it's called
+"Template".
+
+And we define template with other form: in Vue.app Code. Ex:
+
+  HTML file:
+
+    <section id="elementB">
+    </section>
+
+  Js file:
+
+    const appB = Vue.createApp({
+      // remeber the use double crases
+      template: `<p>{{ name }}</p>`,
+      data() {
+        return {
+          name: 'Montenegro'
+        }
+      }
+    })
+
+See the code running on the example 1 folder
