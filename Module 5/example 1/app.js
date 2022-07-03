@@ -16,3 +16,22 @@ const app = Vue.createApp({
 });
 
 app.mount('#app');
+
+const data = {
+  message: 'hello',
+  longMessage: 'Hello'
+}
+
+const handler = {
+  set(target, key, value) {
+    console.log(target)
+    console.log(key)
+    console.log(value)
+  }
+}
+
+const proxy = new Proxy (data, handler)
+
+proxy.message = 'Hello!!!!!'
+
+console.log(proxy.longMessage)
