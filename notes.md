@@ -1179,3 +1179,24 @@ Time to practice, check the challenge 1 folder and resolved.
 =========================== Class 01 ===========================
 
 THis is class is a introduction about the Vue behind the scenes
+
+For more, access the link:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463362#overview
+
+
+=========================== Class 02 ===========================
+
+Reactivity on datas
+
+So how data reactivities work behind the scenes on Vue?
+
+See on: 
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463370#overview
+
+
+
+=========================== Class 03 ===========================
+
+
