@@ -1293,3 +1293,19 @@ The refs, offers many datas about the element, for know about this
 datas, coding:
 
     console.dir(this.$ref.text)
+
+
+=========================== Class 06 ===========================
+
+- Virtual DOM
+
+So how Vue, read and update the DOM?
+
+Read DOM, and update him demands many perfomance, so VUE create a
+virtual DOM, and use that for compare with real DOM, and realise
+your modifications.
+
+Check that explanation for more about that:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463390#overview
+
