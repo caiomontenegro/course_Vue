@@ -1273,3 +1273,23 @@ And we define template with other form: in Vue.app Code. Ex:
     })
 
 See the code running on the example 1 folder
+
+
+=========================== Class 05 ===========================
+
+
+- Refs
+
+The offer another way to capture data elements, this way is "Refs".
+Use Refs to capture value elements coding?
+
+    ref="text"
+
+To use ref on your Vue app, just use:
+
+    this.$ref.text.value
+
+The refs, offers many datas about the element, for know about this
+datas, coding:
+
+    console.dir(this.$ref.text)
