@@ -1169,3 +1169,13 @@ Check this code running in the example 4 folder.
 
 Time to practice, check the challenge 1 folder and resolved.
 
+
+
+
+########################### Module 5 ##############################
+
+
+
+=========================== Class 01 ===========================
+
+THis is class is a introduction about the Vue behind the scenes
