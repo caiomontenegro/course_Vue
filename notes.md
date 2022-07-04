@@ -1309,3 +1309,15 @@ Check that explanation for more about that:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463390#overview
 
+
+=========================== Class 07 ===========================
+
+
+- Vue lifecyle
+
+So which is Vue lifecycle? It's not complex. Watch about it in:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463392#overview
+
+
+
