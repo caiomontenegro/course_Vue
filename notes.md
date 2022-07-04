@@ -1333,3 +1333,15 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463394#o
 
 
 
+
+############################ Module 6 ###########################
+
+
+=========================== Class 01 ===========================
+
+- Components 1/2
+
+Ok, check the example 1 folder, and run the code on the browser. After
+test the Show/Hide Details and you can look our problem...
+
+That problem, that we have resolve with components in the next class.
