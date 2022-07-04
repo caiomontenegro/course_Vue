@@ -1313,11 +1313,23 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463390#o
 =========================== Class 07 ===========================
 
 
-- Vue lifecyle
+- Vue lifecycle
 
 So which is Vue lifecycle? It's not complex. Watch about it in:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463392#overview
+
+
+
+=========================== Class 08 ===========================
+
+- Vue Lifecycle - Practice
+
+SO how VUe Lifecyle works on pracitice?
+
+Check ou that link:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463394#overview
 
 
 
