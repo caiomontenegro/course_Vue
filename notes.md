@@ -1345,3 +1345,82 @@ Ok, check the example 1 folder, and run the code on the browser. After
 test the Show/Hide Details and you can look our problem...
 
 That problem, that we have resolve with components in the next class.
+
+
+=========================== Class 02 ===========================
+
+
+-Components 2/2
+
+So now, lets see the step by step to how create our component.
+
+THe components as mini apps, which contains your own datas, 
+methods, computeds, etc...
+
+And to declare that, follow the steps:
+
+1 - Create de component:
+
+  Below the create.app, and use the parameters:
+  1- Name of component, use de dash between the works
+  2- The properties of the normal app.
+
+    app.component('friend-contat', {
+      data() {
+        return {
+
+        }
+      },
+      methods: {
+        
+      }
+    })
+
+2- Type the template, before the data, remember to use
+crases.
+
+    app.component('friend-contat', {
+      template: `
+        <li>
+          <h2>{{ friend.name }}</h2>
+          <button @click="toggleDetails">{{ showDetails ? 'Hide' : 'Show' }} Details</button>
+          <ul v-if="showDetails">
+            <li><strong>Phone:</strong>{{ friend.phone }}</li>
+            <li><strong>Email:</strong>{{ friend.email }}</li>
+          </ul>
+        </li>
+      `,
+      data() {
+        return {
+        }
+      },
+      methods: {
+      }
+    })
+
+3- Type usually the methods, and another properties.
+
+    data() {
+      return { 
+        showDetails: false,
+        friend: {
+          id: 'manuel',
+          name: 'Manuel Lorenz',
+          phone: '888-888',
+          email: 'manuel@email.com.br'
+        },
+      }
+    },
+    methods: {
+      toggleDetails() {
+        this.showDetails = !this.showDetails
+      }
+    }
+
+
+4- In HTML file, type a new Tag, with component name:
+
+    <friend-contact></friend-contact>
+
+
+Now, see the code running in example 2 folder
