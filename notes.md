@@ -1492,3 +1492,20 @@ of differents types. Let's see about them on:
 
 
 =========================== Class 06 ===========================
+
+On this class, let's see about some main files.
+
+Our mains folder is SRC(source) and Public.
+
+On public folder, we have our main HTML file
+
+And in src file, we have our components, that know 
+are be created with VUe.files, which support HTML
+JS and CSS on the same file.
+
+Se more about that on:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463458#overview
+
+
+=========================== Class 07 ===========================
