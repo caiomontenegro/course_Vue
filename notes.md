@@ -1463,3 +1463,14 @@ Read more about that in:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463444#overview
 
 
+
+=========================== Class 04 ===========================
+
+So let's start to install Vue.CLI...
+
+Follow the step by step on:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463450#overview
+
+
+=========================== Class 05 ===========================
