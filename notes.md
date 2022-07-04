@@ -1454,4 +1454,12 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463440#o
 =========================== Class 03 ===========================
 
 
+Know, is important understand, we use the vue, in your
+basic form... And that, create difficults for debugs, 
+read the code in bigger projects, and another things...
+
+Read more about that in:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463444#overview
+
 
