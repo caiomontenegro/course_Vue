@@ -1431,3 +1431,23 @@ Now, see the code running in example 2 folder
 ####################### Module 7 ######################
 
 
+=========================== Class 01 ===========================
+
+This class is about the module introduction, see more on:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463430#overview
+
+
+
+=========================== Class 02 ===========================
+
+
+Until now, we use the HTML file openning in the browser without a server
+and that, is not appropriate to develop a real project.
+So let's understand more about the use of dev servers:
+
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463440#overview
+
+
+
