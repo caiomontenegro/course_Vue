@@ -1474,3 +1474,21 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463450#o
 
 
 =========================== Class 05 ===========================
+
+After to run the command 
+
+    vue create
+
+And after
+
+    run serve
+
+You must have noticed, were created many files, 
+of differents types. Let's see about them on:
+
+  
+  https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463454#overview
+
+
+
+=========================== Class 06 ===========================
