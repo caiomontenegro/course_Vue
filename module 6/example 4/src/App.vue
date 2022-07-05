@@ -1,5 +1,10 @@
 <template>
-  <h2>My Contact Friends</h2>
+  <section>
+    <h2>My Contact Friendss</h2>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
 </template>
 
 <script>

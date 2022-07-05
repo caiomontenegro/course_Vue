@@ -1562,7 +1562,84 @@ the project models with:
 =========================== Class 10 ===========================
 
 
+- Build Vue Project
+
+So now, we will create a simple Vue Projec. 
+
+
+1- Index.html
+
+Our index HTML, on public folder is responsible for render our
+Vue.app in Vue file.
+
+    <div id="app"></div>
+
+  On that div, our content is rendering
+
+
+2- Main.js
+
+On our main.js file we import the vue modules, App.Vue, and create
+our app wich the App.vue with parameter and mounted him.
+
+    import { createApp } from 'vue';
+
+    import App from './App.vue'
+
+    createApp(App).mount('#app');
 
 
 
+3- App.vue
+
+Here we import our components, we use two main tags:
+
+  -script
+
+  Here we type our template(html), that we want to 
+  render.
+
+      <script>
+        <h2>My Friends</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </script>
+
+  -script
+
+  Here we type our Js code.
+
+      data() {
+        return {
+          friends: [
+            {
+          id: 'carolina',
+          name: 'Carolina Alto',
+          phone: '777 777',
+          email: 'carolina@email.com'
+        },
+        {
+          id: 'gustavo',
+          name: 'Gustavo do Alto',
+          phone: '999 999',
+          email: 'gustavo@email.com'
+        }
+          ]
+        }
+      }
+
+  But remember, we need to export this code, 
+  for our mains.js file. So we need to encapsulate
+  that code, on export.:
+
+
+      export default {
+        data() {
+          ...
+        }
+      }
+
+
+Check the code running on the example 4 folder.
 
