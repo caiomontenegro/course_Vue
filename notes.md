@@ -1527,7 +1527,7 @@ So, take a look a little bit on:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463462#overview
 
 
-=========================== Class 07 ===========================
+=========================== Class 09 ===========================
 
 - New Project
 
@@ -1545,12 +1545,24 @@ the project models with:
     npm i 
 
   or
-  
+
     npm intall
 
 3- Run the server
 
     npm run serve
+
+  And our server, is running on 8080 port.
+
+4- Access page:
+
+    localhost:8080
+
+
+=========================== Class 10 ===========================
+
+
+
 
 
 
