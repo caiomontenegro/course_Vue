@@ -1509,3 +1509,13 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463458#o
 
 
 =========================== Class 07 ===========================
+
+
+FOr help us to develop a vue projects, intalls two
+more extension on VS Code:
+
+Vue Language Features
+Vetur
+
+
+
