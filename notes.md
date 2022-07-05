@@ -1741,4 +1741,20 @@ in your template in App.vue.
 =========================== Class 12 ===========================
 
 
+-Style section
+
+In our vue files, we also have style tag section. And is vey easy
+and common to use.
+
+On the App.vue:
+
+-Open the style tag:
+
+    <style></style>
+
+And insert the styles:
+
+
+
+
 
