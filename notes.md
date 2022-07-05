@@ -1529,8 +1529,28 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463462#o
 
 =========================== Class 07 ===========================
 
+- New Project
 
+So, let's remember how to start a new Vue project.
 
+1- After install the Vue, run the code:
+
+    vue create 'name of project'
+
+2- Configure your project, you can use de default configuration.
+
+3- If you get read project on the hub, or another place, install
+the project models with:
+
+    npm i 
+
+  or
+  
+    npm intall
+
+3- Run the server
+
+    npm run serve
 
 
 
