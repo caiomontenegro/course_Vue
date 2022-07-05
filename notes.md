@@ -1518,4 +1518,14 @@ Vue Language Features
 Vetur
 
 
+=========================== Class 08 ===========================
+
+Yet we have another files unexplored...
+
+So, take a look a little bit on:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463462#overview
+
+
+
 
