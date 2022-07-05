@@ -1643,3 +1643,102 @@ Here we import our components, we use two main tags:
 
 Check the code running on the example 4 folder.
 
+
+
+=========================== Class 11 ===========================
+
+
+- Creating Components
+
+1- Create a new folder named "components" on src folder
+
+2- In there, create a new VUe.file with pascal case named
+as name component.
+
+    FriendContact.vue
+
+3- In component file, create your script and template tags.
+
+    <template></template>
+
+    <script></script>
+
+4- Create your script content in his tag.
+
+  A- Open the export object:
+
+    export default {
+
+    }
+
+  B- Code your js:
+
+    export default {
+      data() {
+        return {
+          detailsAreVisible: false,
+          friends: {
+            id: 'carolina',
+            name: 'Carolina Alto',
+            phone: '777 777',
+            email: 'carolina@email.com'
+          },
+        }
+      },
+      methods: {
+        toggleDatails() {
+          this.detailsAreVisible = !this.detailsAreVisible
+        }
+      }
+    }
+
+5- Write your HTML file content:
+
+    <template>
+      <li>
+        <h2>{{ friends.name }}</h2>
+        <button @click="toggleDatails">{{detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
+        <ul v-if="detailsAreVisible">
+          <li>
+            <strong>Phone:</strong>
+            {{ friends.phone }}
+          </li>
+          <li>
+            <strong>Email:</strong>
+            {{ friends.email }}
+          </li>
+        </ul>
+      </li>
+    </template>
+
+6- In mains.js file, import the Vue modules, and after
+import the App.vue file, and FriendsContacts.vue component
+
+    import { createApp } from 'vue';
+
+    import App from './App.vue'
+    import FriendsContacts from './components/FriendsContacts.vue'
+
+
+7- Create our Vue App, instance the component and mount our app.
+
+    const app = createApp(App)
+
+    app.component('friends-contacts', FriendsContacts)
+
+    app.mount('#app');
+
+
+8- Lastly insert our new component tag ('friends-contacs')
+in your template in App.vue.
+
+    <ul>
+      <friends-contacts></friends-contacts>
+      <friends-contacts></friends-contacts>
+    </ul>
+
+
+=========================== Class 12 ===========================
+
+
+
