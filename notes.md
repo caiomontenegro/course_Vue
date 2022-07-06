@@ -1888,13 +1888,16 @@ See that code running on the example 2 folder
 
 When we work on shared project, maybe is important set how the 
 props of child component might be used. And for this, the props
-have a other tools, which facilitate our job.
+have a other tools, which facilitate our job. For use this methods, 
+the props becomes a object.
 
   -Type:
   We can use the type, to tell what data type might be used.
   Ex:
 
-    type: String / boolean / etc..
+    type: String / Boolean / etc..
+
+    Remember to type capital first letter
   
   -Required
   Serves us for descriminate if data is mandatory or not.
@@ -1971,3 +1974,39 @@ Other types to use on our props:
   date
   function
   symbol
+
+
+
+=========================== Class 5 ============================
+
+
+-Props 5/5
+
+For finish the props, it's time to see dinamic values using props.
+
+So, supose our child component must work with parent component data,
+or the type of some prop is "Boolean". We need to change the way 
+that parent component works with props.
+
+1- If we working with boolean type props, we don't need to use
+validator, because with boolean props we have only two values.
+
+2- On component tag, use v-bind to add dynamic value, and add
+the value. Ex:
+
+      <friends-contacts
+        :email-address="friend.email" 
+        :is-favorite="false" 
+      ></friends-contacts>
+
+3- If you need to repeat this component, for a data list, 
+remember to use "v-for" with "key"
+
+      <friends-contacts
+        v-for="friend in friends"
+        :key="friend.id"
+        :email-address="friend.email" 
+        :is-favorite="false" 
+      ></friends-contacts>
+
+
