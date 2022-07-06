@@ -1763,7 +1763,7 @@ And insert the styles
 =========================== Class 1 ===========================
 
 
--Properties 1/3
+-Properties 1/5
 
 On our last example, we can use the component for show us the data
 friends. But we don't use the dinamic datas. 
@@ -1833,7 +1833,7 @@ Check this code running on the example 2 folder.
 =========================== Class 2 ============================
 
 
-- Props 2/3
+- Props 2/5
 
 Changing Props
 
@@ -1884,7 +1884,7 @@ See that code running on the example 2 folder
 =========================== Class 3 ============================
 
 
-- Props 3/3
+- Props 3/5
 
 When we work on shared project, maybe is important set how the 
 props of child component might be used. And for this, the props
@@ -1952,3 +1952,22 @@ Example of complete prop:
 
 
 See this code running on the example 3 folder.
+
+
+
+=========================== Class 4 ============================
+
+
+-Props 4/5
+
+
+Other types to use on our props:
+
+  string
+  number
+  boolean
+  array
+  object
+  date
+  function
+  symbol
