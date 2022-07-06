@@ -1763,7 +1763,7 @@ And insert the styles
 =========================== Class 1 ===========================
 
 
--Properties
+-Properties 1/3
 
 On our last example, we can use the component for show us the data
 friends. But we don't use the dinamic datas. 
@@ -1833,7 +1833,9 @@ Check this code running on the example 2 folder.
 =========================== Class 2 ============================
 
 
-- Changing Props
+- Props 2/3
+
+Changing Props
 
 The props, works with unidirectional data flow, so we can't modifier
 parents data with child component. But we have a alternative for that.
@@ -1882,5 +1884,71 @@ See that code running on the example 2 folder
 =========================== Class 3 ============================
 
 
+- Props 3/3
+
+When we work on shared project, maybe is important set how the 
+props of child component might be used. And for this, the props
+have a other tools, which facilitate our job.
+
+  -Type:
+  We can use the type, to tell what data type might be used.
+  Ex:
+
+    type: String / boolean / etc..
+  
+  -Required
+  Serves us for descriminate if data is mandatory or not.
+  Ex:
+
+    required: true/false
+
+  -Default
+  We can use a default value, for the prop, mainly if the prop
+  value isn't required
+  Ex:
+
+    default: '100'
+
+    Ps: Default value might be obey the type prop.
 
 
+  -Validator
+  Is a function that return if prop value is correct or not.
+  If value is not correct, the function return false in 
+  browser console.
+
+
+    validator: function(value) {
+      return value === '1' || value === '0'
+    } 
+
+    If the prop value is different of 1 or 0, the validator
+    returns 'false on our console'
+
+  
+Example of complete prop:
+
+    props: {
+      name: {
+        type: String,
+        required: true
+      }, 
+      phoneNumber: {
+        type: String,
+        required: true
+      },
+      emailAddress: {
+        type: String,
+        required: true
+      },
+      isFavorite: {
+        type: String,
+        required: false,
+        default: '0',
+        validator: function(value) {
+          return value === '1' || value === '0'
+        }
+      }
+
+
+See this code running on the example 3 folder.
