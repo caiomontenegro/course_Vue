@@ -2010,3 +2010,96 @@ remember to use "v-for" with "key"
       ></friends-contacts>
 
 
+=========================== Class 6 ============================
+
+
+- Child for Parents Comunication
+
+So, we also can stablish a comunication from child to parents 
+components. That comunication is maked by events.Take a look:
+
+Let's make a new event comunication, using the Toggle Favorite
+Button, at exampe 4 folder.
+
+1-Create the event
+
+  On methods of child component (FriendContacts), create the 
+  method, with "$emit":
+
+    methods: {
+      toggleFavorite() {
+        this.$emit('toggle-favorite')
+      }
+    }
+
+    For this events, is mandatory the use of kebab case.
+
+
+2- Call the event
+  On your parent component, inside of child component tag, 
+  call the event with "v-on/:"
+
+    <friends-contacts
+      @toggle-favorite="toggleFavoriteStatus()"
+    ></friends-contacts>
+
+    Inside of the content, use a new method created on 
+    parent component (next step)
+  
+3-New method parent
+  For example, use the method below, and as argument the 
+  data 
+
+    methods: {
+      toggleFavoriteStatus(friendID) {
+        
+      }
+    }
+
+4-Send child data for parent
+  On the event method in child component(FriendsContacts) insert 
+  your second parameter. You can insert as many as you want.
+
+
+    methods: {
+      toggleFavorite() {
+        this.$emit('toggle-favorite', id)
+      }
+    }
+
+5-Registeron child props.
+  Register the data parameter on the child props
+
+    props: {
+      id: {
+        type: String,
+        require: true
+      }
+    }
+
+6- Call the data(parent)
+  Call the data on the parent component in the child tag 
+  component:
+
+    <friends-contacts
+      :id="friend.id"
+      @toggle-favorite="toggleFavoriteStatus()"
+    ></friends-contacts>
+
+    If you need to send a simple data by child to 
+    parent, it's enough
+
+
+7-Identify friend
+  For our example, we yet need to find which friend
+  be change his favorite status. So on the parente Component
+  complete with:
+
+     methods: {
+      toggleFavoriteStatus(friendID) {
+        const identifiedFriend = this.friends.find(
+          (friend) => friend.id === friendID
+        )
+        identifiedFriend.isFavorite = !identifiedFriend.isFavorite
+      }
+    }
