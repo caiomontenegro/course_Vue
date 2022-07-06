@@ -2103,3 +2103,39 @@ Button, at exampe 4 folder.
         identifiedFriend.isFavorite = !identifiedFriend.isFavorite
       }
     }
+
+
+=========================== Class 8 ============================
+
+
+- Define and Validations Emits
+
+
+Counterpart of the props, the emits alse have a form to make his
+validation and documentation.
+
+That serve us for facilitate the code read, and debugg possible 
+erros.
+
+  - Documentation:
+  Code after props properties: 
+
+        emits: [
+          'toggle-favorites'
+        ]
+
+    
+  -Validation:
+  Cod the validation with:
+
+        emits: {
+          'toggle-favorite': function(id) {
+          if(id) {
+              return true
+            } else {
+              console.warn('Id is missing')
+              return false
+            }
+          }
+        },
+
