@@ -1830,7 +1830,56 @@ Check this code running on the example 2 folder.
 
 
 
+=========================== Class 2 ============================
 
+
+- Changing Props
+
+The props, works with unidirectional data flow, so we can't modifier
+parents data with child component. But we have a alternative for that.
+And is simple, we can create a new data on the child component and 
+give your value of parent data. Ex:
+
+    data() {
+      return {
+        detailsAreVisible: false,
+        friendIsFavorite: this.isFavorite
+      }
+    },
+
+After, we can use the new data "friendIsFavorite", on the template
+of component child, and his method.
+
+  template:
+
+    <h2>{{ name }} {{ friendIsFavorite === '1' ? '(Favorite)' : '' }}</h2>
+    <button @click="toggleDatails">{{detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
+    <button @click="toggleFavorite">Favorite</button>
+
+  Data:
+
+    data() {
+      return {
+        detailsAreVisible: false,
+        friendIsFavorite: this.isFavorite
+      }
+    },
+
+  Method:
+
+    toggleFavorite() {
+      if(this.friendIsFavorite === '1') {
+        this.friendIsFavorite = '0'
+      } else {
+        this.friendIsFavorite = '1'
+      }
+    }
+
+See that code running on the example 2 folder
+
+
+
+=========================== Class 3 ============================
 
 
 

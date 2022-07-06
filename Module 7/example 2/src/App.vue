@@ -5,12 +5,14 @@
       <friends-contacts
         name="Carolina Alto"
         phone-number="777 777"
-        email-address="carolina@email.com"  
+        email-address="carolina@email.com" 
+        is-favorite="1" 
       ></friends-contacts>
       <friends-contacts
         name="Gustavo do Alto"
         phone-number="888 888"
         email-address="gustavo@email.com"
+        is-favorite="0"
       ></friends-contacts>
     </ul>
   </section>
