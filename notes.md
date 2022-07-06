@@ -1752,7 +1752,84 @@ On the App.vue:
 
     <style></style>
 
-And insert the styles:
+And insert the styles
+
+
+
+########################### Module 8 ############################
+
+
+
+=========================== Class 1 ===========================
+
+
+-Properties
+
+On our last example, we can use the component for show us the data
+friends. But we don't use the dinamic datas. 
+
+Remebem on the example 1 page.
+
+So now, let's see about the properties, and understand how that 
+resolve our problem.
+
+First, type on the script of component file, the props. Use 
+the array to add your props. Ex:
+
+    <script>
+      export default {
+        props: [
+          'name',
+          'phoneNumber',
+          'emailAddress'
+        ]
+      }
+    </script>
+
+    Remember to use camelcase here, and Vue will take care to 
+    transform to kebab case for use on HTML Component Tag.
+
+On second step, use interpollation on component template:
+
+
+    <template>
+      <li>
+        <h2>{{ name }}</h2>
+        <button @click="toggleDatails">{{detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
+        <ul v-if="detailsAreVisible">
+          <li>
+            <strong>Phone:</strong>
+            {{ phoneNumber }}
+          </li>
+          <li>
+            <strong>Email:</strong>
+            {{ emailAddress }}
+          </li>
+        </ul>
+      </li>
+    </template>
+
+And the last step, in your App.vue. Add our properties using kebab case
+in our component tag. For this example, we type the data direct on the 
+props:
+
+    <ul>
+      <friends-contacts
+        name="Carolina Alto"
+        phone-number="777 777"
+        email-address="carolina@email.com"  
+      ></friends-contacts>
+      <friends-contacts
+        name="Gustavo do Alto"
+        phone-number="888 888"
+        email-address="gustavo@email.com"
+      ></friends-contacts>
+    </ul>
+
+Check this code running on the example 2 folder.
+
+
+
 
 
 
