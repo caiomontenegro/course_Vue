@@ -2139,3 +2139,14 @@ erros.
           }
         },
 
+
+
+=========================== Class 8 ============================
+
+
+Prop / Event falltrhough & Binding all props.
+
+For this content, acess link below:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21526774#overview
+
