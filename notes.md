@@ -2396,6 +2396,8 @@ and resolve the challenge.
 =========================== Class 12 ============================
 
 
+- Provide & Injection 1/4
+
 Sometimes, we need to create a new components just to use like a 
 data route. And this, can be a problem. Supose if you need to 
 pass a data, for a net element. For this you need to send the data
@@ -2413,7 +2415,7 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463558#q
 =========================== Class 13 ============================
 
 
-- Provide & inject
+- Provide & inject 2/4
 
 To resolve the last class problem, the Vue offer the Provide and Inject 
 methods.
@@ -2493,4 +2495,36 @@ Provides and injection is used on the example 7 folder.
 =========================== Class 14 ============================
 
 
+- Provides & Injection 3/4
 
+
+As was commented previously, we canse the Provides and Injections
+for functions and methods, the inplement is different:
+
+Injection:
+  The injection is similar, use normally:
+
+
+  1- Provide:
+
+    provide() {
+      return {
+        function: this.functionA
+      }
+    }
+
+  1- Inject:
+
+    <button @click="function"></button>
+
+    //remeber to use parameter if is required
+
+    export default {
+      'function'
+    }
+
+Check the code running on the example 7 folder.
+
+
+
+=========================== Class 15 ============================
