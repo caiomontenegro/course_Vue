@@ -2540,3 +2540,10 @@ For default, use the props and methods... But when we need to pass
 datas and function for net components, choose the provides and injection.
 
 
+=========================== Class 16 ============================
+
+- Resume fo the module:
+
+Check the resume module on:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463582#questions
