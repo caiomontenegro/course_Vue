@@ -17,16 +17,6 @@ export default {
   data() {
     return {
       people: [
-        {
-          id: 0,
-          name: 'Caio',
-          age: 29
-        },
-        {
-          id: 1,
-          name: 'Carolina',
-          age: 32
-        },
       ],
     }
   },

@@ -2397,10 +2397,100 @@ and resolve the challenge.
 
 
 Sometimes, we need to create a new components just to use like a 
-data route. And this, can be a problem.
+data route. And this, can be a problem. Supose if you need to 
+pass a data, for a net element. For this you need to send the data
+to the child element first, and his will take care to send the data
+to che net component. 
+
+Ex:
 
 Check this video to see more:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463558#questions
+
+
+
+=========================== Class 13 ============================
+
+
+- Provide & inject
+
+To resolve the last class problem, the Vue offer the Provide and Inject 
+methods.
+
+The logic is: 
+ 
+ 1- The parent component Provide the data/method/computed/etc...
+
+ 2- And child/net can be injected with that data.
+
+ex:
+
+  1-Provide somthing:
+
+    // Parent
+
+    export default {
+      data() {
+        return {
+          name: Caio
+        }
+      },
+      provide: {
+        name: Caio
+      }
+    }
+
+
+  2-Inject on child
+
+    export default {
+      inject: [
+        'name'
+      ]
+    }
+
+CAUTION: we only can inject thing, from parents to child.
+
+But, if we have the same data in use, and we need to provide
+him?
+
+In this case, de dinamic is don't work correctly
+
+In this case, we need to convert provide to a method:
+
+
+1- Create provide method:
+
+    // Parent
+
+    export default {
+      data() {
+        return {
+          user: [
+            {
+              name: 'Caio',
+              age: 29
+            },
+            {
+              name: 'Carolina',
+              age: 28
+            }
+          ]
+        }
+      },
+      provide() {
+        return {
+          user: this.user
+        }
+      }
+    }
+
+Provides and injection is used on the example 7 folder.
+
+
+
+=========================== Class 14 ============================
+
 
 
