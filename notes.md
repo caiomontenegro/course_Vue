@@ -1594,17 +1594,17 @@ our app wich the App.vue with parameter and mounted him.
 
 Here we import our components, we use two main tags:
 
-  -script
+  -Template
 
   Here we type our template(html), that we want to 
   render.
 
-      <script>
+      <template>
         <h2>My Friends</h2>
         <ul>
           <li></li>
         </ul>
-      </script>
+      </template>
 
   -script
 
@@ -2013,6 +2013,9 @@ remember to use "v-for" with "key"
 =========================== Class 6 ============================
 
 
+
+
+
 - Child for Parents Comunication
 
 So, we also can stablish a comunication from child to parents 
@@ -2381,3 +2384,12 @@ and insert a new method that we will be create
     friendID sended by child, add this friend a new list.
 
 It's simple.
+
+
+=========================== Class 11 ============================
+
+
+Time to practice, check the main.js file on the Challenge folder
+and resolve the challenge.
+
+
