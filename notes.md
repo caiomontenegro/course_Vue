@@ -2315,8 +2315,69 @@ This is it, we created a new component with use emits and
 send data to parent component.
 
 
+Check this code running on example 5 folder.
 
 
 
+=========================== Class 10 ============================
 
 
+- Delete Friend
+
+Now, we will create a new component for delete contact friends.
+
+This function wil be a button, the friendsContacts component, in
+example 5 folder.
+
+1- Create a button on the template component:
+
+    <button>Delete</button>
+
+
+2- Create a new emit, to comunite de parent of event, with the 
+data friend ID, that will be deleted
+
+    deleteFriend() {
+      this.$emit('delete-friend', this. id)
+    }
+
+    another form to create the emit, is direct on the 
+    event tag:
+
+    <button @click="$emit('delete')">Delete</button>
+
+
+3- Input the emit on the tag button, and register that on 
+emit list
+
+    
+    <button @click="delete-friend">Delete</button>
+
+    emits: [
+      toggle-favorite,
+      delete-friend,
+    ]
+  
+4- On parent component, call the emit on the child tag component,
+and insert a new method that we will be create
+
+
+    @delete-friend="deleteContact"
+
+5- Create a method of parent, to say "delete friend"
+
+    methods: {
+      deleteContact(friendID) {
+        this.friends = this.friends.filter((friend) => friend.id !=== friendId)
+      }
+    }
+
+    The filter method, return us a new array with the values that respect
+    the condition. So in this case:
+
+    (friend) => running like a for loop
+
+    friend.id !=== friendId The condition, if friend.id is diferent of our
+    friendID sended by child, add this friend a new list.
+
+It's simple.
