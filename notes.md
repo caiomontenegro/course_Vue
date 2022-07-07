@@ -2528,3 +2528,15 @@ Check the code running on the example 7 folder.
 
 
 =========================== Class 15 ============================
+
+
+- Provides & Injection 4/4
+
+
+So when shoud we use the provides and injections and not props and
+methods?
+
+For default, use the props and methods... But when we need to pass
+datas and function for net components, choose the provides and injection.
+
+
