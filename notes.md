@@ -2393,3 +2393,14 @@ Time to practice, check the main.js file on the Challenge folder
 and resolve the challenge.
 
 
+=========================== Class 12 ============================
+
+
+Sometimes, we need to create a new components just to use like a 
+data route. And this, can be a problem.
+
+Check this video to see more:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463558#questions
+
+
