@@ -2150,3 +2150,173 @@ For this content, acess link below:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21526774#overview
 
+
+
+=========================== Class 9 ============================
+
+
+Create New Component:
+
+So lets to create a new Component in our example 5 folder.
+The component, will add a new contacts on the friend list.
+
+1-In componentts folder create a new component file. Ex:
+
+
+    NewFriend.vue
+
+
+2-In mains.js file, register our new component with:
+
+
+    import NewFriend from './components/NewFriend.vue'
+
+    app.component('new-friend', NewFriend)
+
+
+3-Build the simple template on our new component:
+
+
+    <template>
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input type="text">
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email">
+        </div>
+      </form>
+    </template>
+
+4-Create the script, begnning with datas:
+
+    <script>
+      export default {
+        data() {
+          return {
+            name: '',
+            phone: '',
+            email: ''
+          }
+        }
+      }
+    </script>
+
+
+5- Connect the data with inputs using v-model
+
+
+    <template>
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" v-model="name">
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" v-model="phone">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" v-model="email">
+        </div>
+      </form>
+    </template>
+
+
+6- Create the event, to send this data for the 
+parent component.
+
+  1- Create the emit:
+
+     <script>
+      export default {
+        data() {
+          return {
+            name: '',
+            phone: '',
+            email: ''
+          }
+        },
+        methods: {
+          submitData() {
+            this.$emit('add-contact',
+            this.name,
+            this.phone,
+            this.email
+            )
+          }
+        }
+      }
+    </script>
+
+  2- Document the emit, above the data propertie:
+
+     <script>
+      export default {
+        emits: [
+          'add-contact'
+        ]
+        data() {
+        ...
+    </script>
+
+
+7- Add style section if you want. 
+
+
+8- Add the child component tag on the parent template
+  component.
+
+     <section>
+      <header><h1>My Contact Friends</h1></header>
+      <new-friend></new-friend>
+      ...
+     </section>
+
+9- Create the event for push the datas from child to data list 
+of parent component:
+
+    methods: 
+      addContact(name, phone, email) {
+        const newContact = {
+          id: new Date().toISOString(),
+          name: name,
+          phone: phone, 
+          email: email,
+          isFavorite: false
+        }
+        this.friends.push(newContact)
+      }
+    }
+
+10- Add your method above, in your form tag component:
+
+    <form @submit.prevent="addContact">
+
+    the prevent method, block the page refresh
+
+10- Lastly, use the method above in our child component tag
+as value to emit
+
+
+    <new-friend
+      @add-contact="addContact"
+    ></new-friend>
+
+
+This is it, we created a new component with use emits and 
+send data to parent component.
+
+
+
+
+
+
+
