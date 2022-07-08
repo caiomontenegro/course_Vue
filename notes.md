@@ -2542,8 +2542,65 @@ datas and function for net components, choose the provides and injection.
 
 =========================== Class 16 ============================
 
-- Resume fo the module:
+- Resume of the module:
 
 Check the resume module on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463582#questions
+
+
+
+
+########################### Class 17 ###########################
+
+
+=========================== Class 01 ============================
+
+
+- Global vs Local Components.
+
+
+Supose we have a component, and that component is used only once
+in a spefic other component.
+
+We don't need to register the component globally. We can register 
+the component directly on component user.
+
+For this, register the component on the parent script tag:
+
+
+    <script>
+      import BadgeList from './components/BadgeList.vue';
+
+      export default {
+        compoents: {
+          BadgeList
+          or
+          'badge-list': BadgeList
+          or
+          BadgeList: BadgeList
+        }
+      }
+    </script>
+
+
+In the template tag:
+
+    <template>
+
+      <badge-list>
+      </badge-list>
+
+      or
+
+      <BadgeList />
+
+    </template>
+
+
+See this code running in that example 1 folder 
+
+
+=========================== Class 02 ============================
+
+
