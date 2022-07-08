@@ -2604,3 +2604,24 @@ See this code running in that example 1 folder
 =========================== Class 02 ============================
 
 
+- Scoped Style
+
+If you need to style a component, and this componant is a parent, 
+your style will be replicate to child components. 
+
+But if you need to restrict this style to a parent component, you
+can use the "scoped style":
+
+You just need add the word "scoped" in our style tag:
+
+
+    <style scoped></style>
+
+Check this code running on the example 1 folder, in BadgeList.vue
+file
+
+
+=========================== Class 03 ============================
+
+
+
