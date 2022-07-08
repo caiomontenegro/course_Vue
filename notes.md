@@ -2624,4 +2624,40 @@ file
 =========================== Class 03 ============================
 
 
+- Slots
+
+If We have a component and his just have style, like a card, and
+we wish to insert another component with dynamic props and datas,
+we need to use Slots
+
+Without slot, the vue can't render the component child.
+
+Ex:
+
+  Supose this is a card component:
+
+    <template>
+        <div>
+          <slot></slot>
+        </div>
+    </template>
+
+
+  And this, is a component, with dynamic datas:
+
+    <card-component>
+      <header>
+          <h3>{{ fullName }}</h3>
+          <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
+      </header>
+      <p>{{ infoText }}</p>
+    </card-component>
+
+  
+  So with slots, we can render all the components, that are
+  in the card component.
+
+
+See this code running on the example 1 folder.
+
 
