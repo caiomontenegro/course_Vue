@@ -3,7 +3,8 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <button>Delete</button>
+        <base-button mode="flat">Delete</base-button>
+        <!-- With flat, I can change the css selector of the base-button component -->
       </header>
       <p>{{ description }}</p>
       <nav>
@@ -15,8 +16,8 @@
 
 <script>
 export default {
-  props: ['title', 'description', 'link']
-}
+  props: ['title', 'description', 'link'],
+};
 </script>
 
 <style scoped>
