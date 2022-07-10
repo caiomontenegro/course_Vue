@@ -2812,7 +2812,7 @@ and App.vue on the example 1 folder.
 =========================== Class 07 ============================
 
 
-Dynamic Components
+Dynamic Components 1/2
 
 if we need to show a dynamic component, the vue present for us
 a special tag: Component tag
@@ -2861,3 +2861,30 @@ Check the code running, with and without component tag the example 2 folder.
 
 
 =========================== Class 08 ============================
+
+
+Dynamic Component 2/2
+
+
+SUpose one of the components, have a input field, and after that 
+user input something, he change the component after press a 
+button component (last example).
+
+When the user click back to correct component, your data will be
+lost.
+
+So for this, we use the keep-alive tag.
+
+It's simples, just use that tag above the component tag. Like this:
+
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
+
+Now, the user don't lose your data...
+
+
+
+=========================== Class 09 ============================
+
+
