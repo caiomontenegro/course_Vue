@@ -2685,6 +2685,7 @@ on slot tag, and call using v-slot especial property. Ex:
   slot will be DEFAULT:
 
 
+Confirm looking this code running on the example 1 folder
 
 =========================== Class 05 ============================
 
@@ -2695,6 +2696,61 @@ But remember, the component that has slot need be receive the style
 directly on your component vue file.
 
 
+Check the example on example 1 folder.
 
-    
+=========================== Class 06 ============================
 
+
+- Slots 4
+
+
+  - Default content
+
+  Supose we have a situation, where we need add a slot, but which 
+  slot is not aways render the dynamic content. 
+
+  Is this case, we can render a default content.
+
+  Just to type the default content inside of the slots tags.
+
+  Ex:
+
+        <slot name="header">
+          <p>Hello world</p>
+        </slot>
+
+    And, when you used this slot without content, the default
+    content be showed.
+
+  But if we check the browser console, in the case of the default
+  content is not be required, the default content will be showed
+  in comentary content. 
+
+  For resolve that, we can use de dollar signal with v-if/v-show:
+
+        <header v-if="$slots.header"
+
+  Check the change, turn the mod in badgelist.vue file in 
+  components folder. This foder be in example 1 folder.
+
+
+
+  - Slots datas
+
+  If you need to know more about the data slots, we can use
+  a special vue property. The Mount.
+
+    Like this:
+
+        export default {
+          mounted() {
+            console.log(this.$slots)
+          }
+        }
+
+  
+
+=========================== Class 06 ============================
+
+
+- Slots 5
