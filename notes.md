@@ -2960,3 +2960,20 @@ But, the guide has two special rules:
 
 For for rules, access de vue site.
 
+
+=========================== Class 13 ============================
+
+
+
+-Moving to a different folder Structure.
+
+
+So, work with single Component folder is very hard in big 
+projects... So for that, we can create a sub folders components.
+
+Classified with his features.
+
+Check the example on the example 2 folder.
+
+
+
