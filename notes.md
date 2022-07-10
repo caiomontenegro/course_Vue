@@ -2888,3 +2888,16 @@ Now, the user don't lose your data...
 =========================== Class 09 ============================
 
 
+Finishing this module, we have another problem... And for understand
+him, we need to construct the example problem. Check the link below 
+to construc the example.
+
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21526252#notes
+
+
+
+
+=========================== Class 10 ============================
+
+
