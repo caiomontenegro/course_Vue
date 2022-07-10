@@ -2624,7 +2624,7 @@ file
 =========================== Class 03 ============================
 
 
-- Slots
+- Slots 1/
 
 If We have a component and his just have style, like a card, and
 we wish to insert another component with dynamic props and datas,
@@ -2660,4 +2660,36 @@ Ex:
 
 See this code running on the example 1 folder.
 
+
+=========================== Class 04 ============================
+
+
+- Slots 2/
+
+
+If your need to use more than one slot, how can vue identify which
+is which?
+
+It's simple, naming the slots. Use the name especial property
+on slot tag, and call using v-slot especial property. Ex:
+
+  1- Naming your slot
+
+    <slot name="header"></slot>
+
+  2- Call the slot using the name:
+
+    <template v-slot:header></template>
+
+  3- We can use the a only one slot without name, this 
+  slot will be DEFAULT:
+
+
+
+=========================== Class 05 ============================
+
+
+
+
+    
 
