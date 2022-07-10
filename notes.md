@@ -2624,7 +2624,7 @@ file
 =========================== Class 03 ============================
 
 
-- Slots 1/
+- Slots 1/5
 
 If We have a component and his just have style, like a card, and
 we wish to insert another component with dynamic props and datas,
@@ -2664,7 +2664,7 @@ See this code running on the example 1 folder.
 =========================== Class 04 ============================
 
 
-- Slots 2/
+- Slots 2/5
 
 
 If your need to use more than one slot, how can vue identify which
@@ -2681,6 +2681,11 @@ on slot tag, and call using v-slot especial property. Ex:
 
     <template v-slot:header></template>
 
+      If you will use just one slot, we can call 
+      the v-slot in a comum tag, without template tag
+
+    v-slot = #
+
   3- We can use the a only one slot without name, this 
   slot will be DEFAULT:
 
@@ -2690,7 +2695,7 @@ Confirm looking this code running on the example 1 folder
 =========================== Class 05 ============================
 
 
-- Slots 3
+- Slots 3/5
 
 But remember, the component that has slot need be receive the style
 directly on your component vue file.
@@ -2701,7 +2706,7 @@ Check the example on example 1 folder.
 =========================== Class 06 ============================
 
 
-- Slots 4
+- Slots 4/5
 
 
   - Default content
@@ -2753,4 +2758,53 @@ Check the example on example 1 folder.
 =========================== Class 06 ============================
 
 
-- Slots 5
+- Slots 5/5
+
+
+We have another possible situation, that props can hel us...
+
+If we need a another component, and we need to use a dinamic content
+on caller component... So, just we use the slots, but if the slot
+works with components data...
+
+On this case use scoped slots.
+
+    <li v-for="goal in goals" key="goal">
+      <slot :item="goal"></slot>
+    </li>
+
+    export default {
+      data() {
+        return {
+          goals: [
+            'Finish the course', 'Learn Vue'
+          ]
+        }
+      }
+    }
+
+  For pass this datas for the caller component, we use 
+  v-bind + data.
+
+  And for call, we use v-slot:
+
+    <template #default="slotProps">
+              shorthand for default
+    </template>
+
+  the slotProps call, wall props/datas declared on the 
+  slot tag
+
+  And now we can use the props on the caller component:
+
+    template #default="slotProps">
+      <h2>{{ slotProps.item }}</h2>
+
+      remember, we declared item === 'goals'
+      and goals it's our list
+
+    </template>
+
+Check the code running on the new component CourseGoals.vue, 
+and App.vue on the example 1 folder.
+
