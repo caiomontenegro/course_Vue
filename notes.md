@@ -2808,3 +2808,56 @@ On this case use scoped slots.
 Check the code running on the new component CourseGoals.vue, 
 and App.vue on the example 1 folder.
 
+
+=========================== Class 07 ============================
+
+
+Dynamic Components
+
+if we need to show a dynamic component, the vue present for us
+a special tag: Component tag
+
+Firts, create two components: Active Goals, and Manage Goals.
+
+And in the parent component, we will to create two buttons, and
+each buttons will show a component. 
+
+- Active Goals
+- Manage Goals
+
+After we need to create a new data for store which component
+we want to show.
+
+    data() {
+      return {
+        component: 'active-goals'
+        // we using a active-goals as default.
+      }
+    }
+
+Now, we create a method for the buttons:
+
+    methods: {
+      seletctComponent(cmp) {
+        this.component = cmp
+      } 
+    }
+
+Lastly, we call the component using the tags:
+
+    <button @click="setSelectedComponent('active-goals')">Active Goals</button>
+    <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
+
+    // And, instead to call the components by their name, we call using
+    the tag component
+
+    <component :is="selectedComponent"></component>
+
+    // we use the is property with v-bind for set our data component, 
+    and render him.
+
+
+Check the code running, with and without component tag the example 2 folder.
+
+
+=========================== Class 08 ============================
