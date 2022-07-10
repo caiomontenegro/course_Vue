@@ -2937,3 +2937,26 @@ we need to encapsulate them in a another tag, like a div...
 
 Test this, on the MenageGoals.vue file component in the example 2
 folder.
+
+
+=========================== Class 12 ============================
+
+
+Style Guide.
+
+
+So, for naming the Vue components, the docs recomends us to follow
+some rules... 
+
+But, the guide has two special rules:
+
+  For base components, like a cards styles. Use:
+
+    BaseCard.vue
+
+  For single components, used once. 
+
+    TheHeader.vue
+
+For for rules, access de vue site.
+
