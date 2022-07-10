@@ -2926,3 +2926,14 @@ It's simples, using the teleport special vue property:
 Check this code running on the example 2 folder.
 
 
+
+=========================== Class 11 ============================
+
+
+- Fragments:
+
+When we see the many tags loose on the single template, in VUE 2
+we need to encapsulate them in a another tag, like a div...
+
+Test this, on the MenageGoals.vue file component in the example 2
+folder.
