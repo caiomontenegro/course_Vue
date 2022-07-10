@@ -2901,3 +2901,28 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21526252#n
 =========================== Class 10 ============================
 
 
+- Teleporting Elements
+
+In our lastly example, we have a problem... The dialog is render in 
+a general div, and this is not semanctic. The correct way, is render the 
+dialog on the body, for example...
+
+
+So how to transfer the dialog to another place? 
+
+It's simples, using the teleport special vue property:
+
+    <teleport to="body">
+
+    // here we set, the destiny of our content.
+
+      <error-alert v-if="inputIsInvalid">
+        <h2>Input is invalid!</h2>
+        <p>Please enter at least a few characters...</p>
+        <button @click="confirmError">Okay</button>
+      </error-alert>
+    </teleport>
+
+Check this code running on the example 2 folder.
+
+
