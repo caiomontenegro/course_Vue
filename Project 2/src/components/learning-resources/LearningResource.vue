@@ -4,7 +4,6 @@
       <header>
         <h3>{{ title }}</h3>
         <base-button mode="flat">Delete</base-button>
-        <!-- With flat, I can change the css selector of the base-button component -->
       </header>
       <p>{{ description }}</p>
       <nav>
