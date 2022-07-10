@@ -2689,6 +2689,11 @@ on slot tag, and call using v-slot especial property. Ex:
 =========================== Class 05 ============================
 
 
+- Slots 3
+
+But remember, the component that has slot need be receive the style
+directly on your component vue file.
+
 
 
     
