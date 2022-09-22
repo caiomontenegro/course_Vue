@@ -2762,3 +2762,42 @@ Script
 
 
 =========================== Class 03 ============================
+
+
+inputs (3/6)
+
+Dropsdowns inputs:
+
+Again, we'll use the v-model, but em on Dropsdowns, the best is 
+use some dropdown value with default.
+
+Example:
+
+Template:
+
+    <form @submit.prevent="submitForm">
+      <div>
+        <select v-model="select">
+          <option value="google">Google</option>
+          <option value="wom">Word of mouth</option>
+          <option value="newspaper">Newspaper</option>
+        </select>
+      </div>
+    <form>
+
+Script:
+
+    data() {
+      return {
+        select = 'wom'
+      }
+    },
+    methods: {
+      submitForm() {
+        console.log(`Select is: ${this.select}`)
+        this.select = 'wom'
+      }
+    }
+  
+Take look on this example in Module 11 folder.
+
