@@ -8,25 +8,25 @@ See the Code in example 1 folder.
 
 Now, we rebuild the class 1 page with a simple VUE.js, and now, we can understand better.
 
-For this simple example, acces the official Vue website, 
+For this simple example, acces the official Vue website,
 get the VUE link, for work without packages:
 
     <script src="https://unpkg.com/vue@3"></script>
 
-Put above that old js link, in your HTML file, and after you 
+Put above that old js link, in your HTML file, and after you
 can use Vue.js
 
 After, you will type the JS code in another form. Follows this steps:
 
 1- Create a Vue App
-    First you need create a Vue App, and you can create this typing in your
-    js file the object:
-    
+First you need create a Vue App, and you can create this typing in your
+js file the object:
+
         Vue.createApp()
 
 2- Set the datas you will work with.
-    For this, type on the function "data" on Vue.createApp, and this function
-    will return a object with your datas. Ex:
+For this, type on the function "data" on Vue.createApp, and this function
+will return a object with your datas. Ex:
 
         Vue.createApp({
             data() {
@@ -38,17 +38,17 @@ After, you will type the JS code in another form. Follows this steps:
         })
 
 3- Connect the datas with your HTML file contents.
-    Now you need to use a special HTML atribute. This atribute just be seen
-    if you using Vue. So the special atribute is " v-model="" ". Ex:
-    
+Now you need to use a special HTML atribute. This atribute just be seen
+if you using Vue. So the special atribute is " v-model="" ". Ex:
+
         <input v-model="age">
 
 4- Set the Methods
-    The function you use, will be declared on function methods, in your Vue App.
-    And you can call the datas with "this." js method. After you need to use this
-    method, put in your HTML file the special atribute "v-for", this method works
-    like a function FOR, (a loop)
-    Ex:
+The function you use, will be declared on function methods, in your Vue App.
+And you can call the datas with "this." js method. After you need to use this
+method, put in your HTML file the special atribute "v-for", this method works
+like a function FOR, (a loop)
+Ex:
 
          Js.file:
 
@@ -68,12 +68,10 @@ After, you will type the JS code in another form. Follows this steps:
 
         html.file:
             <li v-for="goal in goals">{{ goal }}</li>
-    
-    
 
 5- Configure the Place for Code.
-    lastly, we need to set where our js code is run. Add in your Vue app, the
-    last info ".mount" and pass with parameter the father element. ex:
+lastly, we need to set where our js code is run. Add in your Vue app, the
+last info ".mount" and pass with parameter the father element. ex:
 
     js.file
 
@@ -98,29 +96,27 @@ After, you will type the JS code in another form. Follows this steps:
         <li v-for="goal in goals">{{ goal }}</li>
     </ul>
 
-
 See the code in example 2 folder.
 
 =========================== Class 3 =========================
 
-
 - How to connect Js with HTML.
 
 1- Create a Vue App
-    First you need create a Vue App, and you can create this typing in your
-    js file the object:
-    
+First you need create a Vue App, and you can create this typing in your
+js file the object:
+
         Vue.createApp()
 
 2- Mount the App
-    Mount the app for use the code in your HTML, and set the parameter
-    the class or ID of father element.:
+Mount the app for use the code in your HTML, and set the parameter
+the class or ID of father element.:
 
         app.mount('#user-goal')
 
 3- Use createApp properties
-    Now you cant yse the createApp basics properties in your js.file.
-    First use the data properties for set your vars/lets/const's:
+Now you cant yse the createApp basics properties in your js.file.
+First use the data properties for set your vars/lets/const's:
 
         const app = Vue.createApp({
             data() {
@@ -132,16 +128,14 @@ See the code in example 2 folder.
 
 See the codes in exemple 3 folder.
 
-
 =========================== Class 4 =========================
-
 
 - Interpolation.
 
-So, for use the Vue datas, on the HTML file, you need to use 
+So, for use the Vue datas, on the HTML file, you need to use
 double curly braces on HTML element. Ex:
 
-   Js file:
+Js file:
 
     const app = Vue.createApp({
       data() {
@@ -149,32 +143,29 @@ double curly braces on HTML element. Ex:
           courseGoal: 'Finish the course and learn the Vue.'
         }
       }
-    }) 
+    })
 
-  HTML:
+HTML:
 
     <section id="user-goal">
       <h2>My Course Goal</h2>
       <p>{{ courseGoal }}</p>
     </section>
 
-Remember: 
-  You just can use interpolation in HTML VUe app element, seted in
-  app.mount().
-
+Remember:
+You just can use interpolation in HTML VUe app element, seted in
+app.mount().
 
 See the code in example 3 folder.
 
-
 =========================== Class 5 =========================
-
 
 V-Bind
 
 If you need use Vue data with HTML tags and atributes you need to use
 the "v-bind" as prefix:
 
-  js.file:
+js.file:
 
       const app = Vue.createApp({
         data() {
@@ -185,7 +176,7 @@ the "v-bind" as prefix:
         }
       })
 
-  HTML file:
+HTML file:
 
     <section id="user-goal">
       <h2>My Course Goal</h2>
@@ -195,17 +186,14 @@ the "v-bind" as prefix:
 
 See the code in the example 3 folder.
 
-
-
 =========================== Class 6 ===========================
-
 
 -Methods
 
-  Methods are functions with you can use direct in your HTML file,
-  and you create them on Methods in your Vue.createApp():
+Methods are functions with you can use direct in your HTML file,
+and you create them on Methods in your Vue.createApp():
 
-  Js file:
+Js file:
 
     const app = Vue.createApp({
       data() {
@@ -226,7 +214,7 @@ See the code in the example 3 folder.
       }
     })
 
-  HTML file:
+HTML file:
 
     <section id="user-goal">
       <h2>My Course Goal</h2>
@@ -237,13 +225,11 @@ See the code in the example 3 folder.
 
 See the code in example 3 folder.
 
-
 =========================== Class 7 ===========================
 
-
 -Call Datas in js code.
-  If you need call the data properties in your js file, you need to use
-  the prefix "this." before your data name. Ex:
+If you need call the data properties in your js file, you need to use
+the prefix "this." before your data name. Ex:
 
     const app = Vue.createApp({
       data() {
@@ -265,23 +251,19 @@ See the code in example 3 folder.
       }
     })
 
-
 See the Code in the js file in example 4 folder.
-
-
 
 =========================== Class 8 ===========================
 
-
 -Output HTML tags from js file.
-  If you need output html tags from your Js file, you need to 
-  use the Vue propertie "v-html". Ex:
+If you need output html tags from your Js file, you need to
+use the Vue propertie "v-html". Ex:
 
     const app = Vue.createApp({
       data() {
         return {
           courseGoalA: 'Finish the course and learn the Vue.',
-          courseGoalB: '<h2>Master Vue and build amazing apps</h2>', 
+          courseGoalB: '<h2>Master Vue and build amazing apps</h2>',
           vueLink: 'https://vuejs.org'
         }
       },
@@ -297,28 +279,23 @@ See the Code in the js file in example 4 folder.
       }
     })
 
-But, you need to use this method with care. Because your 
-app is more exposed to script attacks. 
-
+But, you need to use this method with care. Because your
+app is more exposed to script attacks.
 
 See the code in example 5 folder
-
 
 =========================== Class 9 ===========================
 
 Time to practice. See the Challenge 1 folder.
 
-
-
 =========================== Class 10 ===========================
 
-
 -Event Binding 1/2
-  A simple way to add a event listener in a HTML element is the
-  vue method "v-on". We can use the prefix "v-on" for add a event
-  directly in the element tag. Ex:
+A simple way to add a event listener in a HTML element is the
+vue method "v-on". We can use the prefix "v-on" for add a event
+directly in the element tag. Ex:
 
-  HTML file:
+HTML file:
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -327,7 +304,7 @@ Time to practice. See the Challenge 1 folder.
       <p>Result: {{ counter }}</p>
     </section>
 
-  js file:
+js file:
 
     const app = Vue.createApp({
       data() {
@@ -335,23 +312,20 @@ Time to practice. See the Challenge 1 folder.
           counter: 0
         }
       }
-    }) 
+    })
 
     app.mount('#events')
 
 See the code in the exemple 6 folder.
 
-
-
 =========================== Class 11 ===========================
 
-
 -Event Binding 2/2
-  Now, there is a way is as functional as previous example. You would 
-  know, that js code logics don't be in HTML file. So you can use
-  the methods of VueApp, to include this logic. Ex:
+Now, there is a way is as functional as previous example. You would
+know, that js code logics don't be in HTML file. So you can use
+the methods of VueApp, to include this logic. Ex:
 
-  html file:
+html file:
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -360,7 +334,7 @@ See the code in the exemple 6 folder.
       <p>Result: {{ counter }}</p>
     </section>
 
-  js file:
+js file:
 
     const app = Vue.createApp({
       data() {
@@ -373,24 +347,20 @@ See the code in the exemple 6 folder.
           this.counter--
         }
       }
-    }) 
+    })
 
     app.mount('#events')
 
-
 See the code in the exemple 6 folder.
-
-
 
 =========================== Class 12 ===========================
 
-
 -Event Arguments
-  
-  You can use argument in the methods, directly in HTML file event.
-  For example, see the new button "Reduce 5":
 
-  HTML file
+You can use argument in the methods, directly in HTML file event.
+For example, see the new button "Reduce 5":
+
+HTML file
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -400,7 +370,7 @@ See the code in the exemple 6 folder.
       <p>Result: {{ counter }}</p>
     </section>
 
-  Js file:
+Js file:
 
     const app = Vue.createApp({
       data() {
@@ -416,20 +386,18 @@ See the code in the exemple 6 folder.
           this.counter = this.counter - num
         }
       }
-    }) 
+    })
 
 See the code in the example 6 folder.
 
-
 =========================== Class 13 ===========================
-
 
 -Native Event Object
 
-  We can use the natives events objects directly in our HTML element
-  event. In our Js file, just we set event as a parameter Ex:
+We can use the natives events objects directly in our HTML element
+event. In our Js file, just we set event as a parameter Ex:
 
-  HTML file
+HTML file
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -437,7 +405,7 @@ See the code in the example 6 folder.
       <p>Your name {{ name }}</p>
     </section>
 
-  JS File
+JS File
 
     const app = Vue.createApp({
       data() {
@@ -450,14 +418,14 @@ See the code in the example 6 folder.
           this.name = event.target.value
         }
       }
-    }) 
+    })
 
     app.mount('#events')
 
 If you need to use a seconde paremeter in your function, you need add
 "$" before the "event" parameter. Like this:
 
-  HTML file
+HTML file
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -465,7 +433,7 @@ If you need to use a seconde paremeter in your function, you need add
       <p>Your name {{ name }}</p>
     </section>
 
-  JS File
+JS File
 
       const app = Vue.createApp({
         data() {
@@ -478,16 +446,13 @@ If you need to use a seconde paremeter in your function, you need add
             this.name = event.target.value + ' ' + lastName
           }
         }
-      }) 
+      })
 
       app.mount('#events')
 
 See the code running in example 6 folder
 
-
-
 =========================== Class 14 ===========================
-
 
 - Event Modifiers
 
@@ -497,15 +462,15 @@ Remember the event.prevent. That stop the default behavior of browser.
 And for do this, we have two ways:
 
 1-
-  
-  HTML file:
+
+HTML file:
 
     <form v-on:submit="submitFormA">
       <input type="text">
       <button>Send</button>
     </form>
 
-  Js File:
+Js File:
 
     const app = Vue.createApp({
       methods: {
@@ -514,20 +479,20 @@ And for do this, we have two ways:
           alert("Sended")
         }
       }
-    }) 
+    })
 
     app.mount('#events')
 
-2- 
+2-
 
-  HTML file:
+HTML file:
 
     <form v-on:submit.prevent="submitFormB">
     <input type="text">
     <button>Send</button>
     </form>
 
-  Js file:
+Js file:
 
     const app = Vue.createApp({
       method: {
@@ -548,19 +513,17 @@ Check the JS documentation for more event modifiers.
 
 See this code running in the example 6 folder.
 
-
 =========================== Class 14 ===========================
-
 
 - V-once
 
 So, in a fictional scenario, you need to show a data just once.
-But your code manipulate this data elsewhere... How to show the 
+But your code manipulate this data elsewhere... How to show the
 once without after manipulates?
 
 It's simple, using v-once. Like this:
 
-  HTML File
+HTML File
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -571,26 +534,25 @@ It's simple, using v-once. Like this:
       <p>Result: {{ counter }}</p>
     </section>
 
-  Js File
+Js File
 
     const app = Vue.createApp({
       data() {
         return {
-          counter: 0 
+          counter: 0
         }
       },
-      methods: 
+      methods:
       reduceA() {
         this.counter--
       },
       reduceB(num) {
         this.counter = this.counter - num
       }
-    }) 
-  
-Look, the first time the element is shown, the element do not 
-update the "Counter" anymore.
+    })
 
+Look, the first time the element is shown, the element do not
+update the "Counter" anymore.
 
 =========================== Class 15 ===========================
 
@@ -598,9 +560,7 @@ Time to practice.
 
 See the challenge in the challenge 2 folder
 
-
 =========================== Class 16 ===========================
-
 
 - V-Model
   Due the often that we use v-bind:value with v-on:input. The Vue
@@ -618,32 +578,25 @@ See the challenge in the challenge 2 folder
         <button v-on:click="resetName">Reset Name</button>
         <p>Your Name: {{ name }}</p>
 
-
 Check the example in example 7 folder
-
-
 
 =========================== Class 17 ===========================
 
-
 - Methods Called in HTML
-  
+
   We already know which methods can be called via interpollation
   wich double curly braces, but that we don't know is:
-  Whenever something change in the page, the Vue will go execute 
-  the method, because he need see if something that, use a datas 
+  Whenever something change in the page, the Vue will go execute
+  the method, because he need see if something that, use a datas
   inside to the method.
 
   So, methods can be bad for our performance.
 
   For see that, acces the example 7 folder, and click at Add and
-  remove buttons. And you can see on the browser console, the 
+  remove buttons. And you can see on the browser console, the
   method "setFullName()", being called.
 
-
-
 =========================== Class 18 ===========================
-
 
 - Computed Properties
 
@@ -651,18 +604,18 @@ For resolve the refresh problem which methods cause, you can use
 Computed properties.
 
 Computeds, are defined like a methods, but the computeds just
-only call if the element has a interpolation being  triggered.
+only call if the element has a interpolation being triggered.
 
 Obs:Computed can't be called on events.
 
 The config is:
 
-  HTML File 
+HTML File
 
     In computeds, you should never use parentheses
     <p>{{ example }}</p>
 
-  js File
+js File
 
     const app = Vue.createApp() {
       computed: {
@@ -672,18 +625,15 @@ The config is:
       }
     }
 
-See the code in the example 8 folder 
-
-
+See the code in the example 8 folder
 
 =========================== Class 19 ===========================
 
-
 - Watchers
-        
-If you need to monitor a data propertie or a computed propertie, 
+
+If you need to monitor a data propertie or a computed propertie,
 you can use Watch Properties. Watchers be functions like a Computeds
-which running in specifics ocasions. 
+which running in specifics ocasions.
 
 Watch just running, when the Data wich him monitoring be changing.
 
@@ -691,7 +641,7 @@ The sintax for use Watch is similar to Computed and Method sintax, but
 wich a difference, the Watch always must be named wich the Data name that
 is monitoring. Ex:
 
-  HTML FIle:
+HTML FIle:
 
     <section id="events">
       <h2>Events in Action</h2>
@@ -700,8 +650,7 @@ is monitoring. Ex:
       <p>Result: {{ counter }}</p>
     </section>
 
-
-  Js file
+Js file
 
     const app = Vue.createApp({
       data() {
@@ -726,21 +675,17 @@ is monitoring. Ex:
       }
     })
 
-
 Take a look, if the counter is greater than 10, the counter is reseted
 to zero.
 
 See de code running in the example 9 folder.
 
-
-
 =========================== Class 20 ===========================
-
 
 Short-Hands
 
-  V-on:
-  For V-on (events) we can use just "@". Ex:
+V-on:
+For V-on (events) we can use just "@". Ex:
 
     v-on:click="add(1)"
 
@@ -748,8 +693,8 @@ Short-Hands
 
     @click="add(1)"
 
-  V-bind
-  And for V-bind, we can use ":". Ex:
+V-bind
+And for V-bind, we can use ":". Ex:
 
     v-bind:value="name"
 
@@ -759,24 +704,21 @@ Short-Hands
 
 Remember to be consistent in the use of your choice.
 
-
 =========================== Class 21 ===========================
 
 Time to practice!
 
 Acces to challenge 3 and resolve that!
 
-
 =========================== Class 22 ===========================
-
 
 -Dynamic Inline Styling
 
-  To use dinamic style, the Vue use a especial sintax on HTML file.
-  First of all, we need to create a shape to select our element to 
-  style.
+To use dinamic style, the Vue use a especial sintax on HTML file.
+First of all, we need to create a shape to select our element to
+style.
 
-  1- Create de Js file:
+1- Create de Js file:
 
     const app = Vue.createApp ({
       data() {
@@ -804,10 +746,9 @@ Acces to challenge 3 and resolve that!
     It's not the best form to create a select element code, but
     it's serve for know.
 
-    
-  Second, we need to create our HTML with our elements to style:
+Second, we need to create our HTML with our elements to style:
 
-  HTML file:
+HTML file:
 
     <section id="styling">
       <div class="demo" :style="{borderColor: boxASelected ? 'red' : '#CCC'}" @click="boxSelected('A')"></div>
@@ -815,35 +756,30 @@ Acces to challenge 3 and resolve that!
       <div class="demo" @click="boxSelected('C')"></div>
     </section>
 
-  
-  Know let's take a look on first Element "demo".
-  1- We input the method to select, with "A" parameter, for our JS file knows
-  what element we are going to style.
+Know let's take a look on first Element "demo".
+1- We input the method to select, with "A" parameter, for our JS file knows
+what element we are going to style.
 
-  2- We add the style propertie, and add the prefix ":" (v-bind). but
-  to use Vue values on the propertie Style, Class, etc... We need to 
-  use the special sintax with curly braces({ }) ex:
+2- We add the style propertie, and add the prefix ":" (v-bind). but
+to use Vue values on the propertie Style, Class, etc... We need to
+use the special sintax with curly braces({ }) ex:
 
     :style="{'border-color': 'red'}"
 
     // We can remove the simples quotes, and replace with CamelCase:
-    
+
     :style="{borderColor: 'red'}"
 
     // We also can use a simple logic in there:
 
-    :style="{borderColor: boxASelected ? 'red' : '#CCC'}" 
+    :style="{borderColor: boxASelected ? 'red' : '#CCC'}"
 
-    // If boxASelect is true, the border color is red, else 
+    // If boxASelect is true, the border color is red, else
     the border color is gray.
-
 
 See the code running in the example 10 folder.
 
-
-
 =========================== Class 23 ===========================
-
 
 -Dynamic Classes
 
@@ -852,14 +788,14 @@ many properties, and use inline style is not appropriate.
 
 Now, we learn how to add classes wich Vue. Step by Step:
 
-  1-Create the class ou CSS File:
+1-Create the class ou CSS File:
 
     .active {
       border-color: red;
       background-color: salmon;
     }
 
-  2-Create your Js File, wich rules to active the class:
+2-Create your Js File, wich rules to active the class:
 
     const app = Vue.createApp ({
       data() {
@@ -880,8 +816,7 @@ Now, we learn how to add classes wich Vue. Step by Step:
       }
     })
 
-  3-Create de HTML file:
-
+3-Create de HTML file:
 
     <section id="styling">
       <div class="demo" :class="active" @click="boxSelected('A')"></div>
@@ -890,19 +825,18 @@ Now, we learn how to add classes wich Vue. Step by Step:
       <div class="demo" :class="{active: boxBSelected}" @click="boxSelected('B')"></div>
     </section>
 
-  Check the sintax, the default class is added like a normal sintax ("class="demo"),
-  but for dynamic classes with Vue, the sintax is based in True or False, being the 
-  first parameter the class name created in CSS file, and the second is the corresponding
-  value for "true" or "false".
+Check the sintax, the default class is added like a normal sintax ("class="demo"),
+but for dynamic classes with Vue, the sintax is based in True or False, being the
+first parameter the class name created in CSS file, and the second is the corresponding
+value for "true" or "false".
 
-  So:
+So:
 
     :class="{active: boxASelected}"
 
-  It's the same as "Active class is true or false"
+It's the same as "Active class is true or false"
 
 See the coding running in the example 11 folder.
-    
 
 =========================== Class 24 ===========================
 
@@ -910,10 +844,10 @@ Computed with Dynamic Styles.
 
 So, how to remove the logic in the HTML file about the last class?
 
-If you have a many class styles or the logic is very extensive, 
+If you have a many class styles or the logic is very extensive,
 you can use Computed. Ex:
 
-  HTML file:
+HTML file:
 
     <section id="styling">
       <div class="demo" :class="changeStyle" @click="boxSelected('A')"></div>
@@ -952,9 +886,7 @@ you can use Computed. Ex:
 
 See this code running in the example 12 folder
 
-
 =========================== Class 25 ===========================
-
 
 A simple sintax extra, for the classes is the class lists in HTML
 
@@ -964,17 +896,13 @@ You can add a more than one class in a element, use the below sintax:
 
 See that code running in the example 13 folder.
 
-
 =========================== Class 26 ===========================
 
-
-Time to practice. 
+Time to practice.
 
 Look the challenge 4 and resolve that.
 
-
 =========================== Class 27 ===========================
-
 
 Module Summary
 
@@ -982,46 +910,38 @@ Acces the link:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463232#overview
 
-
-
 ########################### Module 3 ###########################
 
-
 =========================== Class 01 ===========================
-
 
 - Rendering Content Conditionally
 
 For the rendering conditional content, you can use the special Vue propertie
 "v-if", like a Js propertie "if". ex:
 
-  HTML File
+HTML File
 
     <p v-if="goals === 0"> No goals have been added yet - please start adding some! </p>
 
-  Js File:
+Js File:
 
     const app = Vue.createApp({
       data() {
-        return { 
+        return {
           goal: '',
-          goals: [], 
+          goals: [],
         };
       },
     })
 
 Check that code running in example 1 folder.
 
-
-
 =========================== Class 02 ===========================
-
 
 - More Deep on Conditional Content
 
 As we can imagine, the Vue also suported the JS properties "else if()" and
 "else()". And you can use typing: v-else-if, or "v-else". ex:
-
 
     <p v-if="goals === 0"> No goals have been added yet - please start adding some! </p>
     <ul v-else>
@@ -1031,36 +951,27 @@ As we can imagine, the Vue also suported the JS properties "else if()" and
 But remember! This just works if you put one below or above the other, if there is
 a another element between the sintax, that not works.
 
-
 Se that code running in the example 2 folder.
 
-
-
 =========================== Class 03 ===========================
-
 
 -V-Show
 
 A alternative to "v-if", is "v-show"... V-show, similar to v-if but
-don't works together "v-else-if" and "v-else", and another feature is 
+don't works together "v-else-if" and "v-else", and another feature is
 that no remove the element when de condition is false, the element continue
 being part of the DOM, but commented.
 
-  Ex:
+Ex:
 
     <p v-show="goals === 0"> No goals have been added yet - please start adding some! </p>
-    
 
-Use the v-show when the element appears for many times in your page, 
+Use the v-show when the element appears for many times in your page,
 because v-show has a more performance than v-if
-
 
 See the code running in the example 3 folder.
 
-
-
 =========================== Class 04 ===========================
-
 
 - Loops 1/2
 
@@ -1076,34 +987,33 @@ of the f-vor element.
 
 Check the code running in example 3 folder.
 
-
 =========================== Class 05 ===========================
 
 - Loops 2/2
 
 V-For tricks:
 
-  We have more ways to work with For:
+We have more ways to work with For:
 
-  1- Show the index. 
-  You can show the index of the value printed. Ex:
+1- Show the index.
+You can show the index of the value printed. Ex:
 
     <li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>
 
-  2- Work with Objects.
-  We can running a objet with V-For. Ex:
+2- Work with Objects.
+We can running a objet with V-For. Ex:
 
     <ul>
       <li v-for="(user in users">{{ user }}</li>
     </ul>
 
-  And we can show the key of value:
+And we can show the key of value:
 
     <ul>
       <li v-for="(value, key) in users">{{ key }}: {{ value }}</li>
     </ul>
 
-  And finally, the index:
+And finally, the index:
 
     <ul>
       <li v-for="(value, key, index) in users">{{ key }}: {{ value }} - {{ index }}</li>
@@ -1117,13 +1027,9 @@ And when we work on objects:
 
     v-for(value, key, index) in list
 
-
 Looke the code running in example 4 folder
 
-
-
 =========================== Class 04 ===========================
-
 
 - Remove item
 
@@ -1135,21 +1041,19 @@ First of all, we need to create a new method to remove:
       this.goals.splice(idx, 1)
     }
 
-Second step, we need to add this method in our element. 
-Remember! We just can acces the index (we need), inside of the 
+Second step, we need to add this method in our element.
+Remember! We just can acces the index (we need), inside of the
 element that v-for is running.
 
     <li v-for="(goal, index) in goals" @click="removeGoals(index)">{{ goal }} - {{ index }}>
 
-
 See the coding running in example 4 folder.
-
 
 =========================== Class 05 ===========================
 
 - Key
 
-So, we can a little problem when we use the v-for. Sometimes, the 
+So, we can a little problem when we use the v-for. Sometimes, the
 elements that be shown, can inherit the properties of another elements
 when are interacted.
 
@@ -1161,20 +1065,13 @@ ID. But for our little example, we use the value of index list:
 
     <li v-for="(goal, index) in goals" :key="goal" @click="removeGoals(index)">{{ goal }} - {{ index }}</li>
 
-
 Check this code running in the example 4 folder.
-
 
 =========================== Class 06 ===========================
 
 Time to practice, check the challenge 1 folder and resolved.
 
-
-
-
 ########################### Module 5 ##############################
-
-
 
 =========================== Class 01 ===========================
 
@@ -1184,30 +1081,26 @@ For more, access the link:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463362#overview
 
-
 =========================== Class 02 ===========================
 
 Reactivity on datas
 
 So how data reactivities work behind the scenes on Vue?
 
-See on: 
+See on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463370#overview
 
-
-
 =========================== Class 03 ===========================
-
 
 - More than one Vue App.
 
 In a single page, we can have more than one Vue app, but de properties can't be
-mixed. 
+mixed.
 
 So to use, is very simple... Just code on after another. Ex:
 
-  HTML file: 
+HTML file:
 
     <section id="app">
       <h2>How Vue Works</h2>
@@ -1222,7 +1115,7 @@ So to use, is very simple... Just code on after another. Ex:
       <h2>{{ name }}</h2>
     </section>
 
-  Js File:
+Js File:
 
     const appA = Vue.createApp({
       data() {
@@ -1247,7 +1140,6 @@ Check the code running in example 1 folder
 
 =========================== Class 04 ===========================
 
-
 - Templates
 
 All the HTML code inside of the Vue app element, it's called
@@ -1255,12 +1147,12 @@ All the HTML code inside of the Vue app element, it's called
 
 And we define template with other form: in Vue.app Code. Ex:
 
-  HTML file:
+HTML file:
 
     <section id="elementB">
     </section>
 
-  Js file:
+Js file:
 
     const appB = Vue.createApp({
       // remeber the use double crases
@@ -1274,9 +1166,7 @@ And we define template with other form: in Vue.app Code. Ex:
 
 See the code running on the example 1 folder
 
-
 =========================== Class 05 ===========================
-
 
 - Refs
 
@@ -1294,7 +1184,6 @@ datas, coding:
 
     console.dir(this.$ref.text)
 
-
 =========================== Class 06 ===========================
 
 - Virtual DOM
@@ -1309,17 +1198,13 @@ Check that explanation for more about that:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463390#overview
 
-
 =========================== Class 07 ===========================
-
 
 - Vue lifecycle
 
 So which is Vue lifecycle? It's not complex. Watch about it in:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463392#overview
-
-
 
 =========================== Class 08 ===========================
 
@@ -1331,11 +1216,7 @@ Check ou that link:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463394#overview
 
-
-
-
 ############################ Module 6 ###########################
-
 
 =========================== Class 01 ===========================
 
@@ -1346,24 +1227,22 @@ test the Show/Hide Details and you can look our problem...
 
 That problem, that we have resolve with components in the next class.
 
-
 =========================== Class 02 ===========================
-
 
 -Components 2/2
 
 So now, lets see the step by step to how create our component.
 
-THe components as mini apps, which contains your own datas, 
+THe components as mini apps, which contains your own datas,
 methods, computeds, etc...
 
 And to declare that, follow the steps:
 
 1 - Create de component:
 
-  Below the create.app, and use the parameters:
-  1- Name of component, use de dash between the works
-  2- The properties of the normal app.
+Below the create.app, and use the parameters:
+1- Name of component, use de dash between the works
+2- The properties of the normal app.
 
     app.component('friend-contat', {
       data() {
@@ -1372,7 +1251,7 @@ And to declare that, follow the steps:
         }
       },
       methods: {
-        
+
       }
     })
 
@@ -1401,7 +1280,7 @@ crases.
 3- Type usually the methods, and another properties.
 
     data() {
-      return { 
+      return {
         showDetails: false,
         friend: {
           id: 'manuel',
@@ -1417,19 +1296,13 @@ crases.
       }
     }
 
-
 4- In HTML file, type a new Tag, with component name:
 
     <friend-contact></friend-contact>
 
-
 Now, see the code running in example 2 folder
 
-
-
-
 ####################### Module 7 ######################
-
 
 =========================== Class 01 ===========================
 
@@ -1437,32 +1310,23 @@ This class is about the module introduction, see more on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463430#overview
 
-
-
 =========================== Class 02 ===========================
-
 
 Until now, we use the HTML file openning in the browser without a server
 and that, is not appropriate to develop a real project.
 So let's understand more about the use of dev servers:
 
-
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463440#overview
-
-
 
 =========================== Class 03 ===========================
 
-
 Know, is important understand, we use the vue, in your
-basic form... And that, create difficults for debugs, 
+basic form... And that, create difficults for debugs,
 read the code in bigger projects, and another things...
 
 Read more about that in:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463444#overview
-
-
 
 =========================== Class 04 ===========================
 
@@ -1472,10 +1336,9 @@ Follow the step by step on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463450#overview
 
-
 =========================== Class 05 ===========================
 
-After to run the command 
+After to run the command
 
     vue create
 
@@ -1483,13 +1346,10 @@ And after
 
     run serve
 
-You must have noticed, were created many files, 
+You must have noticed, were created many files,
 of differents types. Let's see about them on:
 
-  
-  https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463454#overview
-
-
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463454#overview
 
 =========================== Class 06 ===========================
 
@@ -1499,7 +1359,7 @@ Our mains folder is SRC(source) and Public.
 
 On public folder, we have our main HTML file
 
-And in src file, we have our components, that know 
+And in src file, we have our components, that know
 are be created with VUe.files, which support HTML
 JS and CSS on the same file.
 
@@ -1507,16 +1367,13 @@ Se more about that on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463458#overview
 
-
 =========================== Class 07 ===========================
-
 
 FOr help us to develop a vue projects, intalls two
 more extension on VS Code:
 
 Vue Language Features
 Vetur
-
 
 =========================== Class 08 ===========================
 
@@ -1525,7 +1382,6 @@ Yet we have another files unexplored...
 So, take a look a little bit on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463462#overview
-
 
 =========================== Class 09 ===========================
 
@@ -1542,9 +1398,9 @@ So, let's remember how to start a new Vue project.
 3- If you get read project on the hub, or another place, install
 the project models with:
 
-    npm i 
+    npm i
 
-  or
+or
 
     npm intall
 
@@ -1552,20 +1408,17 @@ the project models with:
 
     npm run serve
 
-  And our server, is running on 8080 port.
+And our server, is running on 8080 port.
 
 4- Access page:
 
     localhost:8080
 
-
 =========================== Class 10 ===========================
-
 
 - Build Vue Project
 
-So now, we will create a simple Vue Projec. 
-
+So now, we will create a simple Vue Projec.
 
 1- Index.html
 
@@ -1574,8 +1427,7 @@ Vue.app in Vue file.
 
     <div id="app"></div>
 
-  On that div, our content is rendering
-
+On that div, our content is rendering
 
 2- Main.js
 
@@ -1588,16 +1440,14 @@ our app wich the App.vue with parameter and mounted him.
 
     createApp(App).mount('#app');
 
-
-
 3- App.vue
 
 Here we import our components, we use two main tags:
 
-  -Template
+-Template
 
-  Here we type our template(html), that we want to 
-  render.
+Here we type our template(html), that we want to
+render.
 
       <template>
         <h2>My Friends</h2>
@@ -1606,9 +1456,9 @@ Here we import our components, we use two main tags:
         </ul>
       </template>
 
-  -script
+-script
 
-  Here we type our Js code.
+Here we type our Js code.
 
       data() {
         return {
@@ -1629,10 +1479,9 @@ Here we import our components, we use two main tags:
         }
       }
 
-  But remember, we need to export this code, 
-  for our mains.js file. So we need to encapsulate
-  that code, on export.:
-
+But remember, we need to export this code,
+for our mains.js file. So we need to encapsulate
+that code, on export.:
 
       export default {
         data() {
@@ -1640,13 +1489,9 @@ Here we import our components, we use two main tags:
         }
       }
 
-
 Check the code running on the example 4 folder.
 
-
-
 =========================== Class 11 ===========================
-
 
 - Creating Components
 
@@ -1665,13 +1510,13 @@ as name component.
 
 4- Create your script content in his tag.
 
-  A- Open the export object:
+A- Open the export object:
 
     export default {
 
     }
 
-  B- Code your js:
+B- Code your js:
 
     export default {
       data() {
@@ -1719,7 +1564,6 @@ import the App.vue file, and FriendsContacts.vue component
     import App from './App.vue'
     import FriendsContacts from './components/FriendsContacts.vue'
 
-
 7- Create our Vue App, instance the component and mount our app.
 
     const app = createApp(App)
@@ -1727,7 +1571,6 @@ import the App.vue file, and FriendsContacts.vue component
     app.component('friends-contacts', FriendsContacts)
 
     app.mount('#app');
-
 
 8- Lastly insert our new component tag ('friends-contacs')
 in your template in App.vue.
@@ -1737,9 +1580,7 @@ in your template in App.vue.
       <friends-contacts></friends-contacts>
     </ul>
 
-
 =========================== Class 12 ===========================
-
 
 -Style section
 
@@ -1754,26 +1595,21 @@ On the App.vue:
 
 And insert the styles
 
-
-
 ########################### Module 8 ############################
 
-
-
 =========================== Class 1 ===========================
-
 
 -Properties 1/5
 
 On our last example, we can use the component for show us the data
-friends. But we don't use the dinamic datas. 
+friends. But we don't use the dinamic datas.
 
 Remebem on the example 1 page.
 
-So now, let's see about the properties, and understand how that 
+So now, let's see about the properties, and understand how that
 resolve our problem.
 
-First, type on the script of component file, the props. Use 
+First, type on the script of component file, the props. Use
 the array to add your props. Ex:
 
     <script>
@@ -1786,11 +1622,10 @@ the array to add your props. Ex:
       }
     </script>
 
-    Remember to use camelcase here, and Vue will take care to 
+    Remember to use camelcase here, and Vue will take care to
     transform to kebab case for use on HTML Component Tag.
 
 On second step, use interpollation on component template:
-
 
     <template>
       <li>
@@ -1810,14 +1645,14 @@ On second step, use interpollation on component template:
     </template>
 
 And the last step, in your App.vue. Add our properties using kebab case
-in our component tag. For this example, we type the data direct on the 
+in our component tag. For this example, we type the data direct on the
 props:
 
     <ul>
       <friends-contacts
         name="Carolina Alto"
         phone-number="777 777"
-        email-address="carolina@email.com"  
+        email-address="carolina@email.com"
       ></friends-contacts>
       <friends-contacts
         name="Gustavo do Alto"
@@ -1828,10 +1663,7 @@ props:
 
 Check this code running on the example 2 folder.
 
-
-
 =========================== Class 2 ============================
-
 
 - Props 2/5
 
@@ -1839,7 +1671,7 @@ Changing Props
 
 The props, works with unidirectional data flow, so we can't modifier
 parents data with child component. But we have a alternative for that.
-And is simple, we can create a new data on the child component and 
+And is simple, we can create a new data on the child component and
 give your value of parent data. Ex:
 
     data() {
@@ -1852,13 +1684,13 @@ give your value of parent data. Ex:
 After, we can use the new data "friendIsFavorite", on the template
 of component child, and his method.
 
-  template:
+template:
 
     <h2>{{ name }} {{ friendIsFavorite === '1' ? '(Favorite)' : '' }}</h2>
     <button @click="toggleDatails">{{detailsAreVisible ? 'Hide' : 'Show' }} Details</button>
     <button @click="toggleFavorite">Favorite</button>
 
-  Data:
+Data:
 
     data() {
       return {
@@ -1867,7 +1699,7 @@ of component child, and his method.
       }
     },
 
-  Method:
+Method:
 
     toggleFavorite() {
       if(this.friendIsFavorite === '1') {
@@ -1879,63 +1711,57 @@ of component child, and his method.
 
 See that code running on the example 2 folder
 
-
-
 =========================== Class 3 ============================
-
 
 - Props 3/5
 
-When we work on shared project, maybe is important set how the 
+When we work on shared project, maybe is important set how the
 props of child component might be used. And for this, the props
-have a other tools, which facilitate our job. For use this methods, 
+have a other tools, which facilitate our job. For use this methods,
 the props becomes a object.
 
-  -Type:
-  We can use the type, to tell what data type might be used.
-  Ex:
+-Type:
+We can use the type, to tell what data type might be used.
+Ex:
 
     type: String / Boolean / etc..
 
     Remember to type capital first letter
-  
-  -Required
-  Serves us for descriminate if data is mandatory or not.
-  Ex:
+
+-Required
+Serves us for descriminate if data is mandatory or not.
+Ex:
 
     required: true/false
 
-  -Default
-  We can use a default value, for the prop, mainly if the prop
-  value isn't required
-  Ex:
+-Default
+We can use a default value, for the prop, mainly if the prop
+value isn't required
+Ex:
 
     default: '100'
 
     Ps: Default value might be obey the type prop.
 
-
-  -Validator
-  Is a function that return if prop value is correct or not.
-  If value is not correct, the function return false in 
-  browser console.
-
+-Validator
+Is a function that return if prop value is correct or not.
+If value is not correct, the function return false in
+browser console.
 
     validator: function(value) {
       return value === '1' || value === '0'
-    } 
+    }
 
     If the prop value is different of 1 or 0, the validator
     returns 'false on our console'
 
-  
 Example of complete prop:
 
     props: {
       name: {
         type: String,
         required: true
-      }, 
+      },
       phoneNumber: {
         type: String,
         required: true
@@ -1953,39 +1779,31 @@ Example of complete prop:
         }
       }
 
-
 See this code running on the example 3 folder.
-
-
 
 =========================== Class 4 ============================
 
-
 -Props 4/5
-
 
 Other types to use on our props:
 
-  string
-  number
-  boolean
-  array
-  object
-  date
-  function
-  symbol
-
-
+string
+number
+boolean
+array
+object
+date
+function
+symbol
 
 =========================== Class 5 ============================
-
 
 -Props 5/5
 
 For finish the props, it's time to see dinamic values using props.
 
 So, supose our child component must work with parent component data,
-or the type of some prop is "Boolean". We need to change the way 
+or the type of some prop is "Boolean". We need to change the way
 that parent component works with props.
 
 1- If we working with boolean type props, we don't need to use
@@ -1995,30 +1813,25 @@ validator, because with boolean props we have only two values.
 the value. Ex:
 
       <friends-contacts
-        :email-address="friend.email" 
-        :is-favorite="false" 
+        :email-address="friend.email"
+        :is-favorite="false"
       ></friends-contacts>
 
-3- If you need to repeat this component, for a data list, 
+3- If you need to repeat this component, for a data list,
 remember to use "v-for" with "key"
 
       <friends-contacts
         v-for="friend in friends"
         :key="friend.id"
-        :email-address="friend.email" 
-        :is-favorite="false" 
+        :email-address="friend.email"
+        :is-favorite="false"
       ></friends-contacts>
-
 
 =========================== Class 6 ============================
 
-
-
-
-
 - Child for Parents Comunication
 
-So, we also can stablish a comunication from child to parents 
+So, we also can stablish a comunication from child to parents
 components. That comunication is maked by events.Take a look:
 
 Let's make a new event comunication, using the Toggle Favorite
@@ -2026,8 +1839,8 @@ Button, at exampe 4 folder.
 
 1-Create the event
 
-  On methods of child component (FriendContacts), create the 
-  method, with "$emit":
+On methods of child component (FriendContacts), create the
+method, with "$emit":
 
     methods: {
       toggleFavorite() {
@@ -2037,32 +1850,30 @@ Button, at exampe 4 folder.
 
     For this events, is mandatory the use of kebab case.
 
-
 2- Call the event
-  On your parent component, inside of child component tag, 
-  call the event with "v-on/:"
+On your parent component, inside of child component tag,
+call the event with "v-on/:"
 
     <friends-contacts
       @toggle-favorite="toggleFavoriteStatus()"
     ></friends-contacts>
 
-    Inside of the content, use a new method created on 
+    Inside of the content, use a new method created on
     parent component (next step)
-  
+
 3-New method parent
-  For example, use the method below, and as argument the 
-  data 
+For example, use the method below, and as argument the
+data
 
     methods: {
       toggleFavoriteStatus(friendID) {
-        
+
       }
     }
 
 4-Send child data for parent
-  On the event method in child component(FriendsContacts) insert 
-  your second parameter. You can insert as many as you want.
-
+On the event method in child component(FriendsContacts) insert
+your second parameter. You can insert as many as you want.
 
     methods: {
       toggleFavorite() {
@@ -2071,7 +1882,7 @@ Button, at exampe 4 folder.
     }
 
 5-Registeron child props.
-  Register the data parameter on the child props
+Register the data parameter on the child props
 
     props: {
       id: {
@@ -2081,22 +1892,21 @@ Button, at exampe 4 folder.
     }
 
 6- Call the data(parent)
-  Call the data on the parent component in the child tag 
-  component:
+Call the data on the parent component in the child tag
+component:
 
     <friends-contacts
       :id="friend.id"
       @toggle-favorite="toggleFavoriteStatus()"
     ></friends-contacts>
 
-    If you need to send a simple data by child to 
+    If you need to send a simple data by child to
     parent, it's enough
 
-
 7-Identify friend
-  For our example, we yet need to find which friend
-  be change his favorite status. So on the parente Component
-  complete with:
+For our example, we yet need to find which friend
+be change his favorite status. So on the parente Component
+complete with:
 
      methods: {
       toggleFavoriteStatus(friendID) {
@@ -2107,29 +1917,25 @@ Button, at exampe 4 folder.
       }
     }
 
-
 =========================== Class 8 ============================
 
-
 - Define and Validations Emits
-
 
 Counterpart of the props, the emits alse have a form to make his
 validation and documentation.
 
-That serve us for facilitate the code read, and debugg possible 
+That serve us for facilitate the code read, and debugg possible
 erros.
 
-  - Documentation:
-  Code after props properties: 
+- Documentation:
+  Code after props properties:
 
         emits: [
           'toggle-favorites'
         ]
 
-    
-  -Validation:
-  Cod the validation with:
+-Validation:
+Cod the validation with:
 
         emits: {
           'toggle-favorite': function(id) {
@@ -2142,10 +1948,7 @@ erros.
           }
         },
 
-
-
 =========================== Class 8 ============================
-
 
 Prop / Event falltrhough & Binding all props.
 
@@ -2153,10 +1956,7 @@ For this content, acess link below:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21526774#overview
 
-
-
 =========================== Class 9 ============================
-
 
 Create New Component:
 
@@ -2165,20 +1965,15 @@ The component, will add a new contacts on the friend list.
 
 1-In componentts folder create a new component file. Ex:
 
-
     NewFriend.vue
 
-
 2-In mains.js file, register our new component with:
-
 
     import NewFriend from './components/NewFriend.vue'
 
     app.component('new-friend', NewFriend)
 
-
 3-Build the simple template on our new component:
-
 
     <template>
       <form>
@@ -2211,9 +2006,7 @@ The component, will add a new contacts on the friend list.
       }
     </script>
 
-
 5- Connect the data with inputs using v-model
-
 
     <template>
       <form>
@@ -2232,11 +2025,10 @@ The component, will add a new contacts on the friend list.
       </form>
     </template>
 
-
-6- Create the event, to send this data for the 
+6- Create the event, to send this data for the
 parent component.
 
-  1- Create the emit:
+1- Create the emit:
 
      <script>
       export default {
@@ -2259,7 +2051,7 @@ parent component.
       }
     </script>
 
-  2- Document the emit, above the data propertie:
+2- Document the emit, above the data propertie:
 
      <script>
       export default {
@@ -2270,12 +2062,10 @@ parent component.
         ...
     </script>
 
-
-7- Add style section if you want. 
-
+7- Add style section if you want.
 
 8- Add the child component tag on the parent template
-  component.
+component.
 
      <section>
       <header><h1>My Contact Friends</h1></header>
@@ -2283,15 +2073,15 @@ parent component.
       ...
      </section>
 
-9- Create the event for push the datas from child to data list 
+9- Create the event for push the datas from child to data list
 of parent component:
 
-    methods: 
+    methods:
       addContact(name, phone, email) {
         const newContact = {
           id: new Date().toISOString(),
           name: name,
-          phone: phone, 
+          phone: phone,
           email: email,
           isFavorite: false
         }
@@ -2308,22 +2098,16 @@ of parent component:
 10- Lastly, use the method above in our child component tag
 as value to emit
 
-
     <new-friend
       @add-contact="addContact"
     ></new-friend>
 
-
-This is it, we created a new component with use emits and 
+This is it, we created a new component with use emits and
 send data to parent component.
-
 
 Check this code running on example 5 folder.
 
-
-
 =========================== Class 10 ============================
-
 
 - Delete Friend
 
@@ -2336,34 +2120,30 @@ example 5 folder.
 
     <button>Delete</button>
 
-
-2- Create a new emit, to comunite de parent of event, with the 
+2- Create a new emit, to comunite de parent of event, with the
 data friend ID, that will be deleted
 
     deleteFriend() {
       this.$emit('delete-friend', this. id)
     }
 
-    another form to create the emit, is direct on the 
+    another form to create the emit, is direct on the
     event tag:
 
     <button @click="$emit('delete')">Delete</button>
 
-
-3- Input the emit on the tag button, and register that on 
+3- Input the emit on the tag button, and register that on
 emit list
 
-    
     <button @click="delete-friend">Delete</button>
 
     emits: [
       toggle-favorite,
       delete-friend,
     ]
-  
+
 4- On parent component, call the emit on the child tag component,
 and insert a new method that we will be create
-
 
     @delete-friend="deleteContact"
 
@@ -2385,24 +2165,20 @@ and insert a new method that we will be create
 
 It's simple.
 
-
 =========================== Class 11 ============================
-
 
 Time to practice, check the main.js file on the Challenge folder
 and resolve the challenge.
 
-
 =========================== Class 12 ============================
-
 
 - Provide & Injection 1/4
 
-Sometimes, we need to create a new components just to use like a 
-data route. And this, can be a problem. Supose if you need to 
+Sometimes, we need to create a new components just to use like a
+data route. And this, can be a problem. Supose if you need to
 pass a data, for a net element. For this you need to send the data
 to the child element first, and his will take care to send the data
-to che net component. 
+to che net component.
 
 Ex:
 
@@ -2410,25 +2186,22 @@ Check this video to see more:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463558#questions
 
-
-
 =========================== Class 13 ============================
-
 
 - Provide & inject 2/4
 
-To resolve the last class problem, the Vue offer the Provide and Inject 
+To resolve the last class problem, the Vue offer the Provide and Inject
 methods.
 
-The logic is: 
- 
- 1- The parent component Provide the data/method/computed/etc...
+The logic is:
 
- 2- And child/net can be injected with that data.
+1- The parent component Provide the data/method/computed/etc...
+
+2- And child/net can be injected with that data.
 
 ex:
 
-  1-Provide somthing:
+1-Provide somthing:
 
     // Parent
 
@@ -2443,8 +2216,7 @@ ex:
       }
     }
 
-
-  2-Inject on child
+2-Inject on child
 
     export default {
       inject: [
@@ -2460,7 +2232,6 @@ him?
 In this case, de dinamic is don't work correctly
 
 In this case, we need to convert provide to a method:
-
 
 1- Create provide method:
 
@@ -2490,22 +2261,17 @@ In this case, we need to convert provide to a method:
 
 Provides and injection is used on the example 7 folder.
 
-
-
 =========================== Class 14 ============================
 
-
 - Provides & Injection 3/4
-
 
 As was commented previously, we canse the Provides and Injections
 for functions and methods, the inplement is different:
 
 Injection:
-  The injection is similar, use normally:
+The injection is similar, use normally:
 
-
-  1- Provide:
+1- Provide:
 
     provide() {
       return {
@@ -2513,7 +2279,7 @@ Injection:
       }
     }
 
-  1- Inject:
+1- Inject:
 
     <button @click="function"></button>
 
@@ -2525,20 +2291,15 @@ Injection:
 
 Check the code running on the example 7 folder.
 
-
-
 =========================== Class 15 ============================
 
-
 - Provides & Injection 4/4
-
 
 So when shoud we use the provides and injections and not props and
 methods?
 
 For default, use the props and methods... But when we need to pass
 datas and function for net components, choose the provides and injection.
-
 
 =========================== Class 16 ============================
 
@@ -2548,26 +2309,19 @@ Check the resume module on:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463582#questions
 
-
-
-
 ########################### Module 09 ###########################
-
 
 =========================== Class 01 ============================
 
-
 - Global vs Local Components.
-
 
 Supose we have a component, and that component is used only once
 in a spefic other component.
 
-We don't need to register the component globally. We can register 
+We don't need to register the component globally. We can register
 the component directly on component user.
 
 For this, register the component on the parent script tag:
-
 
     <script>
       import BadgeList from './components/BadgeList.vue';
@@ -2583,7 +2337,6 @@ For this, register the component on the parent script tag:
       }
     </script>
 
-
 In the template tag:
 
     <template>
@@ -2597,32 +2350,26 @@ In the template tag:
 
     </template>
 
-
-See this code running in that example 1 folder 
-
+See this code running in that example 1 folder
 
 =========================== Class 02 ============================
 
-
 - Scoped Style
 
-If you need to style a component, and this componant is a parent, 
-your style will be replicate to child components. 
+If you need to style a component, and this componant is a parent,
+your style will be replicate to child components.
 
 But if you need to restrict this style to a parent component, you
 can use the "scoped style":
 
 You just need add the word "scoped" in our style tag:
 
-
     <style scoped></style>
 
 Check this code running on the example 1 folder, in BadgeList.vue
 file
 
-
 =========================== Class 03 ============================
-
 
 - Slots 1/5
 
@@ -2634,7 +2381,7 @@ Without slot, the vue can't render the component child.
 
 Ex:
 
-  Supose this is a card component:
+Supose this is a card component:
 
     <template>
         <div>
@@ -2642,8 +2389,7 @@ Ex:
         </div>
     </template>
 
-
-  And this, is a component, with dynamic datas:
+And this, is a component, with dynamic datas:
 
     <card-component>
       <header>
@@ -2653,19 +2399,14 @@ Ex:
       <p>{{ infoText }}</p>
     </card-component>
 
-  
-  So with slots, we can render all the components, that are
-  in the card component.
-
+So with slots, we can render all the components, that are
+in the card component.
 
 See this code running on the example 1 folder.
 
-
 =========================== Class 04 ============================
 
-
 - Slots 2/5
-
 
 If your need to use more than one slot, how can vue identify which
 is which?
@@ -2673,46 +2414,41 @@ is which?
 It's simple, naming the slots. Use the name especial property
 on slot tag, and call using v-slot especial property. Ex:
 
-  1- Naming your slot
+1- Naming your slot
 
     <slot name="header"></slot>
 
-  2- Call the slot using the name:
+2- Call the slot using the name:
 
     <template v-slot:header></template>
 
-      If you will use just one slot, we can call 
+      If you will use just one slot, we can call
       the v-slot in a comum tag, without template tag
 
     v-slot = #
 
-  3- We can use the a only one slot without name, this 
-  slot will be DEFAULT:
-
+3- We can use the a only one slot without name, this
+slot will be DEFAULT:
 
 Confirm looking this code running on the example 1 folder
 
 =========================== Class 05 ============================
-
 
 - Slots 3/5
 
 But remember, the component that has slot need be receive the style
 directly on your component vue file.
 
-
 Check the example on example 1 folder.
 
 =========================== Class 06 ============================
 
-
 - Slots 4/5
-
 
   - Default content
 
-  Supose we have a situation, where we need add a slot, but which 
-  slot is not aways render the dynamic content. 
+  Supose we have a situation, where we need add a slot, but which
+  slot is not aways render the dynamic content.
 
   Is this case, we can render a default content.
 
@@ -2724,28 +2460,26 @@ Check the example on example 1 folder.
           <p>Hello world</p>
         </slot>
 
-    And, when you used this slot without content, the default
-    content be showed.
+  And, when you used this slot without content, the default
+  content be showed.
 
   But if we check the browser console, in the case of the default
   content is not be required, the default content will be showed
-  in comentary content. 
+  in comentary content.
 
   For resolve that, we can use de dollar signal with v-if/v-show:
 
         <header v-if="$slots.header"
 
-  Check the change, turn the mod in badgelist.vue file in 
+  Check the change, turn the mod in badgelist.vue file in
   components folder. This foder be in example 1 folder.
-
-
 
   - Slots datas
 
   If you need to know more about the data slots, we can use
   a special vue property. The Mount.
 
-    Like this:
+  Like this:
 
         export default {
           mounted() {
@@ -2753,13 +2487,9 @@ Check the example on example 1 folder.
           }
         }
 
-  
-
 =========================== Class 06 ============================
 
-
 - Slots 5/5
-
 
 We have another possible situation, that props can hel us...
 
@@ -2783,19 +2513,19 @@ On this case use scoped slots.
       }
     }
 
-  For pass this datas for the caller component, we use 
-  v-bind + data.
+For pass this datas for the caller component, we use
+v-bind + data.
 
-  And for call, we use v-slot:
+And for call, we use v-slot:
 
     <template #default="slotProps">
               shorthand for default
     </template>
 
-  the slotProps call, wall props/datas declared on the 
-  slot tag
+the slotProps call, wall props/datas declared on the
+slot tag
 
-  And now we can use the props on the caller component:
+And now we can use the props on the caller component:
 
     template #default="slotProps">
       <h2>{{ slotProps.item }}</h2>
@@ -2805,12 +2535,10 @@ On this case use scoped slots.
 
     </template>
 
-Check the code running on the new component CourseGoals.vue, 
+Check the code running on the new component CourseGoals.vue,
 and App.vue on the example 1 folder.
 
-
 =========================== Class 07 ============================
-
 
 Dynamic Components 1/2
 
@@ -2820,7 +2548,7 @@ a special tag: Component tag
 Firts, create two components: Active Goals, and Manage Goals.
 
 And in the parent component, we will to create two buttons, and
-each buttons will show a component. 
+each buttons will show a component.
 
 - Active Goals
 - Manage Goals
@@ -2840,7 +2568,7 @@ Now, we create a method for the buttons:
     methods: {
       seletctComponent(cmp) {
         this.component = cmp
-      } 
+      }
     }
 
 Lastly, we call the component using the tags:
@@ -2853,21 +2581,17 @@ Lastly, we call the component using the tags:
 
     <component :is="selectedComponent"></component>
 
-    // we use the is property with v-bind for set our data component, 
+    // we use the is property with v-bind for set our data component,
     and render him.
-
 
 Check the code running, with and without component tag the example 2 folder.
 
-
 =========================== Class 08 ============================
-
 
 Dynamic Component 2/2
 
-
-SUpose one of the components, have a input field, and after that 
-user input something, he change the component after press a 
+SUpose one of the components, have a input field, and after that
+user input something, he change the component after press a
 button component (last example).
 
 When the user click back to correct component, your data will be
@@ -2883,32 +2607,23 @@ It's simples, just use that tag above the component tag. Like this:
 
 Now, the user don't lose your data...
 
-
-
 =========================== Class 09 ============================
 
-
 Finishing this module, we have another problem... And for understand
-him, we need to construct the example problem. Check the link below 
+him, we need to construct the example problem. Check the link below
 to construc the example.
-
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21526252#notes
 
-
-
-
 =========================== Class 10 ============================
-
 
 - Teleporting Elements
 
-In our lastly example, we have a problem... The dialog is render in 
-a general div, and this is not semanctic. The correct way, is render the 
+In our lastly example, we have a problem... The dialog is render in
+a general div, and this is not semanctic. The correct way, is render the
 dialog on the body, for example...
 
-
-So how to transfer the dialog to another place? 
+So how to transfer the dialog to another place?
 
 It's simples, using the teleport special vue property:
 
@@ -2925,10 +2640,7 @@ It's simples, using the teleport special vue property:
 
 Check this code running on the example 2 folder.
 
-
-
 =========================== Class 11 ============================
-
 
 - Fragments:
 
@@ -2938,56 +2650,115 @@ we need to encapsulate them in a another tag, like a div...
 Test this, on the MenageGoals.vue file component in the example 2
 folder.
 
-
 =========================== Class 12 ============================
-
 
 Style Guide.
 
-
 So, for naming the Vue components, the docs recomends us to follow
-some rules... 
+some rules...
 
 But, the guide has two special rules:
 
-  For base components, like a cards styles. Use:
+For base components, like a cards styles. Use:
 
     BaseCard.vue
 
-  For single components, used once. 
+For single components, used once.
 
     TheHeader.vue
 
 For for rules, access de vue site.
 
-
 =========================== Class 13 ============================
-
-
 
 -Moving to a different folder Structure.
 
-
-So, work with single Component folder is very hard in big 
+So, work with single Component folder is very hard in big
 projects... So for that, we can create a sub folders components.
 
 Classified with his features.
 
 Check the example on the example 2 folder.
 
-
-
-
 ########################### module 10 ###########################
 
 PROJECT
 
-
-
 ########################### module 11 ###########################
-
 
 
 =========================== Class 01 ============================
 
+Inputs (1/6)
 
+Input text (v-model)
+
+As we'll saw, we can use v-model to get input values, and manipulate
+them using Data and methods.
+
+Ex:
+
+Template:
+
+    <form @submit.prevent="submitForm">
+      <input id="user-name" name="user-name" type="text" v-model="userName" />
+    <form>
+
+  The .prevent, makes impossible browser to refresh the page, and we lost
+  our datas.
+
+Script
+    data() {
+      return {
+        userName: ''
+      }
+    },
+    methods: {
+      submitForm: {
+        console.log('Username: 'this.userName)
+        this.userName = ''
+      }
+    }
+
+Check the example works in Module 11 Folder.
+
+
+=========================== Class 02 ============================
+
+
+inputs (2/6)
+
+Number Inputs 
+
+In the same way that we using a input number, in backstage we receive a number on
+string format.
+
+So, how we can resolve this? Like this:
+
+Diferent of our last example, where we define the data with a empty
+string, now we use the the null value:
+
+Template: 
+
+    <form @submit.prevent="submitForm">
+      <input id="age" name="age" type="number" v-model="userAge">
+    <form>
+
+  If v-model is a type number input, the Vue turn the string input a number
+  automatically.
+
+Script
+  
+    data() {
+      return {
+        userAge = null
+      }
+    },
+    methods: {
+      submitForm() {
+        console.log(this.userAge)
+      }
+    }
+
+
+=========================== Class 03 ============================
