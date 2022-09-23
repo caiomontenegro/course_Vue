@@ -2684,12 +2684,14 @@ Check the example on the example 2 folder.
 
 PROJECT
 
+
+
 ########################### module 11 ###########################
 
 
 =========================== Class 01 ============================
 
-Inputs (1/4)
+Inputs (1/5)
 
 Input text (v-model)
 
@@ -2726,7 +2728,7 @@ Check the example works in Module 11 Folder.
 =========================== Class 02 ============================
 
 
-inputs (2/4)
+inputs (2/5)
 
 Number Inputs 
 
@@ -2764,7 +2766,7 @@ Script
 =========================== Class 03 ============================
 
 
-inputs (3/4)
+inputs (3/5)
 
 Dropsdowns inputs:
 
@@ -2806,7 +2808,7 @@ Take look on this example in Module 11 folder.
 =========================== Class 04 ============================
 
 
-inputs (4/4)
+inputs (4/5)
 
 Checkbox and radio buttons
 
@@ -2922,4 +2924,72 @@ Check the example on module 11 folder
 
 
 
-=========================== Class 04 ============================
+=========================== Class 05 ============================
+
+
+Valid Inputs
+
+Exist any forms for validate our inputs and forms. Here we are
+make one of them:
+
+Here, we will create one of them:
+
+  Script: 
+
+    data() {
+      return {
+        value: 'valid',
+        userName: ''
+      }
+    },
+    methods: {
+      submitForm() {
+        console.log(`Username: ${this.userName}`)
+      },
+      validateUser() {
+        if(this.userName === '') {
+          this.value = 'invalid'
+        } else {
+          this.value = 'valid'
+        }
+      }
+    }
+
+    Now, we have another function method. And it's is responsible 
+    to validate our UserName.
+
+  Template
+
+    <form @submit.prevent="submitForm">
+      <div class="form-control" :class={invalidInput: value === 'invalid'}>
+        <input type="text" name="user-name" id="user-name" v-model.trim="userName"
+        @blur="validateUser"
+        <p v-if="value === 'invalid">
+          Please insert a valid username.
+        </p>
+      </div>
+    <form>
+
+    Take a look above, we use the "trim" method together the v-model, 
+    for the browser remove the spaces in the end and start of string
+
+    We also add a new class, if the data "value" is the same of "invalid"
+    we alternate the style.
+
+    For finish, we present a paragraph if the "userName" is valid, using
+    v-if.
+
+
+  CSS:
+
+    .form-control.invalid input {
+      border-color: red;
+    }
+
+    .form-control.invalid label {
+      color: red;
+    }
+
+Check this example running on the 11 folder.
+
+
