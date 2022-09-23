@@ -2689,7 +2689,7 @@ PROJECT
 
 =========================== Class 01 ============================
 
-Inputs (1/6)
+Inputs (1/4)
 
 Input text (v-model)
 
@@ -2726,7 +2726,7 @@ Check the example works in Module 11 Folder.
 =========================== Class 02 ============================
 
 
-inputs (2/6)
+inputs (2/4)
 
 Number Inputs 
 
@@ -2764,7 +2764,7 @@ Script
 =========================== Class 03 ============================
 
 
-inputs (3/6)
+inputs (3/4)
 
 Dropsdowns inputs:
 
@@ -2801,3 +2801,125 @@ Script:
   
 Take look on this example in Module 11 folder.
 
+
+
+=========================== Class 04 ============================
+
+
+inputs (4/4)
+
+Checkbox and radio buttons
+
+How you should know, we can use v-model in the checkbox options and
+radio buttons. Let's see:
+
+Checkbox:
+
+- More than one options:
+
+We can confirm several checkbox options, so first in case of more than
+one option, we need to create a list data for receive the options
+selecteds.
+
+
+  Script:
+
+    data() {
+      return {
+        options: []
+      }
+    },
+    methods: {
+      confirmForm() {
+        console.log(`Options selected: ${options}`)
+        this.options: []
+      }
+    }
+
+  template: 
+
+    <form @submit.prevent="confirmForm">
+      <div class="form-control">
+        <input type="checkbox" name="videos" value="videos" id="videos" v-model="options">
+        <label for="videos">videos</label>
+        <input type="checkbox" name="photos" value="photos" id="photos" v-model="options">
+        <label for="photos"> 
+      </div>
+    </form>
+
+  Notice: we add the values, for descriminate what option we choosing
+  in our js method.
+
+
+- Just one option
+
+If we have only one checkbox option, (commun in confirm terms) 
+automatically, the value returned is true or false:
+
+  Script:
+
+    data() {
+      return {
+        agree: false
+      }
+    },
+    methods: {
+      agreeTerms() {
+        console.log(`Terms acepted? ${this.agree}`)
+        this.agree = false
+      }
+    }
+
+  template:
+
+    <form @submit.prevente="agreeTerms">
+      <div class="form-control">
+        <input type="checkbox" name="agree" id="agree" v-model="agree" />
+        <label for="for"> I agree the terms and conditions</label>
+      <div>
+    </form>
+
+    
+  How we are use a submit event, and we have only one option checkbox,
+  the vue will take care of changing the checkbox value for True or False.
+
+
+Radios buttons:
+
+For radios buttons, we also use the v-model to get their values. But, 
+for the on the data that will receive the value, should have like default
+value "null". 
+
+And each tag radio input, should receive a single value, for the Vue know
+which value was chosen.
+
+  template:
+
+    <form @submit.prevent="submitForm">
+      <div class="form-control">
+        <input type="radio" name="video" id="video" v-model="option" />
+        <label for="video"> Videos </label>
+        <input type="radio" name="photo" id="photo" v-model="option" />
+        <label for="photo"> Photos </label>
+      </div>
+    </form>
+
+  script: 
+
+    data() {
+      return {
+        option: null
+      }
+    },
+    methods: {
+      submitForm() {
+        console.log(`Option selected: ${this.option}`)
+        this.option = null
+      }
+    }
+
+Check the example on module 11 folder
+
+
+
+=========================== Class 04 ============================
