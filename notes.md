@@ -3008,3 +3008,45 @@ First of all, we'll make our example.
 
 Check the RatingControl component, on the module 11 folder.
 
+
+
+
+=========================== Class 07 ============================
+
+
+Get Custom Control value.
+
+For this, we can use v-model, but under the covers the vue works with
+diferent form.
+
+First we need to pass the a prop for our component:
+
+  Script
+
+    props: ['modelValue'],
+    data() {
+      return {
+        activeOption: this.modelValue
+      }
+    }
+
+After we need to send a emit, for give data for parent:
+
+
+  script
+
+    props: ['modelValue'],
+    emits: ['update:modelValue'],
+    data() {
+      return {
+        activeOpetion: this.modelValue
+      }
+    },
+    methods: {
+      activate(option) {
+        this.activeOption = option
+        this.$emit('update:modelValue', option)
+      }
+    }
+
+
