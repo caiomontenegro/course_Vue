@@ -48,6 +48,9 @@
       </div>
     </div>
     <div class="form-control">
+      <rating-control></rating-control>
+    </div>
+    <div class="form-control">
       <input type="checkbox" name="confirm-terms" id="confirm-terms" v-model="agree" />
       <label for="confirm-terms">Confirm Terms and Conditions</label>
     </div>
@@ -58,44 +61,47 @@
 </template>
 
 <script>
+import RatingControl from "./RatingControl.vue";
 export default {
-  data() {
-    return {
-      userName: '',
-      userAge: null,
-      referrer: 'wom',
-      interest: [],
-      how: null,
-      agree: false,
-      value: "valid"
-    }
-  },
-  methods: {
-    submitForm() {
-      console.log('Username: '+ this.userName)
-      this.userName = ''
-      console.log(`UserAge: ${this.userAge}`)
-      this.userAge = null
-      console.log(`Referrer is: ${this.referrer}`)
-      this.referrer = 'wom'
-      console.log(`checkboxes: ${this.interest}`)
-      this.interest = []
-      console.log(`How: ${this.how}`)
-      this.how = null
-      console.log(`Agree the terms? ${this.agree}`)
-      this.agree = false
+    data() {
+        return {
+            userName: "",
+            userAge: null,
+            referrer: "wom",
+            interest: [],
+            how: null,
+            agree: false,
+            value: "valid"
+        };
     },
-    agreeTerms() {
-      this.agree = !this.agree
+    methods: {
+        submitForm() {
+            console.log("Username: " + this.userName);
+            this.userName = "";
+            console.log(`UserAge: ${this.userAge}`);
+            this.userAge = null;
+            console.log(`Referrer is: ${this.referrer}`);
+            this.referrer = "wom";
+            console.log(`checkboxes: ${this.interest}`);
+            this.interest = [];
+            console.log(`How: ${this.how}`);
+            this.how = null;
+            console.log(`Agree the terms? ${this.agree}`);
+            this.agree = false;
+        },
+        agreeTerms() {
+            this.agree = !this.agree;
+        },
+        validateForm() {
+            if (this.userName === "") {
+                this.value = "invalid";
+            }
+            else {
+                this.value = "valid";
+            }
+        }
     },
-    validateForm() {
-      if(this.userName === '') {
-        this.value = 'invalid'
-      } else {
-        this.value = 'valid'
-      }
-    }
-  }
+    components: { RatingControl }
 }
 </script>
 

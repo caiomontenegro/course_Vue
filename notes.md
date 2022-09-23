@@ -2993,3 +2993,18 @@ Here, we will create one of them:
 Check this example running on the 11 folder.
 
 
+
+=========================== Class 06 ============================
+
+
+Custom Controls
+
+Supose that we have a custom component, like a button or other input type.
+And this custom component, receive custom data that we configure.
+
+How we get the values?
+
+First of all, we'll make our example. 
+
+Check the RatingControl component, on the module 11 folder.
+
