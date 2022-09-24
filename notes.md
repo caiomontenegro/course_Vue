@@ -3128,3 +3128,17 @@ Fetch:
   Now, our Firebase Database, will create a ID for this data, and save them
 
 Check the example running on the module 12 folder.
+
+
+
+=========================== Class 05 ============================
+
+
+HTTP Requests and methods(verbs)
+
+GET - Request datas
+POST - Send and save data
+DELETE - Delete datas from Database
+PUT - Substitute all representations in the server
+PATCH - Update parcial thing in the data.
+
