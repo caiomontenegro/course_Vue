@@ -3142,3 +3142,31 @@ DELETE - Delete datas from Database
 PUT - Substitute all representations in the server
 PATCH - Update parcial thing in the data.
 
+
+
+
+=========================== Class 06 ============================
+
+
+Axios 
+
+The fetch is a browse method to send HTTP request, but we can
+use librarys to sent request of simple form. For example Axios
+
+First we need to instal axios as a dependence of our application:
+
+    npm install -D axios
+
+After that, we need import axios in our component:
+
+    <script>
+    import axios from 'axios'
+    export default{
+
+      axios.post('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json'{
+        name:this.enteredname,
+        rating: this.chosenRating,
+      })
+    }
+    </script>
+
