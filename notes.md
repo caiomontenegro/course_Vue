@@ -3086,3 +3086,45 @@ How to send the our requets?
 We have some alternatives, a popular alternative is Axios, but
 for this course, we use the Fetch 
 
+
+
+=========================== Class 04 ============================
+
+
+Send request for FireBase.
+
+Fetch:
+
+  First add complete the ULR Firebase with file for save our 
+  data:
+
+    fetch('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json')
+
+    We complete the URL with surveys.json, because FireBase force us.
+
+  Now, we need add other parameter as an object: the Header of our request wich request parameter:
+
+    fetch('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json',
+    {
+      method: 'POST',    //method POST
+      headers: {
+        'Content-Type': 'application/json'  //type of content: (json)
+      }
+    })
+
+  Now, we are pass the datas by body:
+
+    fetch('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'applicaton/json'
+      },
+      body: {
+        name: this.enteredName,
+        rating: this.chosenRating
+      }
+    })
+
+  Now, our Firebase Database, will create a ID for this data, and save them
+
+Check the example running on the module 12 folder.
