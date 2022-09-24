@@ -3055,3 +3055,34 @@ After we need to send a emit, for give data for parent:
 ########################### module 11 ###########################
 
 
+=========================== Class 01 ============================
+
+Why we need back-end?
+
+We need to save our data, and send requests for consult or 
+change de datas.
+
+
+=========================== Class 02 ============================
+
+
+Add Back-end
+
+We need a simple back end for our app, and we use the Google
+FireBase on our course.
+
+For this, we just need to create google acount and access the 
+Firebase site.
+
+After, create a Realtime Database.
+
+
+=========================== Class 03 ============================
+
+
+
+How to send the our requets?
+
+We have some alternatives, a popular alternative is Axios, but
+for this course, we use the Fetch 
+
