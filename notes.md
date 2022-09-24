@@ -3170,3 +3170,80 @@ After that, we need import axios in our component:
     }
     </script>
 
+
+
+=========================== Class 07 ============================
+
+
+
+Getting Data
+
+So now, we need to present the data on the scree, for this we'll use
+the fetch for make GET HTTP Request.
+
+First create method:
+
+  Template: 
+
+    <button @click="getData"> View Datas </button>
+
+  script: 
+
+    methods: {
+      getData() {
+        fetch('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json')
+      }
+    }
+
+    The fetch works with GET Request for default, so we don't need to set header and body
+
+Now we need to think on the delay that fetch has for get the data, so FETCH will use
+promisses:
+
+  script:
+  
+    methods: {
+      getData() {
+        fetch('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json').then((response) => {    // this function is for wating datas
+          if (response.ok) {   // if we correctly receive the datas with json file
+            return response.json()   //return json file with datas
+          }
+        }).then((data)=> { //here, this function running after the firs then has been executed
+          console.log(data)
+        })
+      }
+    }
+
+We are already receiving the data, but on json file. We need to transfer the data for a list
+in the client, and present them:
+
+  Create a list, to receive the json data:
+
+    data() {
+      return {
+        results: []
+      }
+    }
+
+Now we need to populate the results list, with the objects json:
+
+
+    methods: {
+      getData() {
+        fetch('https://vue-course-demo-46ae1-default-rtdb.firebaseio.com/surveys.json').then((response) => {    // this function is for wating datas
+          if (response.ok) {   // if we correctly receive the datas with json file
+            return response.json()   //return json file with datas
+          }
+        }).then((data)=> { //here, this function running after the firs then has been executed
+          cons temporaryResults= [] // We create new list for manipulate the Datas
+          for(const id in data) { // Loop for push IDs of datas on the temporaryList
+            temporaryResults.push({
+              id: id,
+              name: data[id].name,
+              rating: data[id].rating,
+            })
+          }
+          this.results = temporaryResults // We officialy populate the result list.
+        })
+      }
+    }
