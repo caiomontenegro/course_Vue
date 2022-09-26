@@ -3251,7 +3251,9 @@ Now we need to populate the results list, with the objects json:
 Check this example on module 12 folder.
 
 
-=========================== Class 07 ============================
+
+
+=========================== Class 08 ============================
 
 
 Loading Data Without click on button.
@@ -3274,3 +3276,59 @@ section, and call the function that make the HTTP request:
 
 Check the module 12 folder for look this example. (Maybe the code is
 commented on UserExperience file.)
+
+
+
+
+=========================== Class 09 ============================
+
+
+
+Add Loading message.
+
+
+If we need to show a loading message while our request is not 
+load?
+
+First, create a new data with boolean value:
+
+Script:
+
+  Create New Data:
+
+    data() {
+      return {
+        isLoading: false
+      }
+    }
+
+  As soon as request start, change the value of new data:
+
+    methods() {
+      loadExperiences() {
+        this.isLoading = false
+      }
+    }
+  
+  After of request receive the values, we turn back the original
+  value of new Data (isLoading):
+
+    then((data)=> {
+      this.isLoading = false
+    })
+
+
+For conclude, we need to add dinamic content on our HTML component
+section, for show the loading message:
+
+HTML:
+
+  Create a new content if the value of new data (isLoading) if it is
+  fake:
+
+    <p if="isLoading">Loading...</p>
+    <ul if="!isLoading">
+      (( component that render the datas ))
+    </ul>
+
+Check that code running on module 12 folder in userExample file component.
