@@ -3331,4 +3331,50 @@ HTML:
       (( component that render the datas ))
     </ul>
 
-Check that code running on module 12 folder in userExample file component.
+Check that code running on module 12 folder in UserExperience file component.
+
+
+
+=========================== Class 10 ============================
+
+
+Don't Data Base case
+
+Supose that we don't need any data on our back-end database. 
+
+In this case, is very easy. We just need to consult our result array
+and add a another dinamic content, in case of empty array. Cause our
+array is populate with our back-end datas
+
+HTML:
+
+    <p v-if="isLoading">Loading...</p>
+
+  Firts, we need to create a new rule for empty database/array:
+
+    <p v-if="isLoading"> Loading... </p>
+    +
+    <p v-else-if="!isLoading && (!results || results.length === 0">
+      The database is empty
+    </p>
+
+    New rule: if loading is false, and results are fase or length less
+    than 0
+
+  For finish, we need to increase changes in our last rule, for show the 
+  datas:
+
+    <p v-if="isLoading"> Loading... </p>
+    <p v-else-if="!isLoading && (!results || results.length === 0">
+      The database is empty
+    </p>
+    +
+    <p v-else-if="!isLoading && results && results.length > 0">
+      <component that show data>
+    </p>
+
+    Rule Change: If loading is false, results array is true, and length 
+    of results is greater than 0
+
+
+See the code working on the module 12 folder, UserExperience file component.
