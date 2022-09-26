@@ -3249,3 +3249,28 @@ Now we need to populate the results list, with the objects json:
     }
 
 Check this example on module 12 folder.
+
+
+=========================== Class 07 ============================
+
+
+Loading Data Without click on button.
+
+
+We can show the datas, without need click the button.
+
+If we remember the life cicle of app, we will see the mounted is
+responsible for mounted Vue instance and render data if this 
+change.
+
+So we just need to create a mounted hook on our end script section 
+section, and call the function that make the HTTP request:
+
+  Script:
+
+    mounted() {
+      this.loadExperiences()
+    }
+
+Check the module 12 folder for look this example. (Maybe the code is
+commented on UserExperience file.)
