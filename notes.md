@@ -3378,3 +3378,58 @@ HTML:
 
 
 See the code working on the module 12 folder, UserExperience file component.
+
+
+
+
+=========================== Class 11 ============================
+
+
+Get Errors
+
+
+Supose we have a error on our request, for this we need to use Catch
+method for resolve.
+
+
+Check the script for resolve:
+
+Script:
+
+    1- Set new data error, with null value cause we don't erro error yet
+
+    data() {
+      return {
+        error: null 
+      }
+    }
+
+    2- After .then promisses, we will create the .catch method. And he, 
+    will execute a new function if .then's failed.
+
+    .catch((error)=> {
+      console.log(error)      // show the error
+      this.isLoading = false    // For don't showwing loading permanently
+      this.error = 'Failed to fetch datas, please try again later' 
+      // ^ the error message that we use in our page.
+    })
+
+    Remember to return the error value to null in the fetch begin lines.
+
+HTML:
+
+    Now, we gonna insert new rule, for show a error paragraph:
+
+    After the success case, we should put the error case immediately:
+
+    <p v-if="isLoading">Loading...</p>
+
+    <p v-else-if="!isLoading && error">
+      {{ error }}
+    </p>
+
+
+Check this example working on the UserExperience component in the module 12 folder.
+
+
+
