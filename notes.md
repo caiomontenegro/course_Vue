@@ -3414,7 +3414,8 @@ Script:
       // ^ the error message that we use in our page.
     })
 
-    Remember to return the error value to null in the fetch begin lines.
+    Remember to return the error value to null before fetch in method begin lines.
+    line 42 on the UserExperience component. at module 12.
 
 HTML:
 
@@ -3433,3 +3434,44 @@ Check this example working on the UserExperience component in the module 12 fold
 
 
 
+
+=========================== Class 12 ============================
+
+
+
+Server Errors
+
+
+We alse can receive server erros, usually we can receive erros from the server
+and this errors are sended with 400 or 500 code errors...
+
+Lets to resolve this:
+
+Script:
+
+    1- Create new Then, with two conditions: Response OK and Response not OK.
+
+    .then(response => {
+      if(reponse.ok) {
+        // conditions if response is ok
+      } else {
+        throw new Error('Could not save data!')
+        // throw new Error, we use for create a new object error, and insert a image error
+      }
+    })
+    .catch((error)=> {
+      console.log(error)
+      this.error = error.message
+      // Now that erros is an object, we call your message.
+    })
+
+HTML:
+
+    <p v-if="error">
+      {{ error }}
+    </p>
+
+
+Now we can handdle erros.
+
+See the code running in the LearningSurvey component at module 12 folder
