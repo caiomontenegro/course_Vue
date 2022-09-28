@@ -3488,7 +3488,7 @@ Multi and Single-page
 
 =========================== Class 01 ============================
 
-Routes (1/)
+Routes (1/3)
 
 Routing Setup 
 
@@ -3521,7 +3521,7 @@ Let's conclude the setup on the next class
 =========================== Class 02 ============================
 
 
-Routes (2/)
+Routes (2/3)
 
 Registering & Rendering Routes
 
@@ -3565,6 +3565,7 @@ for routes. Neither locally nor globally.
 
 =========================== Class 03 ============================
 
+Routes(3/3)
 
 Now we need to configure the links, that direct us for the component
 pages.
@@ -3584,3 +3585,46 @@ For that, we use the router link:
   Now the vue will do the rest for us.
 
 Check this example on the TheNavigation component in the module 13
+
+
+
+=========================== Class 04 ============================
+
+
+Style Router-view
+
+
+Router-vew has a special class to style. The mainly are two:
+
+1-router-link-active
+2-router-link-exact-active
+
+We can se both, if we inspect the router-view when we click him.
+
+The diference is on the route. If you need to style only simple route,
+
+  example:
+
+    localhost:3000/users
+
+  use the router-link-exact-active
+
+  Now, if you want to style all chields routes:
+
+    localhost:3000/users/womens
+
+  use the router-link-active
+
+
+We can customise this class in the main.js file. Example:
+
+  After configure the routes in router:
+
+    routes: [
+      //.....
+    ],
+    linkActiveClass: 'allRoutes'
+
+Check the example on TheNavigation component in the module 13
+
+
