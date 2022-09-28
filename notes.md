@@ -3560,3 +3560,27 @@ for routes. Neither locally nor globally.
   components for special component route:
 
     <router-view> </router-view>
+
+
+
+=========================== Class 03 ============================
+
+
+Now we need to configure the links, that direct us for the component
+pages.
+
+For that, we use the router link:
+
+  1- It's simples, just substitute the old button or link for
+  router link tag:
+
+    <router-link> </router-link>
+
+  2- And configure the link for router:
+
+    <router-link to="/teams"> Team </router-link>
+
+  
+  Now the vue will do the rest for us.
+
+Check this example on the TheNavigation component in the module 13
