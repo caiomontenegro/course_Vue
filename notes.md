@@ -3052,7 +3052,7 @@ After we need to send a emit, for give data for parent:
 
 
 
-########################### module 11 ###########################
+########################### module 12 ###########################
 
 
 =========================== Class 01 ============================
@@ -3475,3 +3475,88 @@ HTML:
 Now we can handdle erros.
 
 See the code running in the LearningSurvey component at module 12 folder
+
+
+
+
+
+########################### module 13 ###########################
+
+
+Multi and Single-page
+
+
+=========================== Class 01 ============================
+
+Routes (1/)
+
+Routing Setup 
+
+So, we can create routes with personal URL for our unique HTML content.
+
+For this, we need to follow the steps bellow:
+
+  Install the vue-router package:
+
+
+    npm install --save vue-router
+
+  
+  In main.js file, import the package:
+
+
+    import {createRouter, createWebHistory} from 'vue-router'
+
+    //create router for create routes, and createWebHistory for
+    create a navigation web createWebHistory on the browser
+
+    const router = createRouter({
+      history: createWebHistory(),
+      routes: []
+    })
+  
+Let's conclude the setup on the next class
+
+
+=========================== Class 02 ============================
+
+
+Routes (2/)
+
+Registering & Rendering Routes
+
+Configuring the main.js
+
+  1- Import the component files:
+
+
+    import TeamsList from './components/teams/TeamsList.vue'
+    import UsersList from './components/users/UsersList.vue'
+
+
+  2 - Add the path and component name on the router:
+
+
+    const router = createRouter({
+      history: createWebHistory(),
+      routes: [
+        { path: '/teams', component: TeamsList}
+        // path is URL Path, and component is name of component imported above ^
+      ]
+    })
+
+  3 - For finish, use the 'use' method for allow the app use another
+  packages:
+
+
+    app.use(router)
+
+
+Now is important know, we don't need import the components that we using
+for routes. Neither locally nor globally.
+
+
+  So, in the component that call the components routes, substitute the 
+  components for special component route:
+
+    <router-view> </router-view>
