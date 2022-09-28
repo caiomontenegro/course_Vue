@@ -3628,3 +3628,39 @@ We can customise this class in the main.js file. Example:
 Check the example on TheNavigation component in the module 13
 
 
+
+
+=========================== Class 05 ============================
+
+
+Programmatic navigation
+
+Supose that we have a form, and after send datas by form, the page
+should be change content.
+
+For this, we use $router methods:
+
+  First, create a new simple button for this example:
+
+    <button @click="confirmInput"> Confirm </button>
+
+  After, we need to create the method confirmInput, and
+  send the $router method:
+
+
+    methods: {
+      confirmInput() {
+        this.$router.push('/teams')
+        //Push to insert the new path ou the router history, 
+
+      }
+    }
+
+It's very simple, we need other router methods, like:
+
+    $router.back() to return the last content page
+    $router.forward() to go for next content, after come back content.
+
+
+Check the exampele on the UsersList component file in the module 13 folder
+
