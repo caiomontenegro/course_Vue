@@ -3750,3 +3750,42 @@ If we need work with dinamic links, we can use router link dinamics:
 
 Check this code running on the TeamsItem component on the module 13 folder.
 
+
+
+=========================== Class 08 ============================
+
+
+
+Update Params Data with Watchers
+
+
+When we are in the dinamic URL on our Browser, and we change
+the dinamic param, but in the same route. The browser don't do
+nothing, because he use the cache, instead destruct and create
+a new DOM.
+
+
+So for resolve this, we use the watchers for resolve this.
+
+
+  Script:
+
+    methods: {
+      loadTeamMembers(route) {
+        // code
+      } 
+    }
+    watch: {
+      $route(newRoute) {
+        // ^^^ the watcher will be executed when $route receive a new Route param
+
+        this.loadTeamMembers(newRoute)
+        // And after execute this method ^^^
+      }
+    }
+
+Check the example runnin on the teamMembers component in the module 13 folder.
+
+
+
+=========================== Class 09 ============================

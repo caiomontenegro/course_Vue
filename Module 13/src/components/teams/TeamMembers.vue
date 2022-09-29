@@ -9,6 +9,7 @@
         :role="member.role"
       ></user-item>
     </ul>
+    <router-link to="/teams/t2">Go to Team 2</router-link>
   </section>
 </template>
 
@@ -26,8 +27,9 @@ export default {
       members: []
     };
   },
-  created() {
-    const teamId = this.$route.params.teamId  // receive the teamId route param
+  methods: {
+    loadTeamMembers(route) {
+    const teamId = route.params.teamId  // receive the teamId route param
 
     const selectedTeam = this.teams.find(team => team.id === teamId) // ^^^ In teams list, we search for for team param, and if team.id equals teamId, return the value
 
@@ -43,6 +45,17 @@ export default {
     }
     this.members = selectedMembers // Update the members with seletedMembers array.
     this.teamName = selectedTeam.name //update the teamName with selectedTeam.name
+    }
+  },
+  created() {
+    // ONche the Dom is mounted (before fo the page is render)
+    this.loadTeamMembers(this.$route)
+  },
+  watch: {
+    $route(newRoute) {
+      // ^^^ when the route change.
+      this.loadTeamMembers(newRoute)
+    }
   }
 };
 </script>
