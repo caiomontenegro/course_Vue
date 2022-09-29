@@ -18,6 +18,7 @@ import UserItem from '../users/UserItem.vue';
 
 export default {
   inject: ['users', 'teams'], // receive the app provide datas.
+  // props: ['teamId'], for use props as route params
   components: {
     UserItem
   },
@@ -29,7 +30,8 @@ export default {
   },
   methods: {
     loadTeamMembers(route) {
-    const teamId = route.params.teamId  // receive the teamId route param
+    // loadTeamMembers(teamID) for use props as route params
+    const teamId = route.params.teamId  
 
     const selectedTeam = this.teams.find(team => team.id === teamId) // ^^^ In teams list, we search for for team param, and if team.id equals teamId, return the value
 
@@ -50,12 +52,16 @@ export default {
   created() {
     // ONche the Dom is mounted (before fo the page is render)
     this.loadTeamMembers(this.$route)
+    // this.loadTeamMembers(this.teamID) for use props as route params
+
   },
   watch: {
     $route(newRoute) {
       // ^^^ when the route change.
       this.loadTeamMembers(newRoute)
     }
+    // teamId(newId) 
+      // this.loadTeamMembers(newID) for use props as route params
   }
 };
 </script>

@@ -3789,3 +3789,26 @@ Check the example runnin on the teamMembers component in the module 13 folder.
 
 
 =========================== Class 09 ============================
+
+
+Passing Params as Props.
+
+
+Is much better use props than params route. Because our component that
+receive the datas is more usefull.
+
+So for this, we just need to insert the name of props in the component:
+
+  Script Component
+
+    props: ['teamId']
+
+And lastly, allow the props on the route:
+
+  Main.js
+
+    { path: '/teams/:teamId', component: Teste, props: true}
+
+
+Check the coments on the TeamMembers component file in the module 13 folder 
+to see the code.
