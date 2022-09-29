@@ -3857,7 +3857,7 @@ Se the code on the main.js file in the module 13 folder.
 =========================== Class 11 ============================
 
 
-Nested Routes
+Nested Routes 
 
 We can insert routes, inside of another route. That is Nested Routes.
 
@@ -3879,3 +3879,48 @@ For this, we need use children params routes:
 
 See the code on the main.js and TeamsList.vue component in the
 module 13 folder.
+
+
+
+=========================== Class 12 ============================
+
+
+Named Routes
+
+It's better call dinamic routes, using props and named routes.
+That way, we have less work to change route datas:
+
+
+  Component HTML:
+
+    <router-link :to="teamMembersUrl"> View Members </router-link>
+
+  Component Script:
+
+    props: [
+      'id', 
+      'name', 
+      'memberCount'
+    ],
+    Computed: {
+      teamMembersUrl() {
+        return {name = 'team-members', params: {teamId: this.id}}
+      }
+    }
+
+    Look, with only name of route, in a object, the Vue, find
+    the correct Route, and you don't need update the paths
+    on script components.
+
+  Main.js
+
+    { name: 'teams',
+     path: '/teams', 
+     component: TeamsList, 
+     children: [
+      { name: 'team-members',  path: ':teamId', component: TeamMembers, props: true} 
+    ]}
+
+
+Check this code running on the main.js and teamsItem Component in the module 13 
+folder.

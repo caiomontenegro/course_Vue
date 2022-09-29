@@ -11,11 +11,18 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', redirect: '/teams'}, // this path, redirect user to '/teams'
-    { path: '/teams', component: TeamsList, children: [
-      { path: ':teamId', component: TeamMembers, props: true} // For children paths, we don't need type the complere route, just the last route param.
+
+    { name: 'teams',
+     path: '/teams', 
+     component: TeamsList, 
+     children: [
+      { name: 'team-members',  path: ':teamId', component: TeamMembers, props: true} // For children paths, we don't need type the complere route, just the last route param.
     ]}, // our-domain.com/teams => TeamsList
+
     { path: '/users', component: UsersList }, // we can use "alias:" propertie, to use more than one path.
+
     // { path: '/teams/:teamId', component: TeamMembers, props: true}, // path with params, remember of register path with params last.
+
     { path: '/:notFound(.*)', component: NotFound }
   ]
 });
