@@ -3664,3 +3664,37 @@ It's very simple, we need other router methods, like:
 
 Check the exampele on the UsersList component file in the module 13 folder
 
+
+
+=========================== Class 06 ============================
+
+
+Send params with routes:
+
+
+Sometimes, we need to send datas as params through the routes.
+
+It's simple, the real work is to use the datas on your components.
+
+  1 - On our main.js file, import the component that receive the 
+  params:
+
+    import TeamMembers from './components/teams/TeamMembers.vue'
+
+  2 - Now, add a new route, with name of param:
+
+    {path: '/teams/:teamId', component: tamMbembers}  
+
+    // When we input the ':' before the route, means all that 
+    are after the ':' be params
+
+  3 - Rembemer, always that we use a params with our route, 
+  register them last, for avoid mistakes.
+
+
+Check the TeamMembers.vue file for see the code running, in the module 13 folder.
+
+Link with more explanations:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879340#overview
+

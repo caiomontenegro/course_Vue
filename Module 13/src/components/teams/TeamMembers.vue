@@ -16,18 +16,34 @@
 import UserItem from '../users/UserItem.vue';
 
 export default {
+  inject: ['users', 'teams'], // receive the app provide datas.
   components: {
     UserItem
   },
   data() {
     return {
-      teamName: 'Test',
-      members: [
-        { id: 'u1', fullName: 'Max Schwarz', role: 'Engineer' },
-        { id: 'u2', fullName: 'Max Schwarz', role: 'Engineer' },
-      ],
+      teamName: '',
+      members: []
     };
   },
+  created() {
+    const teamId = this.$route.params.teamId  // receive the teamId route param
+
+    const selectedTeam = this.teams.find(team => team.id === teamId) // ^^^ In teams list, we search for for team param, and if team.id equals teamId, return the value
+
+    const members = selectedTeam.members // result of our last .find() ^^^ (IDs members) of team
+
+    const selectedMembers = [] // Here we will populate with members must be shown.
+
+    for(const member of members) {
+      const selectedUser = this.users.find(user => user.id === member)
+      // find the data user in members ID list
+      selectedMembers.push(selectedUser)
+      // Insert the users on the selectedMembers array.
+    }
+    this.members = selectedMembers // Update the members with seletedMembers array.
+    this.teamName = selectedTeam.name //update the teamName with selectedTeam.name
+  }
 };
 </script>
 
