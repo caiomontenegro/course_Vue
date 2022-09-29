@@ -3698,3 +3698,55 @@ Link with more explanations:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879340#overview
 
+
+
+
+=========================== Class 07 ============================
+
+
+- Navigation & Dinamics Paths. 
+
+
+If we need work with dinamic links, we can use router link dinamics:
+
+  1 - Create our dinamic link:
+
+    <router-link> View Members </router-link>
+
+  Now, we have two ways: 
+
+  1- Set the dinamic link in the router-link tag:
+
+    HTML:
+
+    <router-link :to="/teams/ + dinamicValue"> View Members </router-link>
+
+    Script:
+
+    data() {
+      return {
+        dinamicValue = 'supose'
+      }
+    }
+
+  2- Set the route with Computed:
+
+    HTML:
+
+    <router-link :to="membersTeamURL"> View Members </router-link>
+
+    Script:
+
+    data() {
+      return {
+        dinamicValue = 'supose'
+      }
+    },
+    computed: {
+      membersTeamURL() {
+        return `/team/${this.dinamicValue}`
+      }
+    }
+
+Check this code running on the TeamsItem component on the module 13 folder.
+
