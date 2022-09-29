@@ -3745,6 +3745,7 @@ If we need work with dinamic links, we can use router link dinamics:
     computed: {
       membersTeamURL() {
         return `/team/${this.dinamicValue}`
+        // It's wrong way, seee the class 12 to correct way.
       }
     }
 
@@ -3924,3 +3925,39 @@ That way, we have less work to change route datas:
 
 Check this code running on the main.js and teamsItem Component in the module 13 
 folder.
+
+
+
+=========================== Class 13 ============================
+
+
+
+Query Params (Optional)
+
+
+It's used for find and loading component, but maybe can be used
+for pass extra information for some component.
+
+For use, we need to use query parameter route.
+
+  Component Script:
+
+    computed: {
+      teamMembersUrl() {
+        // return `'/teams/${this.id}`
+        return {
+          name: 'team-members',
+          params: { teamId: this.id },
+          query: { sort: 'asc' },
+        };
+      },
+    }
+
+  Now we can extract the query, with:
+
+    console.log(this.$route.query)
+
+
+
+
+=========================== Class 14 ============================

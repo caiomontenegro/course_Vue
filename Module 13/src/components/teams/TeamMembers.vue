@@ -61,6 +61,7 @@ export default {
       this.loadTeamMembers(newRoute)
     }
     // teamId(newId) 
+    //console.log(this.$route.query)
       // this.loadTeamMembers(newID) for use props as route params
   }
 };
