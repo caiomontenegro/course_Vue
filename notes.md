@@ -3845,6 +3845,37 @@ But if the user, type a undefine route, we can use Catch All:
     {path: '/:notFound(.*)', component: NotFound}
     // or, we simple can redirect the user a another valid route.
 
+    remember to register that in the as the last router, for not
+    create a overlap.
+
 
 Se the code on the main.js file in the module 13 folder.
 
+
+
+
+=========================== Class 11 ============================
+
+
+Nested Routes
+
+We can insert routes, inside of another route. That is Nested Routes.
+
+For this, we need use children params routes:
+
+    {path: '/teams', component: TeamList, children: [
+      {path: '/:user', component: UserList}
+    ]}    
+
+  The second step, is create a router-view tag on the parent route
+  component:
+
+    <template>
+      <router-view></router-view>
+    </template>
+
+  The logic is the same for roots paths.
+
+
+See the code on the main.js and TeamsList.vue component in the
+module 13 folder.
