@@ -3812,3 +3812,39 @@ And lastly, allow the props on the route:
 
 Check the coments on the TeamMembers component file in the module 13 folder 
 to see the code.
+
+
+
+=========================== Class 10 ============================
+
+
+
+Redirecting & "Catch All" routes
+
+It's alse possible difine more than one route for a unique 
+component. 
+
+For this use 'alias' param route.
+
+    {path: '/teams', component: TeamsList, alias: '/'}
+
+    //with this, both the routes: /teams and / direct the user for TeamList component.
+
+
+Beyond that, we can redirect the user to a route if them access anoter route
+
+
+    {path: '/', redirect: '/teams'}
+
+    // Here, the URL in the browser will change togeter with content
+
+
+But if the user, type a undefine route, we can use Catch All:
+
+
+    {path: '/:notFound(.*)', component: NotFound}
+    // or, we simple can redirect the user a another valid route.
+
+
+Se the code on the main.js file in the module 13 folder.
+
