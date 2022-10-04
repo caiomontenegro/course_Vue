@@ -3961,3 +3961,61 @@ For use, we need to use query parameter route.
 
 
 =========================== Class 14 ============================
+
+
+Multiple Components with only one router.
+
+
+We can render more than one component in the same router. For this
+we need named the components. Like this:
+
+  1- Call another router-view tag for the other component in the
+  route:
+
+  HTML
+
+    <template>
+      <div>
+        <router-view></router-view>
+      </div>
+      <div>
+        <router-view></router-view>
+      </div>
+    </template>
+
+  
+  2- In the Main.js file, chose the route that receive the other 
+  component to render, and change the "component" parameter for 
+  "components" parameter (on plural). That parameter, receive 
+  an object, and this object receive the components with names:
+
+    
+  JS:
+
+    const router = createRouter({
+      history: createWebHistory(),
+      routes: [
+        {path: '/teams', components: {
+          default: TeamsList,   // Default Component
+          footer: TeamsFooter.
+        }}
+      ]
+    })
+
+  3- Now, we will descriminate which component should be render
+  in each router-view tag, using his names:
+
+  HTML 
+
+    <template>
+      <div>
+        <router-view></router-view>   // Caution: tag without name, is default value
+      </div>
+      <div>
+        <router-view name="footer"></router-view>
+      </div>
+    </template>
+
+
+Check this code running in the mains.js file, and App.js file in the Module 13 
+folder.
