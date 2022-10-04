@@ -32,7 +32,13 @@ const router = createRouter({
     // { path: '/teams/:teamId', component: TeamMembers, props: true}, // path with params, remember of register path with params last.
 
     { path: '/:notFound(.*)', component: NotFound }
-  ]
+  ],
+  scrollBehavior(to, from , savedPosition) {
+    if(savedPosition) {
+      return savedPosition
+    } 
+    return {left: 0, top: 0} 
+  }
 });
 
 const app = createApp(App)

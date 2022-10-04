@@ -4019,3 +4019,47 @@ we need named the components. Like this:
 
 Check this code running in the mains.js file, and App.js file in the Module 13 
 folder.
+
+
+
+=========================== Class 15 ============================
+
+
+Controlling the Scroll
+
+For improve the user experience, we can controll the scroll according with
+page change:
+
+The method is scrollBehavior.
+
+This method, use 3 params:
+
+- To (for where the user click)
+- from (From where user comes)
+- savedPostion (last postion of user was)
+
+Using:
+
+  Main.js: 
+
+  After paths, put scrollBehavior:
+
+      path{...},
+    ],
+    scrollBehavior(to, from, savedPosition) {
+      if(savedPosition) {
+        return savedPosition
+      }
+      return {left: 0, top: 0}
+    }
+
+    Here we sayed: If we have a last saved Postion, return there. But if not, 
+    go to the top.
+
+See this code running on the main.js file, in the module 13 folder.
+
+Check the class in this link:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879382#overview
+
+
