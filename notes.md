@@ -4063,3 +4063,31 @@ Check the class in this link:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879382#overview
 
 
+
+=========================== Class 16 ============================
+
+
+Navigation Guards
+
+We can block navigation user, if he don't fulfill a condition.
+
+For this we use the guard. The guards are methods: "beforeEach", and
+inside of beforeEach(), we can create some methods that executed before
+the paths is called:
+
+  Main.js 
+
+    router.beforeEach(function(to, from, next))
+    // to = for where we go
+    // from = where we from
+    // next = the method that be executed
+      console.log(to, from)
+      next(false) = block the navigation
+      next() or next(true) = allow the navigation
+      next('/route') = redirect a some route
+
+Check this code running on the main.js file in the module 13 folder.
+
+Link for this class:
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879388#overview
+
