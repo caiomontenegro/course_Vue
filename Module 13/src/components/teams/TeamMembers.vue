@@ -55,6 +55,10 @@ export default {
     // this.loadTeamMembers(this.teamID) for use props as route params
 
   },
+  beforeRouteUpdate(to, from, next) {
+    this.loadTeamMembers(to.params.teamId)
+    next()
+  },
   watch: {
     $route(newRoute) {
       // ^^^ when the route change.

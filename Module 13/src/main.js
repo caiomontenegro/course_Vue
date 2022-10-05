@@ -27,7 +27,13 @@ const router = createRouter({
     { path: '/users', components: {
       default: UsersList,
       footer: UsersFooter
-    } }, // we can use "alias:" propertie, to use more than one path.
+      },
+      beforeEnter(to, from, next) {
+        console.log('users beforeEnter') 
+        console.log(to, from)
+        next()
+      }
+     }, // we can use "alias:" propertie, to use more than one path.
 
     // { path: '/teams/:teamId', component: TeamMembers, props: true}, // path with params, remember of register path with params last.
 

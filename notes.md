@@ -4067,7 +4067,7 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879382#o
 =========================== Class 16 ============================
 
 
-Navigation Guards
+Navigation Guards (1/3)
 
 We can block navigation user, if he don't fulfill a condition.
 
@@ -4090,4 +4090,49 @@ Check this code running on the main.js file in the module 13 folder.
 
 Link for this class:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879388#overview
+
+
+
+=========================== Class 17 ============================
+
+
+navigation Guards (2/3)
+
+
+Before Each for especific route (Before Enter):
+
+  First way: After send the path configs main.js, insert:
+
+     { path: '/users', components: {
+      default: UsersList,
+      footer: UsersFooter
+      },
+      beforeEnter(to, from, next) {
+        console.log('users beforeEnter') 
+        console.log(to, from)
+        next()
+      }
+     }
+
+  Second way: On component, insert the method (BeforeRouteEnter):
+
+    beforeRouteEnter(to, from, next) {
+      console.log(to, from)
+      next()
+    }
+
+
+Guard for updated component:
+
+
+  In the component, use the method (BeforeRouteUpdate):
+
+    beforeRouteUpdate(to, from, next) {
+      console.log(to, from)
+      next()
+    }
+
+
+Chech this code running on the main.js, UserList component file and TeamMembers
+component file in the module 13 folder
 
