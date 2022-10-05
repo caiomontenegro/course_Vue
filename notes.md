@@ -4213,3 +4213,50 @@ Ex:
 lik for video class:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879406#overview
+
+
+
+
+
+=========================== Class 20 ============================
+
+
+Meta Fields
+
+
+There is another router propertie, that we can use. The Meta.
+
+The Meta store any kind of value, and this value can be use
+in any local of our route (where $route is avaiable)
+
+And we can use the values in our guards.
+
+Ex:
+
+  Main.js
+
+    { name: 'teams',
+      path: '/teams', 
+      meta: {needsAuth: true},
+      components: {
+        default: TeamsList,
+        footer: TeamsFooter,
+     }, 
+
+
+    router.beforeEach(function(to, from, next) {
+      console.log('Global-members') 
+      console.log(to, from)
+      if (to.meta.needsAuth) {
+        console.log('Needs auth!')
+        next()
+      } else {
+        next()
+      }
+    }
+
+Link for the explanation:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879416#overview
+
+
