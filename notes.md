@@ -4136,3 +4136,32 @@ Guard for updated component:
 Chech this code running on the main.js, UserList component file and TeamMembers
 component file in the module 13 folder
 
+
+
+=========================== Class 18 ============================
+
+
+
+Navigation Guards (3/3)
+
+
+Also exists another guard for before nevigations, is the afterEach:
+
+We use to send datas about navigation:
+
+  Main.js 
+
+    router.afterEach(function(to, from) {
+      console.log('Global AfterEach') 
+      console.log(to, from)
+    })
+
+
+See the code running on the main.js file in the module 13 folder.
+
+Link for video:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879402#overview
+
+
+
