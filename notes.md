@@ -4067,7 +4067,7 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879382#o
 =========================== Class 16 ============================
 
 
-Navigation Guards (1/3)
+Navigation Guards (1/4)
 
 We can block navigation user, if he don't fulfill a condition.
 
@@ -4096,7 +4096,7 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879388#o
 =========================== Class 17 ============================
 
 
-navigation Guards (2/3)
+navigation Guards (2/4)
 
 
 Before Each for especific route (Before Enter):
@@ -4142,7 +4142,7 @@ component file in the module 13 folder
 
 
 
-Navigation Guards (3/3)
+Navigation Guards (3/4)
 
 
 Also exists another guard for before nevigations, is the afterEach:
@@ -4165,3 +4165,51 @@ https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879402#o
 
 
 
+
+
+=========================== Class 19 ============================
+
+
+
+Navigation Guards (4/4)
+
+
+The last guard, is the RouteLeave. 
+
+That guard, is executed when the user leave the page. An example for 
+his use, is when the user don't save your datas in forms.
+
+Ex:
+
+  Component:
+
+  HTML
+
+    <template>
+      <button @click="saveChange">Save the Changes</button>
+    </template>
+
+  JS:
+
+    data() {
+      return {
+        changeSaved: false
+      }
+    },
+    methods: {
+      saveChange() {
+        this.changeSaved = true
+      },
+      beforeRouteLeave(to, from, next) {
+        if(this.changeSaved === true) {
+          next() // Changes saved, go straight.
+        } else {
+          next(changeSaved) // ChangeSaved is false by default, so block
+        }
+      }
+    }
+
+
+lik for video class:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879406#overview
