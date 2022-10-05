@@ -4260,3 +4260,26 @@ Link for the explanation:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879416#overview
 
 
+
+
+=========================== Class 21 ============================
+
+
+Organazing
+
+
+For conclude this module, let's organize the our route content.
+
+First, is important em big apps, create a new page with name
+"Pages", for store de component that render as page.
+
+Second, create a new js file, with the name "router.js". And 
+there, put all router logic, and in the end export the router with:
+
+    export default router
+
+And in main.js file, import the router:
+
+    import router from './router.js'
+
+    
