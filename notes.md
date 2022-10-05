@@ -4282,4 +4282,12 @@ And in main.js file, import the router:
 
     import router from './router.js'
 
-    
+
+
+
+
+########################### module 14 ###########################
+
+
+VUEX
+
