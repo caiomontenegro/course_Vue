@@ -4289,5 +4289,56 @@ And in main.js file, import the router:
 ########################### module 14 ###########################
 
 
+=========================== Class 01 ============================
+
+
 VUEX
+
+Vuex is for help us manege the stats, where stat is equals data.
+He replace the provide inject, cause his is more easy to manipulate
+the states.
+
+
+First, install the vuex with:
+
+    npm install --save vuex@next
+
+    @next = latest version
+
+
+Create the Vuex store:
+
+  In main.js file:
+
+    import { createStore } from 'vuex'
+
+    const store = createStore({
+      state() {
+        return {
+          //here our datas/states
+          counter: 0  
+        }
+      }
+    })
+
+    app.use(store)
+
+
+On the component, we can use the state with:
+
+    {{ $store.state.'state name' }}
+
+    On that example:
+
+    <h3>
+      {{ $store.state.counter }}
+    </h3>
+
+
+Check this example on the main.js file and app.vue component in them
+module 14 folder.
+
+
+
+
 
