@@ -4622,3 +4622,76 @@ code is securty for async bugs.
 
 Check this example in Main.js file, ChangeCounter and App components, in the
 module 14 folder.
+
+
+=========================== Class 07 ============================
+
+
+
+Mappers
+
+
+Exist more easy away to call our getters and actions in your components.
+For that, we use the mappers:
+
+Map Getters:
+
+  Ex:
+
+  Template:
+
+    <template>
+      <h3>
+        {{finalCounter}}
+      </h3>
+    </template>
+
+  Component Js:
+
+    <script>
+    import { mapGetters } from 'vuex'
+
+    export default {
+      computed:
+        ...mapGetters(['finalCounter'])
+
+        or
+
+        ...mapGetters({
+          final: 'finalCounter' // Use the final on the template
+        })
+    }
+
+
+Map Actions:
+
+  Ex:
+
+  Template: 
+
+    <template>
+      <button @click="increment">add 1</button>
+      <button @click="increase({value: 11})">add 11</button>
+    <tempalte>
+
+  Component Js:
+
+    <script>
+    import { mapActions } from 'vuex'
+
+    export default {
+      methods:
+        ...mapActions(['increment', 'increase'])
+
+        or
+
+        ...mapActions({
+          inc: increment
+          increase: increase
+        })
+    }
+    </script>
+
+
+Check this example on the TheCountar and ChangeCounter components, 
+in the module 14 folder.
