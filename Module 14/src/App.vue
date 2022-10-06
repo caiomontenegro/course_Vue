@@ -23,13 +23,23 @@ export default {
     addOne() {
       // this.$store.state.counter++
       // this.$store.commit('increment')
-      this.$store.commit('increase', { value: 10}) // We don't need use object values, we can use other kinds of values to. As boleean, strings, number, etc.
+
+
+      // mutation:
+      // this.$store.commit('increase', { value: 10}) // We don't need use object values, we can use other kinds of values to. As boleean, strings, number, etc.
 
       // We can type this, like this:
       // this.$store.commit({
       //  type: 'increase',
       //  value: 10
       // })
+
+
+      // actions:
+      this.$store.dispatch({
+        type: 'increase', 
+        value: 10
+      })
     }
   }
 };

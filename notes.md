@@ -4556,3 +4556,69 @@ link for this class:
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879732#overview
 
 
+
+
+=========================== Class 06 ============================
+
+
+Actions
+
+
+Mutations, don't allow us to work with asyncronous code. Because, 
+that, can generate bugs with our states.
+
+
+For that, if we need to use asynchronous code, we can use Actions.
+
+Always, create action, betweeen the mutations and getters. To guarantee
+us, we're sure about our synchronous code.
+
+ex: 
+
+  Main.js
+
+    const store = createStore ({
+      state() {
+        return {
+          counter: 0
+        }
+      },
+      mutations: {
+        increment(state, payload) {
+          state.counter = state.counter + payload
+        }
+      },
+      actions: {
+        increment(context) {
+          setTimeout(function() {
+            context.commit('increase', payload)
+          }, 2000)
+
+          // Here, we have a async code, and we can declarete him with:
+            context.commit(name of mutation, parameter)
+        }
+      }
+    })
+
+  Component Js:
+
+      <script>
+      export default {
+        methods: {
+          this.$store.dispatch({
+            type: 'increment'
+          })
+
+          or
+
+          this.$store.dispatch('increment')
+        }
+      }
+      </script>
+
+Now, we can use the async code, and same that we don't use, our
+code is securty for async bugs.
+
+
+Check this example in Main.js file, ChangeCounter and App components, in the
+module 14 folder.

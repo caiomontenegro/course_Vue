@@ -7,7 +7,10 @@ export default {
   methods: {
     addOne() {
       // this.$store.state.counter++
-      this.$store.commit('increment')
+      // this.$store.commit('increment')
+      this.$store.dispatch({
+        type: 'increment'
+      })
     }
   }
 }
