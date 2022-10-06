@@ -4427,3 +4427,43 @@ Now, we just need call this mutation in your components:
 Check that code running on the main.js file, ChangeCounter and App.vue
 components in the module 14 folder.
 
+
+
+=========================== Class 03 ============================
+
+
+Payloads
+
+
+Payloads are a method for use parametes on our mutations methods.
+
+So suppose we need to increase a dinamic value, on our mutations:
+
+  Main.js:
+
+    mutations: {
+      increase(state, payload) {  // We can named, as we want.
+        state.counter = state.counter + payload.value
+      }
+    }
+
+    On that example, we use payload as object value. But We
+    can use any kind of value, as strings, number, boleeans, etc..
+
+  Component Js:
+
+    methods: {
+      addOne() {
+        this.$store.commit('increase', {value: 10})
+
+        // but we also can type this, as:
+
+        this.$store.commit({
+          type: 'increase', 
+          value: 10
+        })
+      }
+    }
+
+Check this example code running on the main.js file and 
+app.js component, in the module 14 folder.

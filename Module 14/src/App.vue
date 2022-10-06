@@ -2,7 +2,7 @@
   <base-container title="Vuex"></base-container>
     <the-counter></the-counter>
     <change-counter></change-counter>
-    <button @click="addOne">Add 1</button>
+    <button @click="addOne">Add 10</button>
 </template>
 
 <script>
@@ -19,7 +19,14 @@ export default {
   methods: {
     addOne() {
       // this.$store.state.counter++
-      this.$store.commit('increment')
+      // this.$store.commit('increment')
+      this.$store.commit('increase', { value: 10}) // We don't need use object values, we can use other kinds of values to. As boleean, strings, number, etc.
+
+      // We can type this, like this:
+      // this.$store.commit({
+      //  type: 'increase',
+      //  value: 10
+      // })
     }
   }
 };
