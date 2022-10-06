@@ -4340,5 +4340,39 @@ module 14 folder.
 
 
 
+=========================== Class 02 ============================
+
+
+Connect states:
+
+So, for use our last class states, we can use the computeds.
+
+Ex:
+
+  Template:
+    
+    <template>
+      <h3>{{ counter }} </h3>
+      <button @click="addOne">Add one more </button>
+    </template>
+
+
+  Js:
+
+    computed: {
+      counter() {
+        return this.$store.state.counter
+      }
+    },
+    methods: {
+      addOne() {
+        this.$store.state.counter++
+        // we are plus one more on uor counter.
+      }
+    }
+
+We can use this component, in another new component, if we want.
+
+
 
 
