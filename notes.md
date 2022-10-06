@@ -4429,7 +4429,7 @@ components in the module 14 folder.
 
 
 
-=========================== Class 03 ============================
+=========================== Class 04 ============================
 
 
 Payloads
@@ -4467,3 +4467,92 @@ So suppose we need to increase a dinamic value, on our mutations:
 
 Check this example code running on the main.js file and 
 app.js component, in the module 14 folder.
+
+
+
+
+=========================== Class 05 ============================
+
+
+Getters
+
+So, if we need to modify the state values, before to use them
+in mutations, we can use Getters.
+
+Getters, will modify the states and we can call them on our 
+components, whitout need calculate in the component.
+
+  Main.js:
+
+    const store = createStore ({
+      state() {
+        return {
+          counter: 0
+        }
+      },
+      getters: {
+        finalCounter(state) {
+          state.counter = state.counter * 2
+        }
+      }
+    })
+
+  Component:
+
+    <template>
+      <h3> {{ counter }} </h3>
+    </template>
+
+    <script>
+    export default {
+      computed: {
+        counter() {
+          return this.$store.getters.finalCounter
+        }
+      }
+    }
+    </script>
+
+
+
+But, we can use a getter, inside of other getter. For this, we 
+can use the seconde parameter in the getter. 
+
+All the getters, has two parameters, the first is the state.
+And the second is the other getter, that we want to use.
+
+Ex:
+
+  Mains.js:
+
+      const store = createStore({
+        state() {
+          return {
+            counter = 0
+          }
+        },
+        getters: {
+          finalCounter(state) {
+            state.counter = state.counter / 2
+          },
+          secondCounter(_, getter) {// we don't need use the state parameter, cause the getter that we use on the second parameter, already has access.
+
+            const second = getters.finalCounter // here we call the first getter
+            if (second > 0) {
+              return 'Finish'
+            } else {
+              return second
+            }
+          }
+        }
+      })
+
+
+Check that example on the Main.js file, FovoriteValue component and App component
+in the module 14 folder.
+
+link for this class:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879732#overview
+
+
