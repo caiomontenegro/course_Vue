@@ -4375,4 +4375,55 @@ We can use this component, in another new component, if we want.
 
 
 
+=========================== Class 03 ============================
+
+
+Mutations
+
+So, if we work with the same state in diferent components, we 
+need to repeat the creation of the methods. And that, leave your
+app maintenance hard.
+
+So for that, we can create a methods, inside of Mutations, and the 
+components, call this mutation for use the same logic method.
+
+For that, follow the code:
+
+  Main.js
+
+    const store = createStore() {
+      state() {
+        return {
+          counter: 0
+        }
+      },
+      mutations: {
+        increment(state) {
+          state.counter = state.counter + 2
+        }
+      }
+    }
+
+Now, we just need call this mutation in your components:
+
+  Template:
+
+    <template>
+      <h3>{{ counter }} </h3>
+      <button @click="addOne"> Add 1 </button>  
+    </template>
+
+  Js:
+
+    methods: {
+      addOne() {
+        this.$store.commit('increment')
+        // now we use commit method, and use the name of mutation
+        in his parameter.
+      }
+    }
+
+
+Check that code running on the main.js file, ChangeCounter and App.vue
+components in the module 14 folder.
 
