@@ -4911,3 +4911,48 @@ Check this example this link:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879794#overview
 
+
+
+
+=========================== Class 12 ============================
+
+
+Organize States:
+
+1- Create a new file: Store.js
+
+And import all store logic for there, and export the contant in the page end.
+
+    export default store
+
+
+2- Import the store on the main.js
+
+    import store from './store.js'
+
+  a- Here, create the new js files, for our roots states:
+
+    actions.js
+    getters.js
+    index.js
+    mutations.js
+
+3- Create a new folder: "store"
+
+  a- In there, create new js files for: 
+
+    actions.js
+    getters.js
+    index.js
+    mutations.js
+
+4- Create a folder for each module, with the new js files (Actions, Mutations, etc..)
+
+
+
+Now, how we can split our state in their files:
+
+
+Check the video link:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879798#overview

@@ -1,9 +1,4 @@
-import App from './App.vue';
-
-import { createApp } from 'vue';
 import { createStore } from 'vuex';
-
-// import store from './store' to organize files
 
 const counterModule = {
   state() {
@@ -75,8 +70,5 @@ const store = createStore({
   },
 });
 
-const app = createApp(App);
 
-app.use(store);
-
-app.mount('#app');
+export default store
