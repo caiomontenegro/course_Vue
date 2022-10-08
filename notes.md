@@ -4854,3 +4854,21 @@ Ex:
       },
       ... // root states
     })
+
+
+=========================== Class 10 ============================
+
+
+Local Modules State
+
+The modules are setted localy, so if you need to acces another
+state from another module, it's don't work.
+
+So how we can make this access?
+
+Check the google XD
+
+
+link that class:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879788#overview
