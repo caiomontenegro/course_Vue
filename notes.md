@@ -4812,3 +4812,45 @@ Link for this class:
 =========================== Class 09 ============================
 
 
+Modules
+
+For organize our states with their mutations, actions, etc... We
+can use the modules:
+
+Ex:
+
+  Mains.js file
+
+    // module:
+    const counterModule = {
+      states{
+        return {
+          counter: 0
+        }
+      },
+      methods: {
+        plusCounter(state, payload) {
+          state.counter++
+        }
+      },
+      actions: {
+        plusCounter(context) {
+          context.commit('plusCounter', payload) {
+          }
+        }
+      },
+      getters: {
+        finalCounter(state) {
+          return state.counter
+        }
+      }
+    }
+
+    // Root Store:
+
+    const store = createStore({
+      modules: {
+        counterModule // import the module by the name.
+      },
+      ... // root states
+    })
