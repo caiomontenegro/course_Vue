@@ -4695,3 +4695,120 @@ Map Actions:
 
 Check this example on the TheCountar and ChangeCounter components, 
 in the module 14 folder.
+
+
+
+=========================== Class 08 ============================
+
+
+
+Join the pieces
+
+So now, lets make a little example.
+
+Make a two buttons: "Login" and "logout"
+
+1- If the user click on the login button, hide the login button and
+show logout button.
+
+2- Show the counter content, only the user is logged.
+
+Resolution:
+
+  1- Create the State for check if user is logged or not:
+
+    Mains.js:
+
+      const store = createStore({
+        state() {
+          return {
+            isLogged: false  the user initiate unlogged
+          }
+        }
+      })
+
+    a- Create the mutation:
+
+      mutations: {
+        setAuth(state, payload) {
+          state.isLogged = payload.isAuth  // payload is our parameter 
+                                          // here, we use as object value
+        }
+      }
+
+    b- Create the Actions, for avoid async mistakes and change the 
+    mutations payload parameter:
+
+      actions: {
+        // for login
+        login(context) {
+          context.commit('setAuth', {isAuth: true})
+          // here we call the "setAuth" mutation, and use a new parameter,
+            the same happens in below action:
+        },
+        // for logout
+        logout(context) {
+          context.commit('setAuth', {isAuth: false})
+        }
+      }
+
+    c- Create a getter, for monitorate the "isLogged" value:
+
+      getters: {
+        logged(state) {
+          return state.isLogged
+        }
+    }
+
+
+
+  2- Using the vuex in the component:
+
+    Js Component:
+
+    a- Call the actions for change the auth value:
+
+      methods: {
+        login() {
+          this.$store.dispatch('login')
+        },
+        logout() {
+          this.$store.dispatch('logout')
+        }
+      }
+
+    b- Call the getter, to receive the current auth value:
+      
+      computed: {
+        isAuth() {
+          return this.$store.getters.logged
+        }
+      }
+  
+
+  3- Call the methods and computed in the template:
+
+    <template> 
+      <div v-if="isAuth">
+        <counter-content> </counter-content>
+      </div>
+      <div>
+        <button @click="login" v-if="!isAuth"> Login </button>
+        <button @click="logout" v-if="isAuth"> Logout </button>
+      <div>
+    </template
+
+
+Check that example running on the mains.js file, App and userAUth component
+in the module 15 folder.
+
+
+Link for this class:
+
+  https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879776#overview
+
+
+
+=========================== Class 09 ============================
+
+
