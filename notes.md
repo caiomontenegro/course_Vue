@@ -4859,6 +4859,7 @@ Ex:
 =========================== Class 10 ============================
 
 
+
 Local Modules State
 
 The modules are setted localy, so if you need to acces another
@@ -4872,3 +4873,41 @@ Check the google XD
 link that class:
 
 https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879788#overview
+
+
+
+
+=========================== Class 11 ============================
+
+
+Namespacing Modules.
+
+
+Sometimes, we need to break apart the state of locally, because the 
+it's too big, and we can mistake to named, and use the same name 
+of another state.
+
+For that we canse use Namespacing:
+
+    const counterModules = {
+      namespaced = true   // Namespacing in use
+    }
+
+    const store = createStore({
+      modules: {
+        numbers: counterModule
+      }
+    })
+
+    Now to call our states, methods, etc on our component:
+
+    computed: {
+      counter() {
+        return this.$store.getters['numbers/normalizedCounter']
+      }
+    }
+
+Check this example this link:
+
+https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21879794#overview
+

@@ -46,7 +46,7 @@ const counterModule = {
 
 const store = createStore({
   modules: {
-    counterModule
+    numbers: counterModule
   },
   state() {
     return {
