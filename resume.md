@@ -13,6 +13,8 @@ https://cli.vuejs.org/
 
 ## Architecture
 
+The architecture project:
+
 - `node_modules`: All modules necessaries to run our application.
 - `public`: All public and static files that make up our application.
     - `favicon`: icon files.
@@ -24,6 +26,8 @@ https://cli.vuejs.org/
     - `vue.config.js`: Special vue configs.
     - `package.json`: all scripts and dependencies rountines.
     - `package-lock.json`: Dependency version security lock.
+    - `lin`: Here we configure the sintaxe patterns
+    - `.gitignore`: Here we declare the files that don't send to our repository.
 
 </br>
 </br>
