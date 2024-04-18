@@ -38,7 +38,6 @@ with:
 - **STYLE**: In style is our CSS code.
 
 </br>
-</br>
 
 **<ins>Creating a Component</ins>**
 
@@ -48,7 +47,6 @@ The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. F
 `TheHeader.vue`
 `SubmmitButton.vue`
 
-</br>
 </br>
 
 **<ins>Importing and declaring Component Globally</ins>**
@@ -71,7 +69,6 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
       .component('TheHeader', TheHeader)
       .component('SubmmitButton', SubmmitButton)
 
-</br>
 </br>
 
 **<ins>Importing and declaring Component Locally</ins>**
@@ -97,7 +94,6 @@ If you don't using the setup property. You can use this sintaxe:
       }
     </script>
 
-</br>
 </br>
 
 **<ins>Using Component</ins>**
