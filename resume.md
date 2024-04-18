@@ -1,4 +1,4 @@
-# VUE3 Resume Context 📜
+# VUE 3 Resume Context 📜
 
 ## VUE CLI
 
@@ -33,6 +33,7 @@ with:
 - **STYLE**: In style is our CSS code.
 
 **<ins>Creating a Component</ins>**
+
 In Component folder, create a new .vue file. 
 The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. For example:
 
@@ -41,6 +42,7 @@ The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. F
 
 
 **<ins>Importing and declaring Component Globally</ins>**
+
 If you use the same component, at all or almost pages. We can import the component globally. 
 In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
 
@@ -61,6 +63,7 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
 
 
 **<ins>Importing and declaring Component Locally</ins>**
+
 In a parent component, we need to import and declare de component that we want to use. Like this:
 
     <script setup>
@@ -83,6 +86,7 @@ If you don't using the setup property. You can use this sintaxe:
     </script>
 
 **<ins>Using Component</ins>**
+
 For using our component, use need to declare him inside of template, with <ins>kebab-case</ins>.Like this:
 
     <template>
