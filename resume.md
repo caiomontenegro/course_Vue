@@ -8,6 +8,8 @@ Access the link below and follow the steps:
 
 https://cli.vuejs.org/
 
+</br>
+</br>
 
 ## Architecture
 
@@ -23,6 +25,9 @@ https://cli.vuejs.org/
     - `package.json`: all scripts and dependencies rountines.
     - `package-lock.json`: Dependency version security lock.
 
+</br>
+</br>
+
 ## Components Concepts
 
 In VUE.js, everything is a component. And these components are Single File Component (SFC), his maske up 
@@ -32,6 +37,9 @@ with:
 - **SCRIPT**: In script is our javascript code
 - **STYLE**: In style is our CSS code.
 
+</br>
+</br>
+
 **<ins>Creating a Component</ins>**
 
 In Component folder, create a new .vue file. 
@@ -40,6 +48,8 @@ The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. F
 `TheHeader.vue`
 `SubmmitButton.vue`
 
+</br>
+</br>
 
 **<ins>Importing and declaring Component Globally</ins>**
 
@@ -61,6 +71,8 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
       .component('TheHeader', TheHeader)
       .component('SubmmitButton', SubmmitButton)
 
+</br>
+</br>
 
 **<ins>Importing and declaring Component Locally</ins>**
 
@@ -84,6 +96,9 @@ If you don't using the setup property. You can use this sintaxe:
         }
       }
     </script>
+
+</br>
+</br>
 
 **<ins>Using Component</ins>**
 
