@@ -167,7 +167,7 @@ The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condit
     const showText = true
     <script>
 
-The diference between **v-if** of **v-show**, is****v-if** not be loaded at DOM, if the condition is not met.
+The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, if the condition is not met.
 
 </br>
 
