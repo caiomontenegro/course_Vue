@@ -116,3 +116,93 @@ Or:
       <submmit-button></submmit-button>
     </template>
 
+**Official Docs:**https://vuejs.org/guide/components/registration.html
+
+</br>
+</br>
+
+## Directives
+
+Directives are be VUE instructions. lets see these instructions below:
+
+</br>
+
+**<ins>Conditional Directives</ins>**
+
+These directives, will show some content based on some condition.
+
+- **v-show**: Use for show some content if the condition is <ins>TRUE</ins> or FALSE. Example:
+
+    <template>
+      <span v-show="showText" >Hello world</span>
+    </template>
+
+    <script setup>
+    const showText = true
+    <script>
+
+  Or:
+
+    <template>
+      <span v-show="showText === textEnable" >Hellow world</span>
+    </template>
+
+    <script setup>
+      const showText = true
+      const textEnable = true
+    </script>
+
+
+The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condition is false. But he input a style: <ins>dipslay: none;</ins> if the condition was false.
+
+</br>
+
+- **v-if**: Use for show some content if the condition is <ins>TRUE</ins> or <ins>FALSE</ins>. Example:
+
+    <template>
+      <span v-show="showText" >Hello world</span>
+    </template>
+
+    <script setup>
+    const showText = true
+    <script>
+
+The diference between <ins>v-if</ins> of <ins>v-show</ins>, is that <ins>v-if</ins> not be loaded at DOM, if the condition is not met.
+
+</br>
+
+- **v-else-if**: Use for gives continue the condition logic, if you have more than one content based on the conditions you may have. Example:
+
+    <template>
+      <span v-if="text === primaryText">Hello World</span>
+      <span v-else-if="text === secundaryText">Hello VUE 3</span>
+    </template>
+
+    <script setup>
+      const text = 'Hello VUE 3'
+      const primaryText = 'Hello Word'
+      const secundaryText = 'Hello VUE 3'
+    </script>
+
+</br>
+
+- **v-else**: Use for show a content if the previous conditions is not be met. Exemple:
+
+    <template>
+      <span v-if="text === primaryText">Hello World</span>
+      <span v-else-if="text === secundaryText">Hello VUE 3</span>
+      <span v-else>Hello everyone</span>
+    </template>
+
+    <script setup>
+      const text = 'Hello VUE 3'
+      const primaryText = 'Hello Word'
+      const secundaryText = 'Hello VUE 3'
+    </script>
+
+**Obs**: We necessarily need use <ins>v-if</ins> before, and exactly before using the <ins>v-else</ins> and <ins>v-else-if</ins>.
+
+**Official Docs:**https://vuejs.org/api/built-in-directives.html
+
+</br>
+</br>
