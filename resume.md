@@ -131,7 +131,7 @@ Directives are be VUE instructions. lets see these instructions below:
 
 These directives, will show some content based on some condition.
 
-- **v-show**: Use for show some content if the condition is <ins>TRUE</ins> or FALSE. Example:
+`v-show`: Use for show some content if the condition is <ins>TRUE</ins> or FALSE. Example:
 
     <template>
       <span v-show="showText" >Hello world</span>
@@ -157,7 +157,7 @@ The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condit
 
 </br>
 
-- **v-if**: Use for show some content if the condition is <ins>TRUE</ins> or <ins>FALSE</ins>. Example:
+`v-if`: Use for show some content if the condition is <ins>TRUE</ins> or <ins>FALSE</ins>. Example:
 
     <template>
       <span v-show="showText" >Hello world</span>
@@ -171,7 +171,7 @@ The diference between <ins>v-if</ins> of <ins>v-show</ins>, is that <ins>v-if</i
 
 </br>
 
-- **v-else-if**: Use for gives continue the condition logic, if you have more than one content based on the conditions you may have. Example:
+`v-else-if`: Use for gives continue the condition logic, if you have more than one content based on the conditions you may have. Example:
 
     <template>
       <span v-if="text === primaryText">Hello World</span>
@@ -186,7 +186,7 @@ The diference between <ins>v-if</ins> of <ins>v-show</ins>, is that <ins>v-if</i
 
 </br>
 
-- **v-else**: Use for show a content if the previous conditions is not be met. Exemple:
+`v-else`: Use for show a content if the previous conditions is not be met. Exemple:
 
     <template>
       <span v-if="text === primaryText">Hello World</span>
