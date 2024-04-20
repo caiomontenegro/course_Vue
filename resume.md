@@ -153,11 +153,11 @@ These directives, will show some content based on some condition.
     </script>
 
 
-The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condition is false. But he input a style: <ins>dipslay: none;</ins> if the condition was false.
+The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condition is false. But he input a style: **dipslay: none;** if the condition was false.
 
 </br>
 
-`v-if`: Use for show some content if the condition is <ins>TRUE</ins> or <ins>FALSE</ins>. Example:
+`v-if`: Use for show some content if the condition is **TRUE** or **FALSE**. Example:
 
     <template>
       <span v-show="showText" >Hello world</span>
@@ -167,7 +167,7 @@ The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condit
     const showText = true
     <script>
 
-The diference between <ins>v-if</ins> of <ins>v-show</ins>, is that <ins>v-if</ins> not be loaded at DOM, if the condition is not met.
+The diference between **v-if** of **v-show**, is****v-if** not be loaded at DOM, if the condition is not met.
 
 </br>
 
@@ -200,7 +200,7 @@ The diference between <ins>v-if</ins> of <ins>v-show</ins>, is that <ins>v-if</i
       const secundaryText = 'Hello VUE 3'
     </script>
 
-**Obs**: We necessarily need use <ins>v-if</ins> before, and exactly before using the <ins>v-else</ins> and <ins>v-else-if</ins>.
+**Obs**: We necessarily need use **v-if** before, and exactly before using the **v-else** and **v-else-if**.
 
 **Official Docs:**https://vuejs.org/api/built-in-directives.html
 
