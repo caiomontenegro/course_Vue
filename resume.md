@@ -1,5 +1,12 @@
 # VUE 3 Resume Context 📜
 
+1. [VUE CLI](#vue-cli)
+2. [Architecture](#architecture)
+3. [Components Concepts](#components-concepts)
+  - [Creating a Component](#creating-a-component)
+  
+4. [Directives](#directives)
+
 ## VUE CLI
 
 For create a new VUE project, we can use the VUE CLI to build a vue project architecture.
@@ -43,7 +50,7 @@ with:
 
 </br>
 
-**<ins>Creating a Component</ins>**
+### <ins>Creating a Component</ins>
 
 In Component folder, create a new .vue file. 
 The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. For example:
@@ -53,7 +60,7 @@ The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. F
 
 </br>
 
-**<ins>Importing and declaring Component Globally</ins>**
+## <ins>Importing and declaring Component Globally</ins>
 
 If you use the same component, at all or almost pages. We can import the component globally. 
 In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
@@ -75,7 +82,7 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
 
 </br>
 
-**<ins>Importing and declaring Component Locally</ins>**
+## <ins>Importing and declaring Component Locally</ins>
 
 In a parent component, we need to import and declare de component that we want to use. Like this:
 
@@ -100,7 +107,7 @@ If you don't using the setup property. You can use this sintaxe:
 
 </br>
 
-**<ins>Using Component</ins>**
+## <ins>Using Component</ins>
 
 For using our component, use need to declare him inside of template, with <ins>kebab-case</ins>.Like this:
 
@@ -127,7 +134,7 @@ Directives are be VUE instructions. lets see these instructions below:
 
 </br>
 
-**<ins>Conditional Directives</ins>**
+## <ins>Conditional Directives</ins>
 
 These directives, will show some content based on some condition.
 
