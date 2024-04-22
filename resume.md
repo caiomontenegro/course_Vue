@@ -9,6 +9,7 @@
     - 3.4 [Using Component](#Using-Component)
 - 4 [Directives](#directives)
     - 4.1 [Conditional Directives](#Conditional-Directives)
+    - 4.2 [Loop Directive](#Loop-Directive)
 
 </br>
 </br>
@@ -114,9 +115,9 @@ If you don't using the setup property. You can use this sintaxe:
       }
     </script>
 
-### Using Component
-
 </br>
+
+### Using Component
 
 For using our component, use need to declare him inside of template, with <ins>kebab-case</ins>.Like this:
 
@@ -154,8 +155,14 @@ These directives, will show some content based on some condition.
       <span v-show="showText" >Hello world</span>
     </template>
 
-    <script setup>
-    const showText = true
+    <script>
+    exporta default {
+      data() {
+        return: {
+          showText: true
+        }
+      }
+    }
     <script>
 
   Or:
@@ -164,9 +171,15 @@ These directives, will show some content based on some condition.
       <span v-show="showText === textEnable" >Hellow world</span>
     </template>
 
-    <script setup>
-      const showText = true
-      const textEnable = true
+    <script>
+    export default {
+      data() {
+        return {
+          showText: true
+          textEnable:  true
+        }
+      }
+    }
     </script>
 
 
@@ -180,8 +193,14 @@ The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condit
       <span v-show="showText" >Hello world</span>
     </template>
 
-    <script setup>
-    const showText = true
+    <script>
+    export default {
+      data() {
+        return {
+          showText: true
+        }
+      }
+    }
     <script>
 
 The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, if the condition is not met.
@@ -195,10 +214,16 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
       <span v-else-if="text === secundaryText">Hello VUE 3</span>
     </template>
 
-    <script setup>
-      const text = 'Hello VUE 3'
-      const primaryText = 'Hello Word'
-      const secundaryText = 'Hello VUE 3'
+    <script>
+    export default {
+      data() {
+        return {
+          text: 'Hello VUE 3',
+          primaryText: 'Hello World',
+          secundaryText: 'Hello VUE 3'
+        }
+      }
+    }
     </script>
 
 </br>
@@ -211,10 +236,16 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
       <span v-else>Hello everyone</span>
     </template>
 
-    <script setup>
-      const text = 'Hello VUE 3'
-      const primaryText = 'Hello Word'
-      const secundaryText = 'Hello VUE 3'
+    <script>
+    export default {
+      data() {
+        return {
+          text: 'Hello VUE 3',
+          primaryText: 'Hello World'
+          secundaryText: 'Hello VUE 3'
+        }
+      }
+    }
     </script>
 
 **Obs**: We necessarily need use **v-if** before, and exactly before using the **v-else** and **v-else-if**.
@@ -222,5 +253,49 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
 **Official Docs:**https://vuejs.org/api/built-in-directives.html
 
 </br>
+
+### Loop Directive
+
+Directives for render the content, several times. For this, we have only one directive.
+
+`v-for`: This directives render the content, several times, traversing some array. It is very important, that we use the **key** property tag, for add a key id, for each content that will be render. Examples:
+
+    <template>
+      <span v-for="user in names" key="name">{{ user }}</span>
+    </tempalte>
+
+    <script>
+      export default {
+        data() {
+          return {
+            user: [Caio, Silvana, Evandro]
+          }
+        }
+      }
+    </script>
+
+With Object:
+
+    <template>
+      <span v-for="user in users" :key="obj.id">{{ user.name }}</span>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          users: [
+            {id: 0, name: Caio},
+            {id: 1, name: Silvana},
+            {id: 2, name: Evandro}
+          ]
+        }
+      }
+    }
+    </script>
+
+
 </br>
 </br>
+</br>
+
