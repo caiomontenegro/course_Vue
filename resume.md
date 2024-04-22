@@ -54,8 +54,6 @@ with:
 - **SCRIPT**: In script is our javascript code
 - **STYLE**: In style is our CSS code.
 
-</br>
-
 ### Creating a Component
 
 In Component folder, create a new .vue file. 
@@ -63,8 +61,6 @@ The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. F
 
 `TheHeader.vue`
 `SubmmitButton.vue`
-
-</br>
 
 ### Importing and declaring Component Globally
 
@@ -85,8 +81,6 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
     app
       .component('TheHeader', TheHeader)
       .component('SubmmitButton', SubmmitButton)
-
-</br>
 
 ### Importing and declaring Component Locally
 
@@ -110,8 +104,6 @@ If you don't using the setup property. You can use this sintaxe:
         }
       }
     </script>
-
-</br>
 
 ### Using Component
 
@@ -137,8 +129,6 @@ Or:
 ## Directives
 
 Directives are be VUE instructions. lets see these instructions below:
-
-</br>
 
 ### Conditional Directives
 
