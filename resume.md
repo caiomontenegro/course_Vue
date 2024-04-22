@@ -1,11 +1,11 @@
 # VUE 3 Resume Context 📜
 
-1. [VUE CLI](#vue-cli)
-2. [Architecture](#architecture)
-3. [Components Concepts](#components-concepts)
-    - 3.1 [Creating a Component](#creating-a-component)
+1 [VUE CLI](#vue-cli)
+2 [Architecture](#architecture)
+3 [Components Concepts](#components-concepts)
+    3.1 [Creating a Component](#creating-a-component)
   
-4. [Directives](#directives)
+4 [Directives](#directives)
 
 </br>
 </br>
