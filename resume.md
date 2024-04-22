@@ -12,6 +12,7 @@
 
 </br>
 </br>
+</br>
 
 ## VUE CLI
 
@@ -21,6 +22,7 @@ Access the link below and follow the steps:
 
 https://cli.vuejs.org/
 
+</br>
 </br>
 </br>
 
@@ -44,6 +46,7 @@ The architecture project:
 
 </br>
 </br>
+</br>
 
 ## Components Concepts
 
@@ -54,6 +57,8 @@ with:
 - **SCRIPT**: In script is our javascript code
 - **STYLE**: In style is our CSS code.
 
+</br>
+
 ### Creating a Component
 
 In Component folder, create a new .vue file. 
@@ -61,6 +66,8 @@ The name would be named with <ins>two words</ins>, with <ins>PascalCase</ins>. F
 
 `TheHeader.vue`
 `SubmmitButton.vue`
+
+</br>
 
 ### Importing and declaring Component Globally
 
@@ -81,6 +88,8 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
     app
       .component('TheHeader', TheHeader)
       .component('SubmmitButton', SubmmitButton)
+
+</br>
 
 ### Importing and declaring Component Locally
 
@@ -107,6 +116,8 @@ If you don't using the setup property. You can use this sintaxe:
 
 ### Using Component
 
+</br>
+
 For using our component, use need to declare him inside of template, with <ins>kebab-case</ins>.Like this:
 
     <template>
@@ -123,6 +134,7 @@ Or:
 
 **Official Docs:**https://vuejs.org/guide/components/registration.html
 
+</br>
 </br>
 </br>
 
@@ -207,5 +219,6 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
 
 **Official Docs:**https://vuejs.org/api/built-in-directives.html
 
+</br>
 </br>
 </br>
