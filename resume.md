@@ -142,6 +142,8 @@ Or:
 
 Directives are be VUE instructions. lets see these instructions below:
 
+</br>
+
 ### Conditional Directives
 
 These directives, will show some content based on some condition.
