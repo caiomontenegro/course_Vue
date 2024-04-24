@@ -4,13 +4,18 @@
 - 2 [Architecture](#architecture)
 - 3 [Components Concepts](#components-concepts)
     - 3.1 [Creating a Component](#creating-a-component)
-    - 3.2 [Importing and declaring Component Globally](#Importing-and-declaring-Component-Globally)
-    - 3.3 [Importing and declaring Component Locally](#Importing-and-declaring-Component-Locally)
-    - 3.4 [Using Component](#Using-Component)
+    - 3.2 [Importing and declaring Component Globally](#importing-and-declaring-component-globally)
+    - 3.3 [Importing and declaring Component Locally](#importing-and-declaring-component-locally)
+    - 3.4 [Using Component](#using-component)
 - 4 [Directives](#directives)
-    - 4.1 [Bind Directive](#Bind-Directive)
-    - 4.2 [Conditional Directives](#Conditional-Directives)
-    - 4.3 [Loop Directive](#Loop-Directive)
+    - 4.1 [Bind Directive](#bind-directive)
+    - 4.2 [Conditional Directives](#conditional-directives)
+    - 4.3 [Loop Directive](#loop-directive)
+- 5 [Class and Styles Bindings](#class-and-styles-bindings)
+    - 5.1 [Binding Class](#binding-class)
+    - 5.2 [Binding Styles](#binding-styles)
+
+
 
 </br>
 </br>
@@ -190,6 +195,24 @@ Directive to use a reactive data, on html properties. With this directive we can
 
 </br>
 
+<ins>Dinamic Attribute Name</ins>: We also can use the dinamic attribute with data bind. Check below example:
+
+    <button v-bind:[key]="value"></button>
+    // or
+    <button :[key]="value"></button>
+
+    <script>
+    export default {
+      data() {
+        return {
+          value: 01
+        }
+      }
+    }
+    </script>
+
+</br>
+
 ### Conditional Directives
 
 These directives, will show some content based on some condition.
@@ -343,4 +366,146 @@ With Object:
 </br>
 </br>
 </br>
+
+## Class and Styles Bindings
+
+The VUE offer us a simple way to apply Dinamic Classes and Styles: Class and Style Bindings. For apply the dinamic class and styles, we'll use the [Data Bindin Concepts](#Bind-Directive).
+
+</br>
+
+### Binding Class
+
+For apply the dinamic class, with bind is much simple. Look the below example:
+
+    <template>
+      <h1 :class="title" >Hello VUE 3</h1>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          title: 'titleStyle'
+        }
+      }
+    }
+    </script>
+
+    <style>
+    .titleStyle {
+      color: blue;
+    }
+    </style>
+
+When we use data bind in **class** or **styles** attributes, the **v-bind** suport **objects** and **arrays** as a value. And set some logics for use dinamic class and styles. 
+Class with object example:
+
+
+    <template>
+      // title = class name
+      // true = condition for apply the class, received from reactive data.
+      <h1 :class="{ 'title': true }">Hello Vue</h1>
+    </template>
+
+    // More than one class
+
+    <template>
+      <h1 :class="{ 'title': true, homeTitle: false, subTitle: true}">Hello Vue</h1>
+    </template>
+
+    // IMPORTANT: The last classes declared subscribe the first classes
+
+Class with array example:
+
+    <template>
+      // title = class name
+      // true = condition for apply the class
+      <h1 :class="['title', titleHome]">Hello Vue</h1>
+    </template>
+
+    // IMPORTANT: The last classes declared subscribe the first classes
+
+Class with array and object example:
+
+    <template>
+      // title = class name
+      // true = condition for apply the class
+      <h1 :class="['title', {'titleHome': true}]">Hello Vue</h1>
+    </template>
+
+    // IMPORTANT: The last classes declared subscribe the first classes
+
+**Tip**: We can transfer the attribute content to reactive data:
+
+    <template>
+      // title = class name
+      // true = condition for apply the class
+      <h1 :class="classList">Hello Vue</h1>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          classList=['title', {'titleHome': true}]
+        }
+      }
+    }
+    </script>
+
+    // The same logic is valid for Objects.
+
+We can apply some logic dinamic class when we use array format with **Ternary Expression**. Like that:
+
+    <template>
+      // isActive = reactive boolean data
+      // activeClass = If true, apply activeClass
+      // '' = If False, don't apply classe
+      <span :class="[isActive ? activeClass : '', errorClass]">
+        Hello Vue 3
+      </span>
+    </template>
+
+</br>
+
+### Binding Styles
+
+The logic for apply dinamic styles on our component is the same such **dinamic classes**, but here we use only object value, and instead of using class name as a value, we'll use the css properties. Example:
+
+    <template>
+      <h1 :style="{'color': primaryColor, 'background-color': secundaryColor}">Hello VUE3</h1>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          primaryColor: blue,
+          secundaryColor: black
+        }
+      }
+    }
+    </script>
+
+    // or 
+
+    <template>
+      <h1 :style="styleClass">Hello VUE3</h1>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          styleClass={'color': primaryColor, 'background-color': secundaryColor}
+          // or
+          styleClass={color: primaryColor, backgroundColor: secundaryColor}
+        }
+      }
+    }
+    </script>
+
+
+
+
 
