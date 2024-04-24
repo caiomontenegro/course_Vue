@@ -166,7 +166,7 @@ Directive to use a reactive data, on html properties. With this directive we can
     }
     </script>
 
-<ins>shorthand</ins>. ":" and "." for **props** modifiers. Example:
+<ins>shorthand</ins>: The shorthand is ":" and "." for **props** modifiers. Example:
 
     <template>
       <img :src="imgURL" alt="Image">
