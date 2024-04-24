@@ -8,8 +8,9 @@
     - 3.3 [Importing and declaring Component Locally](#Importing-and-declaring-Component-Locally)
     - 3.4 [Using Component](#Using-Component)
 - 4 [Directives](#directives)
-    - 4.1 [Conditional Directives](#Conditional-Directives)
-    - 4.2 [Loop Directive](#Loop-Directive)
+    - 4.1 [Bind Directive](#Bind-Directive)
+    - 4.2 [Conditional Directives](#Conditional-Directives)
+    - 4.3 [Loop Directive](#Loop-Directive)
 
 </br>
 </br>
@@ -142,6 +143,50 @@ Or:
 ## Directives
 
 Directives are be VUE instructions. lets see these instructions below:
+
+</br>
+
+### Bind Directive
+
+Directive to use a reactive data, on html properties. With this directive we can use dinamic values in our properties.
+
+`v-bind`: Use the data bind directive as prefix for another HTML propertie. Example:
+
+    <template>
+      <img v-bind:src="imgURL" alt="Image">
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          imgURL: '/path/src/img/myImage.png'
+        }
+      }
+    }
+    </script>
+
+<ins>shorthand</ins>. ":" and "." for **props** modifiers. Example:
+
+    <template>
+      <img :src="imgURL" alt="Image">
+
+      // For props:
+
+      <div :someProperty.prop="someObject"></div>
+      // equivalent to
+      <div .someProperty="someObject"></div>
+    </template>
+
+    <script>
+    export default {
+      data() {
+        return {
+          imgURL: '/path/src/img/myImage.png'
+        }
+      }
+    }
+    </script>
 
 </br>
 
