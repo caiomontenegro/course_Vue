@@ -11,7 +11,7 @@
     - 4.1 [Text Interpolation](#text-interpolation)
     - 4.2 [Javascript Interpolation](#javascript-interpolation)
 - 5 [Directives](#directives)
-    - 5.1 [Bind Directive](#bind-directive)
+    - 5.1 [Two Way Bind Directive](#two-way-bind-directive)
     - 5.2 [Bidirectional Directive](#bidirection-directive)
     - 5.3 [Conditional Directives](#conditional-directives)
     - 5.4 [Loop Directive](#loop-directive)
@@ -183,7 +183,7 @@ We also use Objects, and Array lists in Mustache sintax.
 
 The interpolation, also accepts javascript language logics. Example:
 
-  Concatenation:
+  <ins>Concatenation:</ins>
 
     <template>
       <span>{{ name + '' + lastName}}</span>
@@ -198,7 +198,7 @@ The interpolation, also accepts javascript language logics. Example:
       }
     }
 
-  Ternary Expression:
+  <ins>Ternary Expression:</ins>
 
       <template>
         <span>{{ positiveNumber ? 'positve' : "negative" }}</span>
@@ -212,7 +212,7 @@ The interpolation, also accepts javascript language logics. Example:
         }
       }
 
-  Javascript methods and functions:
+  <ins>Javascript methods and functions:</ins>
 
     <template>
       <span>{{ name.split('').reverse().join('') }}</span>
@@ -228,7 +228,7 @@ The interpolation, also accepts javascript language logics. Example:
       }
     </script>
 
-  Template String:
+  <ins>Template String:</ins>
 
     <template>
       <span id="`${id}`">{{ name }}</span>
@@ -261,7 +261,7 @@ Directives are be VUE instructions. lets see these instructions below:
 
 Directive to use a reactive data, on html properties. With this directive we can use dinamic values in our properties.
 
-`v-bind`: Use the data bind directive as prefix for another HTML propertie. Example:
+`v-bind`: Use the data bind directive as prefix for another HTML property. Example:
 
     <template>
       <img v-bind:src="imgURL" alt="Image">
@@ -318,6 +318,119 @@ Directive to use a reactive data, on html properties. With this directive we can
       }
     }
     </script>
+
+</br>
+
+### Two Way Bind Directive
+
+The VUE offer us a directive to implement a two-way data binding, that is, the user receive some reactive data and he can change this data, and return him to system. The name of this directive is **v-model**.
+
+`v-model`: Similar to the bind, but the user can change de value, and send him to the system on real time. It's extremely indicate to use on input data forms. 
+
+  <ins>Text Input</ins>
+
+    <template>
+      <label for="name">Insert the name:</label>
+      <input id="name" type="text" v-model="firstName"></input>
+      {{ firstName }}
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            firstName: 'Caio'
+          }
+        }
+      }
+    </script>
+
+  Here, we've a simple form. The input value, is pre configured with "Caio", and the same data is render below the input. But if the user change de value in the input, automacally the firstName data, will be change. Let's check more examples:
+
+  <ins>Select Input</ins>
+
+    <template>
+      <label for="country">Countries</label>
+      <select id="country" v-model="country">
+        <option value="Brazil">Brasil</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Colombia">Colombia</option>
+      </select>
+      {{ country }}
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            country: "Brasil"
+          }
+        }
+      }
+    </script>
+
+  <ins>Radio Input</ins>
+
+    <template>
+      <label for="theme">Theme color</label>
+      <input v-model="theme" type="radio" value="White">White</input>
+      <input v-model="theme" type="radio" value="Black">Black</input>
+      {{ 'You chosed :', theme}}
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            theme:'White'
+          }
+        }
+      }
+    </script>
+
+  <ins>Checkbox input 1/2</ins>
+  For boolean data:
+
+    <template>
+      <label for="contract">Do you agree wit the terms?</label>
+      <input id="contract" type="text" v-model="accepted">I agree</input>
+      {{ accepted }}
+    </template>
+
+
+    <script>
+      export default {
+        data() {
+          return {
+            accepted: null
+          }
+        }
+      }
+    </script>
+
+  <ins>Checkbox input 2/2</ins>
+  For array list data:
+
+    <template>
+      <label for="colors">Choose your favorite colors</label>
+      <input type="checkbox" value="blue" id="colors">blue</input>
+      <input type="checkbox" value="red" id="colors">red</input>
+      <input type="checkbox" value="green" id="colors">green</input>
+      <input type="checkbox" value="yellow" id="colors">yellow</input>
+      {{ 'Favorite Colors:', colors  }}
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            colors: []
+          }
+        }
+      }
+    </script>
+
+
 
 </br>
 
