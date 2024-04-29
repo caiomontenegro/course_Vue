@@ -7,13 +7,17 @@
     - 3.2 [Importing and declaring Component Globally](#importing-and-declaring-component-globally)
     - 3.3 [Importing and declaring Component Locally](#importing-and-declaring-component-locally)
     - 3.4 [Using Component](#using-component)
-- 4 [Directives](#directives)
-    - 4.1 [Bind Directive](#bind-directive)
-    - 4.2 [Conditional Directives](#conditional-directives)
-    - 4.3 [Loop Directive](#loop-directive)
-- 5 [Class and Styles Bindings](#class-and-styles-bindings)
-    - 5.1 [Binding Class](#binding-class)
-    - 5.2 [Binding Styles](#binding-styles)
+- 4 [Interpolation](#interpolation)
+    - 4.1 [Text Interpolation](#text-interpolation)
+    - 4.2 [Javascript Interpolation](#javascript-interpolation)
+- 5 [Directives](#directives)
+    - 5.1 [Bind Directive](#bind-directive)
+    - 5.2 [Bidirectional Directive](#bidirection-directive)
+    - 5.3 [Conditional Directives](#conditional-directives)
+    - 5.4 [Loop Directive](#loop-directive)
+- 6 [Class and Styles Bindings](#class-and-styles-bindings)
+    - 6.1 [Binding Class](#binding-class)
+    - 6.2 [Binding Styles](#binding-styles)
 
 
 
@@ -28,6 +32,7 @@ For create a new VUE project, we can use the VUE CLI to build a vue project arch
 Access the link below and follow the steps:
 
 https://cli.vuejs.org/
+
 
 </br>
 </br>
@@ -145,6 +150,107 @@ Or:
 </br>
 </br>
 
+## Interpolation
+
+We can use a reactive data and some logics, in our template component. For that we use the Interpolation, with
+Mustache sintax (double curly braces).
+
+</br>
+
+### Text Interpolation
+
+Using reactive data on your template. Example:
+
+      <template>
+        <span>{{ name }}</span>
+      </template>
+
+      <script>
+        export default {
+          data() {
+            return {
+              name: 'VUE 3'
+            }
+          }
+        }
+      </script>
+
+We also use Objects, and Array lists in Mustache sintax.
+
+</br>
+
+### Javascript Interpolation
+
+The interpolation, also accepts javascript language logics. Example:
+
+  Concatenation:
+
+    <template>
+      <span>{{ name + '' + lastName}}</span>
+    </template>
+
+    export default {
+      data() {
+        return {
+          name: 'VUE 3',
+          lastName: 'The Knowledge'
+        }
+      }
+    }
+
+  Ternary Expression:
+
+      <template>
+        <span>{{ positiveNumber ? 'positve' : "negative" }}</span>
+      </template>
+
+      export default {
+        data () {
+          return {
+            postiveNumber: True
+          }
+        }
+      }
+
+  Javascript methods and functions:
+
+    <template>
+      <span>{{ name.split('').reverse().join('') }}</span>
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            name: 'Caio'
+          }
+        }
+      }
+    </script>
+
+  Template String:
+
+    <template>
+      <span id="`${id}`">{{ name }}</span>
+    </template>
+
+    <script>
+      export default {
+        data() {
+          return {
+            id: 01,
+            name: 'VUE 3'
+          }
+        }
+      }
+    </script>
+
+**Official docs:** https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation
+
+</br>
+</br>
+</br>
+
 ## Directives
 
 Directives are be VUE instructions. lets see these instructions below:
@@ -194,6 +300,8 @@ Directive to use a reactive data, on html properties. With this directive we can
     </script>
 
 </br>
+
+
 
 <ins>Dinamic Attribute Name</ins>: We also can use the dinamic attribute with data bind. Check below example:
 
@@ -362,6 +470,7 @@ With Object:
     }
     </script>
 
+**Officia Docs**:https://vuejs.org/api/built-in-directives.html#built-in-directives
 
 </br>
 </br>
@@ -505,7 +614,7 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
     }
     </script>
 
-
+**Oficial Docs**:https://vuejs.org/guide/essentials/class-and-style.html#class-and-style-bindings
 
 
 
