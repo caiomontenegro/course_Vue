@@ -165,6 +165,8 @@ Using reactive data on your template. Example:
         <span>{{ name }}</span>
       </template>
 
+      // Options API
+
       <script>
         export default {
           data() {
@@ -173,6 +175,12 @@ Using reactive data on your template. Example:
             }
           }
         }
+      </script>
+
+      // Composition API
+
+      <script setup>
+        const name = 'VUE 3'
       </script>
 
 We also use Objects, and Array lists in Mustache sintax.
@@ -189,14 +197,23 @@ The interpolation, also accepts javascript language logics. Example:
       <span>{{ name + '' + lastName}}</span>
     </template>
 
-    export default {
-      data() {
-        return {
-          name: 'VUE 3',
-          lastName: 'The Knowledge'
+    // Options API
+
+    <script>
+      export default {
+        data() {
+          return {
+            name: 'VUE 3',
+            lastName: 'The Knowledge'
+          }
         }
       }
-    }
+    </script>
+
+    <script setup>
+      const name = 'VUE 3'
+      lastName = 'The Knowledge'
+    </script>
 
   <ins>Ternary Expression:</ins>
 
@@ -204,19 +221,33 @@ The interpolation, also accepts javascript language logics. Example:
         <span>{{ positiveNumber ? 'positve' : "negative" }}</span>
       </template>
 
-      export default {
-        data () {
-          return {
-            postiveNumber: True
+      //Options API
+
+      <script>
+        export default {
+          data () {
+            return {
+              positiveNumber: True
+            }
           }
         }
-      }
+      </script>
+
+      // Compostion API 
+
+      <script setup>
+        const positiveNumber = True
+      <script>
+
+
 
   <ins>Javascript methods and functions:</ins>
 
     <template>
       <span>{{ name.split('').reverse().join('') }}</span>
     </template>
+
+    // Options API
 
     <script>
       export default {
@@ -228,11 +259,19 @@ The interpolation, also accepts javascript language logics. Example:
       }
     </script>
 
+    // Composition API
+
+    <script setup>
+      const name = 'Caio'
+    </script>
+
   <ins>Template String:</ins>
 
     <template>
       <span id="`${id}`">{{ name }}</span>
     </template>
+
+    // Options API
 
     <script>
       export default {
@@ -243,6 +282,13 @@ The interpolation, also accepts javascript language logics. Example:
           }
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const id = 01
+    const name = 'VUE 3'
     </script>
 
 **Official docs:** https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation
@@ -267,6 +313,8 @@ Directive to use a reactive data, on html properties. With this directive we can
       <img v-bind:src="imgURL" alt="Image">
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
@@ -275,6 +323,12 @@ Directive to use a reactive data, on html properties. With this directive we can
         }
       }
     }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const imgURL = '/path/src/img/myImage.png'
     </script>
 
 <ins>shorthand</ins>: The shorthand is ":" and "." for **props** modifiers. Example:
@@ -289,6 +343,8 @@ Directive to use a reactive data, on html properties. With this directive we can
       <div .someProperty="someObject"></div>
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
@@ -299,6 +355,12 @@ Directive to use a reactive data, on html properties. With this directive we can
     }
     </script>
 
+    // Composition API
+
+    <script setup>
+    const imgURL: '/path/src/img/myImage.png'
+    <script>
+
 </br>
 
 
@@ -308,6 +370,8 @@ Directive to use a reactive data, on html properties. With this directive we can
     <button v-bind:[key]="value"></button>
     // or
     <button :[key]="value"></button>
+    
+    // Options API
 
     <script>
     export default {
@@ -317,6 +381,12 @@ Directive to use a reactive data, on html properties. With this directive we can
         }
       }
     }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const value = 01
     </script>
 
 </br>
@@ -335,6 +405,8 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
       {{ firstName }}
     </template>
 
+    // Options API
+
     <script>
       export default {
         data() {
@@ -343,6 +415,12 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
           }
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const firstName = 'Caio'
     </script>
 
   Here, we've a simple form. The input value, is pre configured with "Caio", and the same data is render below the input. But if the user change de value in the input, automacally the firstName data, will be change. Let's check more examples:
@@ -359,6 +437,8 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
       {{ country }}
     </template>
 
+    // Options API
+
     <script>
       export default {
         data() {
@@ -367,6 +447,12 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
           }
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const country = 'Brasil'
     </script>
 
   <ins>Radio Input</ins>
@@ -378,6 +464,8 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
       {{ 'You chosed :', theme}}
     </template>
 
+    // Options API
+
     <script>
       export default {
         data() {
@@ -386,6 +474,12 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
           }
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const theme = 'white'
     </script>
 
   <ins>Checkbox input 1/2</ins>
@@ -397,6 +491,7 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
       {{ accepted }}
     </template>
 
+    // Options API
 
     <script>
       export default {
@@ -406,6 +501,12 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
           }
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const accepted = null
     </script>
 
   <ins>Checkbox input 2/2</ins>
@@ -420,6 +521,8 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
       {{ 'Favorite Colors:', colors  }}
     </template>
 
+    // Options API
+
     <script>
       export default {
         data() {
@@ -430,7 +533,11 @@ The VUE offer us a directive to implement a two-way data binding, that is, the u
       }
     </script>
 
+    // Composition API
 
+    <script setup>
+    const colors = []
+    </script>
 
 </br>
 
@@ -444,6 +551,8 @@ These directives, will show some content based on some condition.
       <span v-show="showText" >Hello world</span>
     </template>
 
+    // Options API
+
     <script>
     exporta default {
       data() {
@@ -454,11 +563,19 @@ These directives, will show some content based on some condition.
     }
     <script>
 
+    // Compostion API 
+
+    <script setup>
+    const showText = True
+    </script?
+
   Or:
 
     <template>
       <span v-show="showText === textEnable" >Hellow world</span>
     </template>
+
+    // Options API
 
     <script>
     export default {
@@ -469,6 +586,13 @@ These directives, will show some content based on some condition.
         }
       }
     }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const showText = true
+    textEnable = true
     </script>
 
 
@@ -482,6 +606,8 @@ The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condit
       <span v-show="showText" >Hello world</span>
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
@@ -491,6 +617,12 @@ The <nis>v-show,</nis> makes the content to be loaded in DOM, even if the condit
       }
     }
     <script>
+
+    // Composition API
+
+    <script setup>
+    const showText = true
+    </script>
 
 The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, if the condition is not met.
 
@@ -502,6 +634,8 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
       <span v-if="text === primaryText">Hello World</span>
       <span v-else-if="text === secundaryText">Hello VUE 3</span>
     </template>
+
+    // Options API
 
     <script>
     export default {
@@ -515,6 +649,14 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
     }
     </script>
 
+    // Composition API
+
+    <script setup>
+    const text = 'Hello VUE 3'
+    const primaryText = 'Hello World'
+    const secundaryText = 'Hello VUE 3'
+    </script>
+
 </br>
 
 `v-else`: Use for show a content if the previous conditions is not be met. Exemple:
@@ -524,6 +666,8 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
       <span v-else-if="text === secundaryText">Hello VUE 3</span>
       <span v-else>Hello everyone</span>
     </template>
+
+    // Options API
 
     <script>
     export default {
@@ -535,6 +679,14 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
         }
       }
     }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const text = 'Hello VUE 3'
+    const primaryText = 'Hellow World'
+    const secundaryText = 'Hello VUE 3'
     </script>
 
 **Obs**: We necessarily need use **v-if** before, and exactly before using the **v-else** and **v-else-if**.
@@ -553,14 +705,22 @@ Directives for render the content, several times. For this, we have only one dir
       <span v-for="user in names" key="name">{{ user }}</span>
     </tempalte>
 
+    // Options API
+
     <script>
       export default {
         data() {
           return {
-            user: [Caio, Silvana, Evandro]
+            user: ['Caio', 'Silvana', 'Evandro']
           }
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const user = ['Caio', 'Silvana', 'Evandro']
     </script>
 
 With Object:
@@ -569,21 +729,89 @@ With Object:
       <span v-for="user in users" :key="obj.id">{{ user.name }}</span>
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
         return {
           users: [
-            {id: 0, name: Caio},
-            {id: 1, name: Silvana},
-            {id: 2, name: Evandro}
+            {id: 0, name: 'Caio'},
+            {id: 1, name: 'Silvana'},
+            {id: 2, name: 'Evandro'}
           ]
         }
       }
     }
     </script>
 
-**Officia Docs**:https://vuejs.org/api/built-in-directives.html#built-in-directives
+    // Composition API
+
+    <script setup>
+    const users = [
+      {id: 0, name: 'Caio'},
+      {id: 1, name: 'Silvana'},
+      {id: 2, name: 'Evandro'}
+    ]
+    </script>
+
+**Official Docs**:https://vuejs.org/api/built-in-directives.html#built-in-directives
+
+</br>
+
+### Event Listener
+
+The directive for listen javascript events. 
+
+`v-on`: With this directive, we can listen some javascript event and call a function to be executed, or so some javascript instruction. Example:
+
+      <template>
+        <button v-on:click="count++">Plus 1</button>
+      </template>
+
+      // Options API
+
+      <script>
+      export default {
+        data() {
+          return {
+            count: 0
+          }
+        }
+      }
+      </script>
+
+      // Composition API
+
+      <script setup>
+      const count = 0
+      </script>
+
+<ins>shorthand</ins>: We can use a simple shorthand: "@"
+
+      <template>
+        <button @click="count++">Plus 1</button>
+      </template>
+
+      // Options API
+
+      <script>
+      export default {
+        data() {
+          return {
+            count: 0
+          }
+        }
+      }
+      </script>
+
+      // Composition API
+
+      <script setup>
+      const count = 0
+      </script>
+
+**official Docs**:https://vuejs.org/guide/essentials/event-handling.html#listening-to-events
 
 </br>
 </br>
@@ -603,6 +831,8 @@ For apply the dinamic class, with bind is much simple. Look the below example:
       <h1 :class="title" >Hello VUE 3</h1>
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
@@ -611,6 +841,12 @@ For apply the dinamic class, with bind is much simple. Look the below example:
         }
       }
     }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const title = 'titleStyle'
     </script>
 
     <style>
@@ -665,6 +901,8 @@ Class with array and object example:
       <h1 :class="classList">Hello Vue</h1>
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
@@ -673,6 +911,12 @@ Class with array and object example:
         }
       }
     }
+    </script>
+
+    // Compostion API
+
+    <script setup>
+    const classList = ['title', {'titleHome': true}]
     </script>
 
     // The same logic is valid for Objects.
@@ -698,15 +942,24 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
       <h1 :style="{'color': primaryColor, 'background-color': secundaryColor}">Hello VUE3</h1>
     </template>
 
+    // Options API
+
     <script>
     export default {
       data() {
         return {
-          primaryColor: blue,
-          secundaryColor: black
+          primaryColor: 'blue',
+          secundaryColor: 'black'
         }
       }
     }
+    </script>
+
+    // Compostion API
+
+    <script setup>
+    const primaryColor = 'blue', 
+    const secundaryColor = 'black'
     </script>
 
     // or 
@@ -714,6 +967,8 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
     <template>
       <h1 :style="styleClass">Hello VUE3</h1>
     </template>
+
+    // Options API
 
     <script>
     export default {
@@ -727,7 +982,17 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
     }
     </script>
 
+    // Compostion API
+
+    <script setup>
+    const styleClass={'color': primaryColor, 'backgournd-color': secundaryColor}
+    // or
+    const styleClass={color: primaryColor, backgroundColor: secundaryColor}
+    </script>
+
 **Oficial Docs**:https://vuejs.org/guide/essentials/class-and-style.html#class-and-style-bindings
 
 
-
+</br>
+</br>
+</br>
