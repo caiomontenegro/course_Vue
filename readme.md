@@ -18,6 +18,7 @@
     - 5.5 [Event Binding (Event listener)](#event-binding-(event-listener))
     - 5.6 [Once Render Content](#once-render-content)
     - 5.7 [Render Static Content](#render-static-content)
+    - 5.8 [Dinamic Content For Child Component](#Dinamic-content-for-child-component)
 - 6 [Class and Styles Bindings](#class-and-styles-bindings)
     - 6.1 [Binding Class](#binding-class)
     - 6.2 [Binding Styles](#binding-styles)
@@ -858,6 +859,108 @@ For render the static content.
     <template>
       <span>The mustache tags, should be used for render the dinamic content {{ dinamic content }}</span>
     </template>
+
+</br>    
+
+### Dinamic Content For Child Component
+
+For render a dinamic HTML/string content in a component child, that we call. We can use **slots**.
+
+`v-slot`: Pass the dinamic template content (HTML) for child component. Check this example beloow, supose that we have a simple layout, that we need to render a section title.
+
+    // Parent Component
+
+    <template>
+      <child-component>
+        <template v-slot>
+          My Section Title
+        </template>
+      </child-component>
+    </template>
+
+    // Child Component (called)
+
+    <template>
+      <h1>
+        <slot></slot>
+      </h1>
+    </template>
+
+<ins>Named Slots:</ins>
+We can use multiple slot, and also specify the slot by naming it. Example:
+
+    // Parent Component
+  
+    <template>
+      <child-component>
+        <template v-slot:title>
+          My Title
+        </template>
+        <template v-slot:content>
+          This is the content
+        </template>
+      </child-component>
+    </template>
+
+    // Child Component
+
+    <template>
+      <h1>
+        <h1>
+          <slot name="title"></slot>
+        </h1>
+        <h2>
+          <slot name="sub-title"></slot>
+        </h2>
+        <div>
+          <slot name="content"></slot>
+        </div>
+      </h1>
+    </template>
+
+On above example, we can use only slots that we need.
+
+<ins>Shorthand:</ins> The short hand for slots is <b>#</b> by named slots. If slot don't have name, use <b>#default</b>.
+
+<ins>Scoped Slots:</ins>
+With scoped, we can pass child data to the parent. Example:
+
+    // Parent Component
+
+    <template>
+      <child-component :items="items">
+        <template #item="slotProps">
+          <div>{{ slotProps.item.name }}</div>
+        </template>
+      </child-component>
+    </template>
+
+    // Child Component
+
+    <template>
+      <div>
+        <slot v-for="item in items" :item="item"></slot>
+      </div>
+    </template>
+
+    // Options API
+
+    <script>
+    export default {
+      data() {
+        return {
+          items:['apple', 'banana']
+        }
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script>
+    const items=['apple', 'banana']
+    </script>
+
 
 </br>
 </br>
