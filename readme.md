@@ -17,7 +17,7 @@
     - 5.4 [Loop Directive](#loop-directive)
     - 5.5 [Event Binding (Event listener)](#event-binding-(event-listener))
     - 5.6 [Once Render Content](#once-render-content)
-    - 5.7 [Block Static Content](#block-static-content)
+    - 5.7 [Render Static Content](#render-static-content)
 - 6 [Class and Styles Bindings](#class-and-styles-bindings)
     - 6.1 [Binding Class](#binding-class)
     - 6.2 [Binding Styles](#binding-styles)
@@ -849,7 +849,7 @@ For render the content or element once only, use the **v-once**.
 
 </br>
 
-### Block Static Content
+### Render Static Content
 
 For render the static content.
 
