@@ -815,6 +815,37 @@ The directive for listen javascript events.
 **official Docs**:https://vuejs.org/guide/essentials/event-handling.html#listening-to-events
 
 </br>
+
+### locking Content
+
+For render the content or element once only, use the **v-once**.
+
+`v-once`: The content, will be render once only. If the element or component will be render again, the content do not be updated, even if the user change de value. Example:
+
+    <template>
+      <span> v-once> This will never change: {{msg}}</span>
+      <input type:"text" v-model="msg"></input>
+    </template>
+
+    //options API
+
+    <script>
+    export default {
+      data() {
+        return {
+          msg: ''
+        }
+      }
+    }
+    </script>
+
+    //composition API
+
+    <script setup>
+    let msg = ''
+    </script>
+
+</br>
 </br>
 </br>
 
