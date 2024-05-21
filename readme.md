@@ -15,6 +15,7 @@
     - 5.2 [Two Way Bind Directive](#two-way-bind-directive)
     - 5.3 [Conditional Directives](#conditional-directives)
     - 5.4 [Loop Directive](#loop-directive)
+    - 5.5 [Event Binding (Event listener)](#event-binding-(event-listener))
 - 6 [Class and Styles Bindings](#class-and-styles-bindings)
     - 6.1 [Binding Class](#binding-class)
     - 6.2 [Binding Styles](#binding-styles)
@@ -759,7 +760,7 @@ With Object:
 
 </br>
 
-### Event Listener
+### Event Binding (Event listener)
 
 The directive for listen javascript events. 
 
@@ -991,7 +992,6 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
     </script>
 
 **Oficial Docs**:https://vuejs.org/guide/essentials/class-and-style.html#class-and-style-bindings
-
 
 </br>
 </br>
