@@ -16,6 +16,8 @@
     - 5.3 [Conditional Directives](#conditional-directives)
     - 5.4 [Loop Directive](#loop-directive)
     - 5.5 [Event Binding (Event listener)](#event-binding-(event-listener))
+    - 5.6 [Once Render Content](#once-render-content)
+    - 5.7 [Block Static Content](#block-static-content)
 - 6 [Class and Styles Bindings](#class-and-styles-bindings)
     - 6.1 [Binding Class](#binding-class)
     - 6.2 [Binding Styles](#binding-styles)
@@ -816,7 +818,7 @@ The directive for listen javascript events.
 
 </br>
 
-### locking Content
+### Once Render Content
 
 For render the content or element once only, use the **v-once**.
 
@@ -844,6 +846,18 @@ For render the content or element once only, use the **v-once**.
     <script setup>
     let msg = ''
     </script>
+
+</br>
+
+### Block Static Content
+
+For render the static content.
+
+`v-pre`: even you use mustache tags, the content will be render as-is. Example:
+
+    <template>
+      <span>The mustache tags, should be used for render the dinamic content {{ dinamic content }}</span>
+    </template>
 
 </br>
 </br>
