@@ -848,6 +848,8 @@ For render the content or element once only, use the **v-once**.
     let msg = ''
     </script>
 
+**official Docs**:https://vuejs.org/api/built-in-directives.html#v-once
+
 </br>
 
 ### Render Static Content
@@ -859,6 +861,8 @@ For render the static content.
     <template>
       <span>The mustache tags, should be used for render the dinamic content {{ dinamic content }}</span>
     </template>
+
+**Official Docs**:https://vuejs.org/api/built-in-directives.html#v-pre
 
 </br>    
 
@@ -961,6 +965,7 @@ With scoped, we can pass child data to the parent. Example:
     const items=['apple', 'banana']
     </script>
 
+**Official Docs**:https://vuejs.org/api/built-in-directives.html#v-slot
 
 </br>
 </br>
