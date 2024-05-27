@@ -7,6 +7,7 @@
     - 3.2 [Importing and declaring Component Globally](#importing-and-declaring-component-globally)
     - 3.3 [Importing and declaring Component Locally](#importing-and-declaring-component-locally)
     - 3.4 [Using Component](#using-component)
+    - 3.5 [Capturing Template Element](#capturing-template-element)
 - 4 [Interpolation](#interpolation)
     - 4.1 [Text Interpolation](#text-interpolation)
     - 4.2 [Javascript Interpolation](#javascript-interpolation)
@@ -18,7 +19,8 @@
     - 5.5 [Event Binding (Event listener)](#event-binding-(event-listener))
     - 5.6 [Once Render Content](#once-render-content)
     - 5.7 [Render Static Content](#render-static-content)
-    - 5.8 [Dinamic Content For Child Component](#Dinamic-content-for-child-component)
+    - 5.8 [Dinamic Content For Child Component](#dinamic-content-for-child-component)
+    - 5.9 [HTML Dinamic Content](#HTML-dinamic-content)
 - 6 [Class and Styles Bindings](#class-and-styles-bindings)
     - 6.1 [Binding Class](#binding-class)
     - 6.2 [Binding Styles](#binding-styles)
@@ -149,6 +151,131 @@ Or:
     </template>
 
 **Official Docs:**https://vuejs.org/guide/components/registration.html
+
+</br>
+
+### Capturing Template Element
+
+We can catch the HTML content for use and explore in javascript language (script).
+
+`refs`: Wich refs we can select the HTML content with him values and parameters. For this, we use the **ref** parameter, and we named as we want. Example:
+
+    <template>
+      <input type="text" ref="input">
+    </template>
+
+After, we can use this HTML element to inspect and use.
+
+`$`: The dollar sign is a special VUE property, and ever we wanna see some VUE propertie we needed to use. Example:
+
+    <template>
+      <input type="text" ref="input">
+    </template>
+
+    // Options API
+
+    <script>
+    export default {
+      data() {
+        return {
+          content: ''
+        }
+      }
+      mounted() {
+        this.content = this.$refs.input
+      }
+    }
+    </script>
+
+    // Composition API (we don't need use the $)
+
+    <script setup>
+    import { ref, onMounted } from 'vue'
+
+    // the name of data must match tempalte ref value
+    const input = ref(null)
+
+    onMounted(() => {
+      content = input
+      console.log(content)
+    })
+    </script>
+
+On this example, we have the HTML element content with your tags, and values. 
+
+`dir`: With dir, we can specify the element diretory content. Example:
+
+    <template>
+      <input type="text" ref="input">
+    </template>
+
+    // Options API
+
+    <script>
+    export default {
+      data() {
+        return {
+          content: ''
+        }
+      }
+      mounted() {
+        this.content = this.$refs.input
+        console.dir(this.$refs.input)
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    import { ref, onMounted} from 'vue'
+  
+    const input = ref(null)
+
+    onMounted(() => {
+      content = input
+      console.dir(content)
+    })
+    </script>
+
+And with that, we can work whith the directory. Example:
+
+    <template>
+      <input type="text" ref="input">
+    </template>
+
+    // Options API
+
+    <script>
+    export default {
+      data() {
+        return {
+          content: ''
+        }
+      }
+      mounted() {
+        // value directory:
+        this.content = this.$refs.input.value
+        console.dir(this.$refs.input)
+      }
+    }
+    </script>
+
+    // Composition API 
+
+    <script setup>
+    import { ref, onMounted} from 'vue'
+
+    const input = ref(null)
+
+    onMounted(() => {
+      content = input.value
+      console.log(content)
+    })
+    </script>
+
+**Official Docs**: https://vuejs.org/guide/essentials/template-refs.html#accessing-the-refs
+
 
 </br>
 </br>
@@ -969,7 +1096,7 @@ With scoped, we can pass child data to the parent. Example:
 
 </br>
 
-### HTML dinamic content
+### HTML Dinamic Content
 
 For render html tags, contained in string value, we can use a simple, but dangerous directive.
 
@@ -997,6 +1124,8 @@ For render html tags, contained in string value, we can use a simple, but danger
     <script setup>
     const goal = 'Learn Vue 3'
     </script>
+
+**Caution**: v-html allow the user to input HTML content in your app. Use with care.
 
 **Official Docs**: https://vuejs.org/api/built-in-directives.html#v-html
 
