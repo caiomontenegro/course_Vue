@@ -968,6 +968,38 @@ With scoped, we can pass child data to the parent. Example:
 **Official Docs**:https://vuejs.org/api/built-in-directives.html#v-slot
 
 </br>
+
+### HTML dinamic content
+
+For render html tags, contained in string value, we can use a simple, but dangerous directive.
+
+`v-html`: Use this tag, for leave tag contained in strings comply your functions. Examples:
+
+    <template>
+      <div v-html="goal">
+      </div>
+    </template>
+
+    // Options API
+
+    <script>
+    export default {
+      data() {
+        return {
+          goal: 'Learn Vue 3'
+        }
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    const goal = 'Learn Vue 3'
+    </script>
+
+
+</br>
 </br>
 </br>
 
