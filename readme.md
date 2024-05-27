@@ -998,6 +998,7 @@ For render html tags, contained in string value, we can use a simple, but danger
     const goal = 'Learn Vue 3'
     </script>
 
+**Official Docs**: https://vuejs.org/api/built-in-directives.html#v-html
 
 </br>
 </br>
