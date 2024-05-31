@@ -842,7 +842,7 @@ Directives for render the content, several times. For this, we have only one dir
       export default {
         data() {
           return {
-            user: ['Caio', 'Silvana', 'Evandro']
+            names: ['Caio', 'Silvana', 'Evandro']
           }
         }
       }
@@ -851,7 +851,7 @@ Directives for render the content, several times. For this, we have only one dir
     // Composition API
 
     <script setup>
-    const user = ['Caio', 'Silvana', 'Evandro']
+    const names = ['Caio', 'Silvana', 'Evandro']
     </script>
 
 With Object:
