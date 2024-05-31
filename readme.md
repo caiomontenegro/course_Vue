@@ -857,7 +857,7 @@ Directives for render the content, several times. For this, we have only one dir
 With Object:
 
     <template>
-      <span v-for="user in users" :key="obj.id">{{ user.name }}</span>
+      <span v-for="user in users" :key="user.id">{{ user.name }}</span>
     </template>
 
     // Options API
