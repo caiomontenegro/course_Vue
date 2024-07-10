@@ -113,12 +113,7 @@ In <ins>main.js</ins> file, use the <ins>.component()</ins> method:
 
 In a parent component, we need to import and declare de component that we want to use. Like this:
 
-    <script setup>
-      import TheHeader from './components/TheHeader.vue'
-      import SubmmitButton from './components/SubmmitButton.vue'
-    </script>
-
-If you don't using the setup property. You can use this sintaxe:
+    // Option API
 
     <script>
       import TheHeader from './components/TheHeader.vue'
@@ -130,6 +125,13 @@ If you don't using the setup property. You can use this sintaxe:
           SubmmitButton
         }
       }
+    </script>
+
+    // Composition API
+
+    <script setup>
+      import TheHeader from './components/TheHeader.vue'
+      import SubmmitButton from './components/SubmmitButton.vue'
     </script>
 
 </br>
@@ -200,7 +202,6 @@ After, we can use this HTML element to inspect and use.
       console.log(content)
     })
     </script>
-
 On this example, we have the HTML element content with your tags, and values. 
 
 `dir`: With dir, we can specify the element diretory content. Example:
@@ -423,6 +424,40 @@ The interpolation, also accepts javascript language logics. Example:
     </script>
 
 **Official docs:** https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation
+
+</br>
+</br>
+</br>
+
+## Options API
+
+On Vue.js we have two ways to build our script component section. Options and Compositions. Let's look at them.
+
+</br>
+
+### State (datas)
+
+**Options**:
+
+    // On options, we need to use export default and declare
+    // the component as a object.
+
+    <script>
+    export default {
+      data() {
+        return {
+          name: 'Vue.js'
+        }
+      }
+    }
+    <script>
+
+    // And we called the prefix "this": this.$data or this.name
+
+**Composition**:
+
+
+
 
 </br>
 </br>
