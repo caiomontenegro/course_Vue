@@ -1352,9 +1352,9 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
 Each component instance has a cycle, that we can use to input functions with our instructions. Bellow we
 can see the order:
 
-- init Composition API
+- ** init Composition API
 - 1 - beforeCreate
-- Init Options API
+- ** Init Options API
 - 2 - created
 - 3 - beforeMount
 - 4 - mounted
