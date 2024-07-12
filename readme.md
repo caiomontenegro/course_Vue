@@ -37,7 +37,8 @@ For create a new VUE project, we can use the VUE CLI to build a vue project arch
 
 Access the link below and follow the steps:
 
-https://cli.vuejs.org/
+<a href="https://cli.vuejs.org/" target="_blank">Official Cli Tutorial</a>
+
 
 
 </br>
@@ -1346,3 +1347,21 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
 </br>
 </br>
 </br>
+
+## Component Lifecycle
+
+Each component instance has a cycle, that we can use to input functions with our instructions. Bellow we
+can see the order:
+
+- init Composition API
+- 1 beforeCreate
+- Init Options API
+- 2 created
+- 3 beforeMount
+- 4 mounted
+  - 4.1 beforeUpdated
+  - 4.2 Updated
+- 5 beforeUnmount
+- 6 unmounted
+
+
