@@ -1353,14 +1353,14 @@ Each component instance has a cycle, that we can use to input functions with our
 can see the order:
 
 - init Composition API
-- 1 beforeCreate
+- 1 - beforeCreate
 - Init Options API
-- 2 created
-- 3 beforeMount
-- 4 mounted
-  - 4.1 beforeUpdated
-  - 4.2 Updated
-- 5 beforeUnmount
-- 6 unmounted
+- 2 - created
+- 3 - beforeMount
+- 4 - mounted
+  - 4.1 - beforeUpdated
+  - 4.2 - Updated
+- 5 - beforeUnmount
+- 6 - unmounted
 
 
