@@ -37,8 +37,7 @@ For create a new VUE project, we can use the VUE CLI to build a vue project arch
 
 Access the link below and follow the steps:
 
-<a href="https://cli.vuejs.org/" target="_blank">Official Cli Tutorial</a>
-
+**<a href="https://cli.vuejs.org/" target="_blank">Official CLI Tutorial</a>**
 
 
 </br>
@@ -153,7 +152,7 @@ Or:
       <submmit-button></submmit-button>
     </template>
 
-**Official Docs:**https://vuejs.org/guide/components/registration.html
+**<a href="https://vuejs.org/guide/components/registration.html" target="_blank">Official Documentation</a>**
 
 </br>
 
@@ -276,7 +275,7 @@ And with that, we can work whith the directory. Example:
     })
     </script>
 
-**Official Docs**: https://vuejs.org/guide/essentials/template-refs.html#accessing-the-refs
+**<a href="https://vuejs.org/guide/essentials/template-refs.html#accessing-the-refs" target="_blank">Official Documentation</a>**
 
 
 </br>
@@ -424,7 +423,7 @@ The interpolation, also accepts javascript language logics. Example:
     const name = 'VUE 3'
     </script>
 
-**Official docs:** https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation
+**<a href="https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation" target="_blank">Official Documentation</a>**
 
 </br>
 </br>
@@ -858,7 +857,7 @@ The diference between **v-if** of **v-show**, is **v-if** not be loaded at DOM, 
 
 **Obs**: We necessarily need use **v-if** before, and exactly before using the **v-else** and **v-else-if**.
 
-**Official Docs:**https://vuejs.org/api/built-in-directives.html
+**<a href="https://vuejs.org/api/built-in-directives.html" target="_blank">Official Documentation</a>**
 
 </br>
 
@@ -922,7 +921,7 @@ With Object:
     ]
     </script>
 
-**Official Docs**:https://vuejs.org/api/built-in-directives.html#built-in-directives
+**<a href="https://vuejs.org/api/built-in-directives.html#built-in-directives" target="_blank">Official Documentation</a>**
 
 </br>
 
@@ -978,7 +977,7 @@ The directive for listen javascript events.
       const count = 0
       </script>
 
-**official Docs**:https://vuejs.org/guide/essentials/event-handling.html#listening-to-events
+**<a href="https://vuejs.org/guide/essentials/event-handling.html#listening-to-events" target="_blank">Official Documentation</a>**
 
 </br>
 
@@ -1011,7 +1010,7 @@ For render the content or element once only, use the **v-once**.
     let msg = ''
     </script>
 
-**official Docs**:https://vuejs.org/api/built-in-directives.html#v-once
+**<a href="https://vuejs.org/api/built-in-directives.html#v-once" target="_blank">Official Documentation</a>**
 
 </br>
 
@@ -1025,7 +1024,7 @@ For render the static content.
       <span>The mustache tags, should be used for render the dinamic content {{ dinamic content }}</span>
     </template>
 
-**Official Docs**:https://vuejs.org/api/built-in-directives.html#v-pre
+**<a href="https://vuejs.org/api/built-in-directives.html#v-pre" target="_blank">Official Documentation</a>**
 
 </br>    
 
@@ -1128,7 +1127,7 @@ With scoped, we can pass child data to the parent. Example:
     const items=['apple', 'banana']
     </script>
 
-**Official Docs**:https://vuejs.org/api/built-in-directives.html#v-slot
+**<a href="https://vuejs.org/api/built-in-directives.html#v-slot" target="_blank">Official Documentation</a>**
 
 </br>
 
@@ -1163,7 +1162,7 @@ For render html tags, contained in string value, we can use a simple, but danger
 
 **Caution**: v-html allow the user to input HTML content in your app. Use with care.
 
-**Official Docs**: https://vuejs.org/api/built-in-directives.html#v-html
+**<a href="https://vuejs.org/api/built-in-directives.html#v-html" target="_blank">Official Documentation</a>**
 
 </br>
 </br>
@@ -1342,7 +1341,7 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
     const styleClass={color: primaryColor, backgroundColor: secundaryColor}
     </script>
 
-**Oficial Docs**:https://vuejs.org/guide/essentials/class-and-style.html#class-and-style-bindings
+**<a href="https://vuejs.org/guide/essentials/class-and-style.html#class-and-style-bindings" target="_blank">Official Documentation</a>**
 
 </br>
 </br>
