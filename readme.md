@@ -1642,9 +1642,9 @@ This hook is called when the component is removed from the DOM tree.
     </script>
 
 
-<a href="https://vuejs.org/api/options-lifecycle.html" target="_blank"> Official Option API docs</a>
+<a href="https://vuejs.org/api/options-lifecycle.html" target="_blank"> Official Option API Documentation</a>
 </br>
-<a href="https://vuejs.org/api/composition-api-lifecycle.html" target="_blank">Official Composition API docs</a>
+<a href="https://vuejs.org/api/composition-api-lifecycle.html" target="_blank">Official Composition API Documentation</a>
 
 </br>
 </br>
