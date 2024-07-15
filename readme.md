@@ -403,6 +403,8 @@ data with **this.** prefix.
     }
     </script>
 
+<a href="https://vuejs.org/api/options-state.html#options-state" target="_blank">Official Docs</a>
+
 </br>
 </br>
 </br>
