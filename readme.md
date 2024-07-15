@@ -1352,9 +1352,9 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
 Each component instance has a cycle, that we can use to input functions with our instructions. Bellow we
 can see the order:
 
-- ** Init Composition API
+- --> Init Composition API
 - 1 - [beforeCreate](#beforeCreate)
-- ** Init Options API
+- --> Init Options API
 - 2 - [created](#created)
 - 3 - [beforeMount](#beforeMount)
 - 4 - [mounted](#mounted)
@@ -1550,6 +1550,7 @@ This hook is called when the component is removed from the DOM tree.
 
 
 <a href="https://vuejs.org/api/options-lifecycle.html" target="_blank"> Official Option API docs</a>
+</br>
 <a href="https://vuejs.org/api/composition-api-lifecycle.html" target="_blank">Official Composition API docs</a>
 
 </br>
