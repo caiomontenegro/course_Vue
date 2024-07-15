@@ -8,7 +8,7 @@
     - 3.3 [Importing and declaring Component Locally](#importing-and-declaring-component-locally)
     - 3.4 [Using Component](#using-component)
     - 3.5 [Capturing Template Element](#capturing-template-element)
-- 4 [Component API's](#component-api's)
+- 4 [Component API's](#Component-API's)
     - 4.1 [Options API](#options-api)
     - 4.2 [Composition API](#composition-api)
 - 5 [Interpolation](#interpolation)
