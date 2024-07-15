@@ -329,10 +329,12 @@ data with **this.** prefix.
       }
     }
     </script>
-    
+
 </br>
 
 `methods`: With methods, we define your functions and logics. We can call uor method's on events, inside other methods, inside of template and hooks. Ever something change on the page, the methods are be called
+</br>
+
 **Use**: Use the to run logics whenever any change occurence on the page, on interpolation and events.
 
     <script>
@@ -352,6 +354,8 @@ data with **this.** prefix.
 </br>
 
 `computed`: Computed's properties, works like a methods, but computed should ever return something, and can't be called on template events. Computed's are be recalculated if just some computed dependency changes (the dependencies are saving in cache).
+</br>
+
 **Use**: The computed's properties, works like a data properties. Use for derivate data based in another datas, when the de dependency data suffer some change.
 
     <script>
@@ -375,21 +379,13 @@ data with **this.** prefix.
 </br>
 
 `watchers`: Watchers works watching some data our computed, for execute some logic, that is, always that the property watched change, the logic will be executed. The name should be the same name of the computed our data that being watched.
-**Use**: Run in real time, ever the data changed. Use for any non-data updated your want to make. Named with the same name as the property being assisted. Recomended in the http requests.
-**Params**: We can access the old and new value, setting the params.
+</br>
 
-    <script>
-    export default {
-      data() {
-        name: ''
-      },
-      watch: {
-        name( newName, oldName ) {
-          console.log('The new name is: ', newName, ', and the olde name is: ', oldName)
-        }
-      }
-    }
-    </script>
+**Use**: Run in real time, ever the data changed. Use for any non-data updated your want to make. Named with the same name as the property being assisted. Recomended in the http requests.
+</br>
+
+**Params**: We can access the old and new value, setting the params.
+</br>
 
 **deep**: If you work with a objetic, and need that watch run when the nested property change, you need to use Deep, property:
 
@@ -401,9 +397,9 @@ data with **this.** prefix.
       watch: {
         name( newName, oldName ) {
           console.log('The new name is: ', newName, ', and the olde name is: ', oldName)
-        },
-        deep: true
-      }
+        }
+      },
+      deep: true
     }
     </script>
 
