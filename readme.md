@@ -397,9 +397,9 @@ data with **this.** prefix.
       watch: {
         name( newName, oldName ) {
           console.log('The new name is: ', newName, ', and the olde name is: ', oldName)
-        }
-      },
-      deep: true
+        },
+        deep: true
+      }
     }
     </script>
 
