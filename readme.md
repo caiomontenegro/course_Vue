@@ -24,7 +24,7 @@
 - 6 [Class and Styles Bindings](#class-and-styles-bindings)
     - 6.1 [Binding Class](#binding-class)
     - 6.2 [Binding Styles](#binding-styles)
-
+- 7 [Component Lifecycle](#component-lifecycle)
 
 
 </br>
@@ -1352,15 +1352,206 @@ The logic for apply dinamic styles on our component is the same such **dinamic c
 Each component instance has a cycle, that we can use to input functions with our instructions. Bellow we
 can see the order:
 
-- ** init Composition API
-- 1 - beforeCreate
+- ** Init Composition API
+- 1 - [beforeCreate](#beforeCreate)
 - ** Init Options API
-- 2 - created
-- 3 - beforeMount
-- 4 - mounted
-  - 4.1 - beforeUpdated
-  - 4.2 - Updated
-- 5 - beforeUnmount
-- 6 - unmounted
+- 2 - [created](#created)
+- 3 - [beforeMount](#beforeMount)
+- 4 - [mounted](#mounted)
+  - 4.1 - [beforeUpdated](#beforeUpdated)
+  - 4.2 - [updated](#updated)
+- 5 - [beforeUnmount](#beforeUnmount)
+- 6 - [unmounted](#unmounted)
+
+</br>
+
+### beforeCreate
+
+All routines declared here, will be executed before component is created. That is, when the component has instanced, before Vue has set up the component's data, computed, methods, and event listeners. Before create is available only on Options API. 
+
+    // Options API
+
+    <script>
+    export default {
+      beforeCreate() {
+        console.log('Component has been instanced')
+      }
+    }
+    </script>
+
+</br>
+
+### created
+
+The routines that will be declared here, will be declared after the component is initialized. So VUE component has already set up the component's data, computed, methods, and events listeners. Before create is available only Options API.
+
+    // Options API
+
+    <script>
+    export default {
+      created() {
+        console.log('Component has been created')
+      }
+    }
+    </script>
+
+</br>
+
+### beforeMount
+
+Here, the function and instructions will be executed, before the component is added to the DOM.
+
+    // Options API
+
+    <script>
+    export default {
+      beforeMount() {
+        console.log('Component is already to be mount')
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    import {onBeforeMount}
+    
+    onBeforeMount(() => {
+      console.log('Component is already to be mount')
+    })
+    </script>
+
+</br>
+
+### mount
+
+Right after a component is added to the DOM tree, the **mounted** function is called.
+
+    // Options API
+
+    <script>
+    export default {
+      mounted() {
+        console.log('The component was mounted')
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    import { onMounted } from 'vue'
+
+    onMounted(() => {
+      console.log('The component was mounted')
+    })
+    </script>
+
+</br>
+
+### beforeUpdate
+
+Is called whenever there is a change in the data fof your component, but before the update is rendere to the screen.
+
+    // Options API
+
+    <script>
+    export default {
+      beforeUpdate() {
+        console.log('Some data or content will be change and uptade')
+      }
+    }
+    </script>
+
+    // Compostion API
+
+    <script setup>
+    import { onBeforeUpdate } from 'vue'
+    onBeforeUpdate(() => {
+      console.log('Some data ofr content will be change and update')
+    })
+    </script>
+
+</br>
+
+### updated
+
+This hook is called after our component has updated it's DOM tree.
+
+    // Options API
+
+    <script>
+    export default {
+      updated() {
+        console.log('The component has been updated in DOM')
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    import { onUpdated } from 'vue'
+
+    onUpdated(() => {
+      console.log('The componenthas been updated in DOM')
+    })
+    </script>
+
+</br>
+
+### beforeUnmount
+
+This hook is called just before a componet is removed from the DOM
+
+    // Options API
+
+    <script>
+    export default {
+      beforeUnmount() {
+        console.log('This component will be unmount of DOM')
+      }
+    }
+    </script>
+
+    <script setup>
+    import { onBeforeUnmount } from 'vue'
+
+    onBeforeUnmount(() => {
+      console.log('This component will be unmount of DOM')
+    })
+    </script>
+
+</br>
+
+### unmounted
+
+This hook is called when the component is removed from the DOM tree.
+
+    // Options API
+
+    <script>
+    export default {
+      unmounted() {
+        console.log('The component has been removed from the DOM')
+      }
+    }
+    </script>
+
+    // Composition API
+
+    <script setup>
+    import { onUnmounted } from 'vue'
+
+    onUnmounted(() => {
+      console.log('The component has been removed from the DOM')
+    })
+    </script>
 
 
+<a href="https://vuejs.org/api/options-lifecycle.html" target="_blank"> Official Option API docs</a>
+<a href="https://vuejs.org/api/composition-api-lifecycle.html" target="_blank">Official Composition API docs</a>
+
+</br>
+</br>
+</br>
