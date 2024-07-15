@@ -8,23 +8,26 @@
     - 3.3 [Importing and declaring Component Locally](#importing-and-declaring-component-locally)
     - 3.4 [Using Component](#using-component)
     - 3.5 [Capturing Template Element](#capturing-template-element)
-- 4 [Interpolation](#interpolation)
-    - 4.1 [Text Interpolation](#text-interpolation)
-    - 4.2 [Javascript Interpolation](#javascript-interpolation)
-- 5 [Directives](#directives)
-    - 5.1 [Bind Directive](#bind-directive)
-    - 5.2 [Two Way Bind Directive](#two-way-bind-directive)
-    - 5.3 [Conditional Directives](#conditional-directives)
-    - 5.4 [Loop Directive](#loop-directive)
-    - 5.5 [Event Binding (Event listener)](#event-binding-(event-listener))
-    - 5.6 [Once Render Content](#once-render-content)
-    - 5.7 [Render Static Content](#render-static-content)
-    - 5.8 [Dinamic Content For Child Component](#dinamic-content-for-child-component)
-    - 5.9 [HTML Dinamic Content](#HTML-dinamic-content)
-- 6 [Class and Styles Bindings](#class-and-styles-bindings)
-    - 6.1 [Binding Class](#binding-class)
-    - 6.2 [Binding Styles](#binding-styles)
-- 7 [Component Lifecycle](#component-lifecycle)
+- 4 [Component API's](#component-api's)
+    - 4.1 [Options API](#options-api)
+    - 4.2 [Composition API](#composition-api)
+- 5 [Interpolation](#interpolation)
+    - 5.1 [Text Interpolation](#text-interpolation)
+    - 5.2 [Javascript Interpolation](#javascript-interpolation)
+- 6 [Directives](#directives)
+    - 6.1 [Bind Directive](#bind-directive)
+    - 6.2 [Two Way Bind Directive](#two-way-bind-directive)
+    - 6.3 [Conditional Directives](#conditional-directives)
+    - 6.4 [Loop Directive](#loop-directive)
+    - 6.5 [Event Binding (Event listener)](#event-binding-(event-listener))
+    - 6.6 [Once Render Content](#once-render-content)
+    - 6.7 [Render Static Content](#render-static-content)
+    - 6.8 [Dinamic Content For Child Component](#dinamic-content-for-child-component)
+    - 6.9 [HTML Dinamic Content](#HTML-dinamic-content)
+- 7 [Class and Styles Bindings](#class-and-styles-bindings)
+    - 7.1 [Binding Class](#binding-class)
+    - 7.2 [Binding Styles](#binding-styles)
+- 8 [Component Lifecycle](#component-lifecycle)
 
 
 </br>
@@ -282,6 +285,132 @@ And with that, we can work whith the directory. Example:
 </br>
 </br>
 
+## Component API's
+
+On Vue 3, we have two ways to define the component, **Composition** and **Options**. Let's se each way.
+
+</br>
+
+### Options API
+
+On the **Options API**, we have four main options for define our component. Let's check:
+
+`data()`: Here we define uor reactive datas, when we need to call some data in another field of our script, we call this
+data with **this.** prefix.
+
+    <script>
+    export default {
+      data() {
+        return {
+
+          // number
+          number: 0
+
+          // strings
+          theString: 'some text',
+
+          // boolean
+          validated: false,
+
+          // object
+          someObject: {
+            color: 'white',
+            age: 21,
+            name: Caio
+          },
+          
+          // arrays lists
+          theArray: [
+            pineapple,
+            apple,
+            banana
+          ]
+        }
+      }
+    }
+    </script>
+    
+</br>
+
+`methods`: With methods, we define your functions and logics. We can call uor method's on events, inside other methods, inside of template and hooks. Ever something change on the page, the methods are be called
+**Use**: Use the to run logics whenever any change occurence on the page, on interpolation and events.
+
+    <script>
+    export default {
+      data() {
+        name: ''
+      },
+      methods: {
+        changeName() {
+          // Remember to use the "this." prefix
+          this.name = 'Caio'
+        }
+      }
+    }
+    </script>
+
+</br>
+
+`computed`: Computed's properties, works like a methods, but computed should ever return something, and can't be called on template events. Computed's are be recalculated if just some computed dependency changes (the dependencies are saving in cache).
+**Use**: The computed's properties, works like a data properties. Use for derivate data based in another datas, when the de dependency data suffer some change.
+
+    <script>
+    export default {
+      data() {
+        name: 'Carlos'
+      },
+      computed: {
+        fullName() {
+
+          // name is a dependency
+          if (this.name === '') {
+            return this.name
+          }
+
+        }
+      }
+    }
+    </script>
+
+</br>
+
+`watchers`: Watchers works watching some data our computed, for execute some logic, that is, always that the property watched change, the logic will be executed. The name should be the same name of the computed our data that being watched.
+**Use**: Run in real time, ever the data changed. Use for any non-data updated your want to make. Named with the same name as the property being assisted. Recomended in the http requests.
+**Params**: We can access the old and new value, setting the params.
+
+    <script>
+    export default {
+      data() {
+        name: ''
+      },
+      watch: {
+        name( newName, oldName ) {
+          console.log('The new name is: ', newName, ', and the olde name is: ', oldName)
+        }
+      }
+    }
+    </script>
+
+**deep**: If you work with a objetic, and need that watch run when the nested property change, you need to use Deep, property:
+
+    <script>
+    export default {
+      data() {
+        name: ''
+      },
+      watch: {
+        name( newName, oldName ) {
+          console.log('The new name is: ', newName, ', and the olde name is: ', oldName)
+        },
+        deep: true
+      }
+    }
+    </script>
+
+</br>
+</br>
+</br>
+
 ## Interpolation
 
 We can use a reactive data and some logics, in our template component. For that we use the Interpolation, with
@@ -424,40 +553,6 @@ The interpolation, also accepts javascript language logics. Example:
     </script>
 
 **<a href="https://vuejs.org/guide/essentials/template-syntax.html#text-interpolation" target="_blank">Official Documentation</a>**
-
-</br>
-</br>
-</br>
-
-## Options API
-
-On Vue.js we have two ways to build our script component section. Options and Compositions. Let's look at them.
-
-</br>
-
-### State (datas)
-
-**Options**:
-
-    // On options, we need to use export default and declare
-    // the component as a object.
-
-    <script>
-    export default {
-      data() {
-        return {
-          name: 'Vue.js'
-        }
-      }
-    }
-    <script>
-
-    // And we called the prefix "this": this.$data or this.name
-
-**Composition**:
-
-
-
 
 </br>
 </br>
@@ -1556,3 +1651,4 @@ This hook is called when the component is removed from the DOM tree.
 </br>
 </br>
 </br>
+
