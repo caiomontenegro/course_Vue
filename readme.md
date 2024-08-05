@@ -405,6 +405,190 @@ data with **this.** prefix.
 
 <a href="https://vuejs.org/api/options-state.html#options-state" target="_blank">Official Documentation</a>
 
+
+### Compostion API
+
+In the Composition API, we have some diferent approaches
+
+`data() -> refs`: Here, we use the reactive data with simple form:
+
+    <script>
+    import { ref } from 'vue'
+
+    export default {
+      setup() {
+      
+        // user const, EVER
+        const uName = ref('Caio Montenegro')
+
+        setTimeout(() => {
+
+          // Remenber, here the datas was saved as object
+          uName.value = 'Caio'
+        })
+
+        return { userName: uName}
+      }
+    }
+    </script>
+
+    <template>
+      <h1>{{ uName }}</h1>
+    </template>
+
+For use with objects, we can use the **ref()**, but we can user the **reactive()**, because he simplified the code. Let's see:
+
+    // With refs()
+
+    <script>
+    import { ref } from 'vue'
+
+    export default {
+      setup() {
+      
+        const user = ref({
+          name: "Caio Montenegro",
+          age: 31
+        })
+
+        setTimeout(() => {
+          uName.value.name = 'Caio'
+          uName.value.age = 32
+        })
+
+        return { user: user}
+      }
+    }
+    </script>
+
+    // with reactive()
+
+    <template>
+      <h2>{{ user.name }}</h2>
+      <h3>{{ user.age}}</h3>
+    </template>
+
+    <script>
+    import { ref, reactive } from 'vue'
+
+    export default {
+      setup() {
+      
+        const user = reactive({
+          name: "Caio Montenegro",
+          age: 31
+        })
+
+        setTimeout(() => {
+          
+          // Here we don't need use the .value
+          uName.name = 'Caio'
+          uName.age = 32
+        })
+
+        return { user: user}
+      }
+    }
+    </script>
+
+    <template>
+      <h2>{{ user.name }}</h2>
+      <h3>{{ user.age}}</h3>
+    </template>
+
+Now, let's see the simplified codem, with ** Script Setup, with ref() and reactive():
+
+
+    <script setup>
+    import { ref } from 'vue'
+
+    const uName = ref('Caio Montenegro')
+
+    setTimeout(() => {
+      uName.value = 'Caio'
+    })
+
+    </script>
+
+    <template>
+      <h1>{{ uName }}</h1>
+    </template>
+
+
+    // with object
+
+    <template>
+      <h2>{{ user.name }}</h2>
+      <h3>{{ user.age}}</h3>
+    </template>
+
+    <script setup>
+    import { ref, reactive } from 'vue'
+    
+    const user = reactive({
+      name: "Caio Montenegro",
+      age: 31
+    })
+
+    setTimeout(() => {
+      uName.name = 'Caio'
+      uName.age = 32
+    })
+
+    </script>
+
+</br>
+
+`methods -> Regular Functions`: Here, we can use the simple functions, to substitute the methods:
+
+    <template>
+    <button @click="setAge" ></button>
+    </template>
+
+    <script> 
+    import { reactive } from 'vue'
+
+    export default {
+      setup() {
+        const user = reactive({
+          name: 'Caio',
+          age: 31
+        })
+
+        function setNewAge() {
+          user.age = 32
+        }
+
+        return { user: ser, setAge: setNewAge}
+      }
+    }
+    </script>
+
+    // Simplified
+
+
+    <template>
+    <button @click="setAge" ></button>
+    </template>
+
+    <script setup> 
+    import { reactive } from 'vue'
+
+    const user = reactive({
+      name: 'Caio',
+      age: 31
+    })
+
+    function setAge() {
+      user.age = 32
+    }
+
+
+    </script>
+
+</br>
+
+`Computed`: let's see how we can use the computed:
 </br>
 </br>
 </br>
