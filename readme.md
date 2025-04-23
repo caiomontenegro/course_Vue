@@ -58,11 +58,11 @@ The architecture project:
     - `assets`: That we have our image and styles files.
     - `components`: Our vue components files.
     - `app.vue`: the main component vue file.
-    - `mains.js`: inside this file, we have a instance vue app.
+    - `main.js`: inside this file, we have a instance vue app.
     - `vue.config.js`: Special vue configs.
     - `package.json`: all scripts and dependencies rountines.
     - `package-lock.json`: Dependency version security lock.
-    - `lin`: Here we configure the sintaxe patterns
+    - `lint`: Here we configure the sintaxe patterns
     - `.gitignore`: Here we declare the files that don't send to our repository.
 
 </br>
@@ -242,7 +242,7 @@ On this example, we have the HTML element content with your tags, and values.
     })
     </script>
 
-And with that, we can work whith the directory. Example:
+And with that, we can work with the directory. Example:
 
     <template>
       <input type="text" ref="input">
@@ -295,7 +295,7 @@ On Vue 3, we have two ways to define the component, **Composition** and **Option
 
 On the **Options API**, we have four main options for define our component. Let's check:
 
-`data()`: Here we define uor reactive datas, when we need to call some data in another field of our script, we call this
+`data()`: Here we define our reactive datas, when we need to call some data in another field of our script, we call this
 data with **this.** prefix.
 
     <script>
@@ -332,7 +332,7 @@ data with **this.** prefix.
 
 </br>
 
-`methods`: With methods, we define your functions and logics. We can call uor method's on events, inside other methods, inside of template and hooks. Ever something change on the page, the methods are be called
+`methods`: With methods, we define your functions and logics. We can call our method's on events, inside other methods, inside of template and hooks. Ever something change on the page, the methods are be called
 </br>
 
 **Use**: Use the to run logics whenever any change occurence on the page, on interpolation and events.
@@ -353,7 +353,7 @@ data with **this.** prefix.
 
 </br>
 
-`computed`: Computed's properties, works like a methods, but computed should ever return something, and can't be called on template events. Computed's are be recalculated if just some computed dependency changes (the dependencies are saving in cache).
+`computed`: Computed's properties, works like a methods, but computed should ever return something, can be called on templates as a data properties, but can't be called on template events, because Computed's are getters. Computed's are be recalculated if just some computed dependency changes (the dependencies are saving in cache).
 </br>
 
 **Use**: The computed's properties, works like a data properties. Use for derivate data based in another datas, when the de dependency data suffer some change.
@@ -361,16 +361,18 @@ data with **this.** prefix.
     <script>
     export default {
       data() {
-        name: 'Carlos'
+        name: 'Carlos',
+        lastName: 'Fonseca'
       },
       computed: {
         fullName() {
 
           // name is a dependency
-          if (this.name === '') {
+          if (this.lastName === '') {
             return this.name
+          } else {
+            return `${this.firstName} ${this.lastName}`;
           }
-
         }
       }
     }
@@ -378,7 +380,7 @@ data with **this.** prefix.
 
 </br>
 
-`watchers`: Watchers works watching some data our computed, for execute some logic, that is, always that the property watched change, the logic will be executed. The name should be the same name of the computed our data that being watched.
+`watchers`: Watchers works watching some data our computed, for execute some logic, but don't to return another value based on the watched value. The objetive is execute some logic. The name should be the same name of the computed our data that being watched.
 </br>
 
 **Use**: Run in real time, ever the data changed. Use for any non-data updated your want to make. Named with the same name as the property being assisted. Recomended in the http requests.
@@ -387,16 +389,38 @@ data with **this.** prefix.
 **Params**: We can access the old and new value, setting the params.
 </br>
 
-**deep**: If you work with a objetic, and need that watch run when the nested property change, you need to use Deep, property:
+**deep**: If you work with a object, and need that watch run when the nested property change, you need to use Deep, property:
 
     <script>
     export default {
       data() {
-        name: ''
+        name: '',
+        showName: false,
       },
       watch: {
         name( newName, oldName ) {
-          console.log('The new name is: ', newName, ', and the olde name is: ', oldName)
+          console.log('The new name is: ', newName, ', and the old name is: ', oldName)
+          showName = true
+        }
+      }
+    }
+    </script>
+
+    // With Deep property
+
+    <script>
+    export default {
+      data() {
+        user: {
+          name: '',
+          lastName: '',
+        },
+        showName: false,
+      },
+      watch: {
+        name( newValue, oldValue ) {
+          console.log('The new full name is: ', newValue.Name + newValue.lastName)
+          showName = true
         },
         deep: true
       }
@@ -410,7 +434,9 @@ data with **this.** prefix.
 
 In the Composition API, we have some diferent approaches
 
-`data() -> refs`: Here, we use the reactive data with simple form:
+`data() -> refs`: In composition API, data properties become a normal variables, but they are declared with **ref()**. And all of them, behind the scenes are objects.
+
+**Use**:Here, we use the reactive data with simple form:
 
     <script>
     import { ref } from 'vue'
@@ -423,7 +449,7 @@ In the Composition API, we have some diferent approaches
 
         setTimeout(() => {
 
-          // Remenber, here the datas was saved as object
+          // Remember, here the datas was saved as object
           uName.value = 'Caio'
         })
 
@@ -436,7 +462,7 @@ In the Composition API, we have some diferent approaches
       <h1>{{ uName }}</h1>
     </template>
 
-For use with objects, we can use the **ref()**, but we can user the **reactive()**, because he simplified the code. Let's see:
+For use with objects, we can use the **ref()**, but we can also user the **reactive()**, because he simplified the code. Let's see:
 
     // With refs()
 
@@ -452,8 +478,8 @@ For use with objects, we can use the **ref()**, but we can user the **reactive()
         })
 
         setTimeout(() => {
-          uName.value.name = 'Caio'
-          uName.value.age = 32
+          user.value.name = 'Caio'
+          user.value.age = 32
         })
 
         return { user: user}
@@ -462,11 +488,6 @@ For use with objects, we can use the **ref()**, but we can user the **reactive()
     </script>
 
     // with reactive()
-
-    <template>
-      <h2>{{ user.name }}</h2>
-      <h3>{{ user.age}}</h3>
-    </template>
 
     <script>
     import { ref, reactive } from 'vue'
@@ -482,8 +503,8 @@ For use with objects, we can use the **ref()**, but we can user the **reactive()
         setTimeout(() => {
           
           // Here we don't need use the .value
-          uName.name = 'Caio'
-          uName.age = 32
+          user.name = 'Caio'
+          user.age = 32
         })
 
         return { user: user}
@@ -491,12 +512,7 @@ For use with objects, we can use the **ref()**, but we can user the **reactive()
     }
     </script>
 
-    <template>
-      <h2>{{ user.name }}</h2>
-      <h3>{{ user.age}}</h3>
-    </template>
-
-Now, let's see the simplified codem, with ** Script Setup, with ref() and reactive():
+Now, let's see the simplified code, with **Script Setup**, with ref() and reactive():
 
 
     <script setup>
@@ -531,15 +547,17 @@ Now, let's see the simplified codem, with ** Script Setup, with ref() and reacti
     })
 
     setTimeout(() => {
-      uName.name = 'Caio'
-      uName.age = 32
+      user.name = 'Caio'
+      user.age = 32
     })
 
     </script>
 
 </br>
 
-`methods -> Regular Functions`: Here, we can use the simple functions, to substitute the methods:
+`methods -> Regular Functions`: Here, we can use the simple functions, to substitute the methods, just like that:
+
+**Use**: 
 
     <template>
     <button @click="setAge" ></button>
@@ -583,12 +601,82 @@ Now, let's see the simplified codem, with ** Script Setup, with ref() and reacti
       user.age = 32
     }
 
-
     </script>
 
 </br>
 
 `Computed`: let's see how we can use the computed:
+
+    <script>
+    import { reactive } from 'vue'
+
+    export default {
+      setup () {
+
+        const customer = reactive({
+          name: 'Caio Montenegro',
+          books: [
+            'Vinte Mil Léguas Submarinas', 
+            'O Senhor dos Anéis',
+            'Possessão'
+          ]
+        })
+
+        // computed:
+        const booksAcquired = computed(() => {
+          return customer.books.length > 0 ? 'yes' : 'No'
+        })
+
+        return  {
+          customer,
+          booksAcquired
+        }
+      }
+    }
+      
+    </script>
+
+    // Simplified
+
+    <script setup>
+    import { reactive } from 'vue'
+
+    const customer = reactive ({
+      name: 'Caio Montenegro',
+      books: [
+        'Vinte Mil Légua Submarinas', 
+        'O Senhor dos Anéis',
+        'Possessão'
+      ]
+    })
+
+    // computed:
+
+    const booksAcquired = computed (() => {
+      return customer.books.length > 0 ? 'yes' : 'no'
+    })
+    </script>
+
+`Watch`: Finally let's see watchers:
+
+    <script setup>
+    import { reactive, watch } from 'vue';
+
+    // Definindo um objeto reativo
+    const user = reactive({
+      name: 'Carlos',
+      age: 30,
+    });
+
+    // Usando o watch com deep para observar alterações no objeto inteiro
+    watch(user, (newVal, oldVal) => {
+      console.log('Pessoa foi alterada:');
+      console.log('Antes:', oldVal);
+      console.log('Depois:', newVal);
+    },{ deep: true });
+    </script>
+
+
 </br>
 </br>
 </br>
